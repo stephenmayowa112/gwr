@@ -1,0 +1,146 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum AttendanceType {
+  IN_PERSON
+  ONLINE
+}
+
+enum EventStatus {
+  UPCOMING
+  LIVE
+  COMPLETED
+  ATTEMPT_ENDED
+}
+
+enum InquiryStatus {
+  NEW
+  REPLIED
+}
+
+model Registration {
+  id              String         @id @default(cuid())
+  fullName        String
+  email           String         @unique
+  phone           String
+  attendeesCount  Int            @default(1)
+  attendanceType  AttendanceType @default(IN_PERSON)
+  hearAbout       String?
+  consent         Boolean        @default(true)
+  ticketCode      String         @unique
+  checkedIn       Boolean        @default(false)
+  checkedInAt     DateTime?
+  utmSource       String?
+  utmMedium       String?
+  utmCampaign     String?
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  @@index([email])
+  @@index([ticketCode])
+  @@index([attendanceType])
+  @@index([checkedIn])
+}
+
+model PartnerInquiry {
+  id            String        @id @default(cuid())
+  name          String
+  organization  String
+  email         String
+  tierInterest  String
+  message       String
+  status        InquiryStatus @default(NEW)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+model PressRequest {
+  id            String        @id @default(cuid())
+  name          String
+  outlet        String
+  role          String
+  email         String
+  coverageType  String
+  status        InquiryStatus @default(NEW)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+model LiveUpdate {
+  id             String    @id @default(cuid())
+  title          String
+  message        String
+  milestoneHour  Int?
+  isPinned       Boolean   @default(false)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@index([createdAt])
+  @@index([isPinned])
+}
+
+model DailyPhrase {
+  id             String    @id @default(cuid())
+  french         String
+  english        String
+  phonetic       String
+  context        String
+  dateStr        String    @unique
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@index([dateStr])
+}
+
+model FaqItem {
+  id             String    @id @default(cuid())
+  question       String
+  answer         String
+  category       String
+  order          Int       @default(0)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@index([order])
+  @@index([category])
+}
+
+model EventConfig {
+  id                String      @id @default("singleton")
+  status            EventStatus @default(UPCOMING)
+  officialStartTime DateTime    // 2026-10-30T18:00:00+01:00
+  youtubeUrl        String?
+  hourOverride      Float?
+  venueCapacity     Int         @default(2500)
+  waitlistActive    Boolean     @default(false)
+  resultOutcome     String?     @default("Guinness World Record Achieved: 48 Hours Completed!")
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
+}
+
+model AdminUser {
+  id             String    @id @default(cuid())
+  email          String    @unique
+  passwordHash   String
+  name           String
+  role           String    @default("ADMIN")
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@index([email])
+}
