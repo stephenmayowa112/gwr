@@ -80,7 +80,7 @@ export const TimezoneCountdown: React.FC<TimezoneCountdownProps> = ({
 
   if (variant === 'compact') {
     return (
-      <div className="flex items-center gap-3 font-mono text-sm tabular-nums text-emerald-100">
+      <div className="flex items-center gap-2 sm:gap-3 font-mono text-xs sm:text-sm tabular-nums text-emerald-100">
         <span className="text-amber-400 font-semibold">{String(timeLeft.days).padStart(2, '0')}d</span>
         <span>:</span>
         <span>{String(timeLeft.hours).padStart(2, '0')}h</span>
@@ -94,44 +94,44 @@ export const TimezoneCountdown: React.FC<TimezoneCountdownProps> = ({
 
   return (
     <div className="w-full max-w-xl">
-      <div className="flex items-center justify-between text-[11px] tracking-[0.2em] uppercase font-mono text-emerald-200/80 mb-2">
+      <div className="flex flex-wrap items-center justify-between gap-1 text-[10px] sm:text-[11px] tracking-[0.15em] uppercase font-mono text-emerald-200/80 mb-2">
         <span>{title}</span>
-        <span className="text-amber-400/90 font-medium">WAT (UTC+1)</span>
+        <span className="text-amber-400 font-medium">WAT (UTC+1)</span>
       </div>
 
-      <div className="grid grid-cols-4 gap-2 sm:gap-3">
-        <div className="flex flex-col items-center justify-center p-3 sm:p-4 bg-emerald-950/60 border border-emerald-800/60 backdrop-blur-sm rounded-lg">
-          <span className="text-2xl sm:text-4xl font-extrabold text-white font-mono tabular-nums">
+      <div className="grid grid-cols-4 gap-1.5 sm:gap-3">
+        <div className="flex flex-col items-center justify-center p-2.5 sm:p-4 bg-emerald-950/70 border border-emerald-800/60 backdrop-blur-sm rounded-lg sm:rounded-xl">
+          <span className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white font-mono tabular-nums">
             {String(timeLeft.days).padStart(2, '0')}
           </span>
-          <span className="text-[10px] sm:text-xs font-mono tracking-wider text-emerald-300/80 uppercase mt-1">
+          <span className="text-[9px] sm:text-xs font-mono tracking-wider text-emerald-300/80 uppercase mt-0.5 sm:mt-1">
             Days
           </span>
         </div>
 
-        <div className="flex flex-col items-center justify-center p-3 sm:p-4 bg-emerald-950/60 border border-emerald-800/60 backdrop-blur-sm rounded-lg">
-          <span className="text-2xl sm:text-4xl font-extrabold text-white font-mono tabular-nums">
+        <div className="flex flex-col items-center justify-center p-2.5 sm:p-4 bg-emerald-950/70 border border-emerald-800/60 backdrop-blur-sm rounded-lg sm:rounded-xl">
+          <span className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white font-mono tabular-nums">
             {String(timeLeft.hours).padStart(2, '0')}
           </span>
-          <span className="text-[10px] sm:text-xs font-mono tracking-wider text-emerald-300/80 uppercase mt-1">
+          <span className="text-[9px] sm:text-xs font-mono tracking-wider text-emerald-300/80 uppercase mt-0.5 sm:mt-1">
             Hours
           </span>
         </div>
 
-        <div className="flex flex-col items-center justify-center p-3 sm:p-4 bg-emerald-950/60 border border-emerald-800/60 backdrop-blur-sm rounded-lg">
-          <span className="text-2xl sm:text-4xl font-extrabold text-white font-mono tabular-nums">
+        <div className="flex flex-col items-center justify-center p-2.5 sm:p-4 bg-emerald-950/70 border border-emerald-800/60 backdrop-blur-sm rounded-lg sm:rounded-xl">
+          <span className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white font-mono tabular-nums">
             {String(timeLeft.minutes).padStart(2, '0')}
           </span>
-          <span className="text-[10px] sm:text-xs font-mono tracking-wider text-emerald-300/80 uppercase mt-1">
+          <span className="text-[9px] sm:text-xs font-mono tracking-wider text-emerald-300/80 uppercase mt-0.5 sm:mt-1">
             Mins
           </span>
         </div>
 
-        <div className="flex flex-col items-center justify-center p-3 sm:p-4 bg-emerald-950/60 border border-amber-500/40 backdrop-blur-sm rounded-lg">
-          <span className="text-2xl sm:text-4xl font-extrabold text-amber-400 font-mono tabular-nums">
+        <div className="flex flex-col items-center justify-center p-2.5 sm:p-4 bg-emerald-950/70 border border-amber-500/50 backdrop-blur-sm rounded-lg sm:rounded-xl">
+          <span className="text-xl sm:text-3xl md:text-4xl font-extrabold text-amber-400 font-mono tabular-nums">
             {String(timeLeft.seconds).padStart(2, '0')}
           </span>
-          <span className="text-[10px] sm:text-xs font-mono tracking-wider text-amber-300/90 uppercase mt-1">
+          <span className="text-[9px] sm:text-xs font-mono tracking-wider text-amber-300/90 uppercase mt-0.5 sm:mt-1">
             Secs
           </span>
         </div>
