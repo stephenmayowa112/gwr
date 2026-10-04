@@ -1,36 +1,42 @@
 import React from 'react';
+import { UgegbeBrandLogo } from '../common/UgegbeBrandLogo';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#022C22] border-t border-emerald-900/60 text-white py-16 sm:py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+    <footer className="w-full bg-[#001410] border-t border-[#23C48E]/20 text-[#D2FCE3] py-16 sm:py-24">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+        {/* Official Brand Logo Mark */}
+        <div className="flex justify-center pb-2">
+          <UgegbeBrandLogo variant="light" size="lg" withGwrBadge={true} />
+        </div>
+
         <h2 className="text-2xl sm:text-3xl font-display font-black tracking-tight uppercase text-white">
           STAY CONNECTED
         </h2>
 
-        <div className="space-y-2 text-base sm:text-lg text-emerald-100 font-normal">
+        <div className="space-y-2 text-base sm:text-lg text-[#D2FCE3] font-normal">
           <p>
-            Follow the journey: <strong className="text-amber-400 font-bold">@UGEGBEGWR</strong>
+            Follow the journey: <strong className="text-[#23C48E] font-bold">@UGEGBEGWR</strong>
           </p>
-          <p className="text-xs sm:text-sm font-mono text-emerald-200/90 tracking-wide">
+          <p className="text-xs sm:text-sm font-mono text-[#D2FCE3]/80 tracking-wide">
             Instagram · X · TikTok · YouTube
           </p>
         </div>
 
-        <div className="pt-2">
+        <div className="pt-1">
           <a
             href="mailto:info@ugegbegwr.com"
-            className="text-sm sm:text-base font-mono text-emerald-300 hover:text-amber-400 underline transition-colors"
+            className="text-sm sm:text-base font-mono text-[#23C48E] hover:text-[#40FFBC] underline transition-colors"
           >
             info@ugegbegwr.com
           </a>
         </div>
 
-        <div className="pt-2 text-xs sm:text-sm font-mono text-emerald-300/80 tracking-wide">
+        <div className="pt-2 text-xs sm:text-sm font-mono text-[#D2FCE3]/75 tracking-wide">
           #UgegbeGWR · #FavourUgegbe · #FrenchLanguageMarathon
         </div>
 
-        <div className="pt-8 border-t border-emerald-900/60 text-xs font-mono text-emerald-400/60">
+        <div className="pt-8 border-t border-[#23C48E]/20 text-xs font-mono text-[#D2FCE3]/50">
           © 2026 Ugegbe. All rights reserved.
         </div>
       </div>

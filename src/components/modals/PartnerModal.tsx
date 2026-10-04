@@ -55,27 +55,27 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/75 backdrop-blur-xs overflow-y-auto">
-      <div className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto bg-white rounded-2xl shadow-2xl p-5 sm:p-8 border border-emerald-950/20 my-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-xs overflow-y-auto">
+      <div className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto bg-[#001410] text-[#D2FCE3] rounded-2xl shadow-2xl p-5 sm:p-8 border border-[#23C48E]/30 my-auto">
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2 text-slate-400 hover:text-slate-800 rounded-full hover:bg-slate-100 transition-colors cursor-pointer"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2 text-[#D2FCE3]/60 hover:text-white rounded-full hover:bg-[#003734] transition-colors cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
 
         {isSuccess ? (
           <div className="text-center py-6 space-y-3">
-            <CheckCircle2 className="w-10 h-10 text-emerald-700 mx-auto" />
-            <h3 className="text-2xl font-display font-black text-emerald-950 uppercase">
+            <CheckCircle2 className="w-10 h-10 text-[#23C48E] mx-auto" />
+            <h3 className="text-2xl font-display font-black text-white uppercase">
               INQUIRY RECEIVED
             </h3>
-            <p className="text-xs text-slate-600 leading-relaxed font-mono">
+            <p className="text-xs text-[#D2FCE3]/80 leading-relaxed font-mono">
               Thank you. Our partnership team will contact you via {formData.email} or you can reach us at info@ugegbegwr.com.
             </p>
             <button
               onClick={onClose}
-              className="mt-3 px-6 py-2.5 bg-emerald-950 text-white font-mono text-xs uppercase tracking-wider rounded-lg cursor-pointer"
+              className="mt-3 px-6 py-2.5 bg-[#23C48E] text-[#001410] font-mono text-xs uppercase tracking-wider font-bold rounded-lg cursor-pointer"
             >
               Close
             </button>
@@ -83,20 +83,20 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
         ) : (
           <div className="space-y-4">
             <div>
-              <span className="text-[11px] font-mono uppercase tracking-widest text-emerald-800 font-bold block">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-[#23C48E] font-bold block">
                 PARTNER
               </span>
-              <h3 className="text-2xl font-display font-black text-emerald-950 uppercase tracking-tight">
+              <h3 className="text-2xl font-display font-black text-white uppercase tracking-tight">
                 PARTNER WITH US
               </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs text-[#D2FCE3]/80 leading-relaxed">
                 Put your organisation alongside a story about language, culture, connection and possibility.
               </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-3">
               <div>
-                <label className="block text-xs font-mono font-semibold uppercase text-slate-800 mb-1">
+                <label className="block text-xs font-mono font-semibold uppercase text-[#D2FCE3] mb-1">
                   Name *
                 </label>
                 <input
@@ -105,12 +105,12 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
                   placeholder="Your name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-800"
+                  className="w-full px-3.5 py-2.5 bg-[#003734]/40 border border-[#23C48E]/30 rounded-lg text-base sm:text-sm text-white placeholder:text-[#D2FCE3]/40 focus:outline-none focus:ring-2 focus:ring-[#23C48E]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono font-semibold uppercase text-slate-800 mb-1">
+                <label className="block text-xs font-mono font-semibold uppercase text-[#D2FCE3] mb-1">
                   Organisation *
                 </label>
                 <input
@@ -119,12 +119,12 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
                   placeholder="Organisation name"
                   value={formData.organization}
                   onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-800"
+                  className="w-full px-3.5 py-2.5 bg-[#003734]/40 border border-[#23C48E]/30 rounded-lg text-base sm:text-sm text-white placeholder:text-[#D2FCE3]/40 focus:outline-none focus:ring-2 focus:ring-[#23C48E]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono font-semibold uppercase text-slate-800 mb-1">
+                <label className="block text-xs font-mono font-semibold uppercase text-[#D2FCE3] mb-1">
                   Email *
                 </label>
                 <input
@@ -133,12 +133,12 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
                   placeholder="name@organisation.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-800"
+                  className="w-full px-3.5 py-2.5 bg-[#003734]/40 border border-[#23C48E]/30 rounded-lg text-base sm:text-sm text-white placeholder:text-[#D2FCE3]/40 focus:outline-none focus:ring-2 focus:ring-[#23C48E]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono font-semibold uppercase text-slate-800 mb-1">
+                <label className="block text-xs font-mono font-semibold uppercase text-[#D2FCE3] mb-1">
                   Message *
                 </label>
                 <textarea
@@ -147,7 +147,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
                   placeholder="Brief note on your partnership interest..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-800"
+                  className="w-full px-3.5 py-2.5 bg-[#003734]/40 border border-[#23C48E]/30 rounded-lg text-base sm:text-sm text-white placeholder:text-[#D2FCE3]/40 focus:outline-none focus:ring-2 focus:ring-[#23C48E]"
                 />
               </div>
 
@@ -155,7 +155,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 bg-emerald-950 hover:bg-emerald-900 text-amber-400 font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer disabled:opacity-60"
+                  className="w-full py-3 bg-[#23C48E] hover:bg-[#40FFBC] text-[#001410] font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer disabled:opacity-60"
                 >
                   {isSubmitting ? 'Sending...' : 'Submit Partner Inquiry'}
                 </button>

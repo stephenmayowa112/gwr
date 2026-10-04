@@ -23,7 +23,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-slate-900 selection:bg-emerald-800 selection:text-white antialiased">
+    <div className="min-h-screen flex flex-col bg-[#001410] text-[#D2FCE3] selection:bg-[#23C48E] selection:text-[#001410] antialiased">
       {/* Top Bar Navigation */}
       <Navbar
         onOpenRegister={() => setIsRegisterOpen(true)}

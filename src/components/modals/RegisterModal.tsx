@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { X, CheckCircle2, Calendar, MapPin, Printer, ExternalLink, ShieldCheck } from 'lucide-react';
+import { X, CheckCircle2, Calendar, MapPin, ExternalLink } from 'lucide-react';
 import { RegistrationSchema, RegistrationFormData, Registration } from '../../types';
 import { store } from '../../services/store';
 import { OFFICIAL_MILESTONES, downloadIcsFile, generateGoogleCalendarUrl } from '../../services/calendar';
+import { UgegbeBrandLogo } from '../common/UgegbeBrandLogo';
 
 interface RegisterModalProps {
   isOpen: boolean;
@@ -35,9 +36,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
     e.preventDefault();
     setErrors({});
 
-    if (formData.websiteTrap && formData.websiteTrap.length > 0) {
-      return;
-    }
+    if (formData.websiteTrap && formData.websiteTrap.length > 0) return;
 
     const validation = RegistrationSchema.safeParse(formData);
     if (!validation.success) {
@@ -67,34 +66,34 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
     'https://www.google.com/maps/search/?api=1&query=Landmark+Centre+Victoria+Island+Lagos+Nigeria';
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/75 backdrop-blur-xs overflow-y-auto">
-      <div className="relative w-full max-w-xl max-h-[92vh] overflow-y-auto bg-white rounded-2xl shadow-2xl p-5 sm:p-8 border border-emerald-950/20 my-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-xs overflow-y-auto">
+      <div className="relative w-full max-w-xl max-h-[92vh] overflow-y-auto bg-[#001410] text-[#D2FCE3] rounded-2xl shadow-2xl p-5 sm:p-8 border border-[#23C48E]/30 my-auto">
         {/* Modal Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 p-2 text-slate-400 hover:text-slate-800 rounded-full hover:bg-slate-100 transition-colors cursor-pointer"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 p-2 text-[#D2FCE3]/60 hover:text-white rounded-full hover:bg-[#003734] transition-colors cursor-pointer"
           aria-label="Close dialog"
         >
           <X className="w-5 h-5" />
         </button>
 
         {successResult ? (
-          <div className="p-6 sm:p-8 space-y-6">
+          <div className="p-2 sm:p-4 space-y-6">
             <div className="text-center space-y-2">
-              <div className="inline-flex p-3 rounded-full bg-emerald-100 text-emerald-800">
-                <CheckCircle2 className="w-8 h-8 text-emerald-700" />
+              <div className="inline-flex p-3 rounded-full bg-[#23C48E]/10 text-[#23C48E] border border-[#23C48E]/30">
+                <CheckCircle2 className="w-8 h-8 text-[#23C48E]" />
               </div>
-              <h3 className="text-2xl font-display font-black text-emerald-950 uppercase tracking-tight">
+              <h3 className="text-2xl font-display font-black text-white uppercase tracking-tight">
                 {successResult.isUpdate ? 'REGISTRATION UPDATED' : 'YOU ARE REGISTERED. BE THERE.'}
               </h3>
-              <p className="text-xs text-slate-600 font-mono">
+              <p className="text-xs text-[#D2FCE3]/80 font-mono">
                 Landmark, Lagos · 30 October – 1 November 2026 · Entry is free
               </p>
             </div>
 
             {/* Official Pass Display */}
-            <div className="bg-emerald-50/60 border border-emerald-900/20 rounded-xl p-5 text-center space-y-3">
-              <span className="text-[10px] font-mono tracking-widest uppercase text-amber-700 font-bold block">
+            <div className="bg-[#003734]/40 border border-[#23C48E]/30 rounded-xl p-5 text-center space-y-3">
+              <span className="text-[10px] font-mono tracking-widest uppercase text-[#23C48E] font-bold block">
                 OFFICIAL ATTENDEE PASS
               </span>
 
@@ -102,18 +101,18 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
                 <img
                   src={successResult.registration.qrCodeDataUrl}
                   alt={`QR Pass for ${successResult.registration.ticketCode}`}
-                  className="w-36 h-36 mx-auto object-contain bg-white p-2 rounded-lg border border-emerald-900/10 shadow-xs"
+                  className="w-36 h-36 mx-auto object-contain bg-white p-2 rounded-lg border border-[#23C48E]/40 shadow-xs"
                 />
               )}
 
               <div>
-                <span className="text-sm font-mono font-bold text-emerald-950 block">
+                <span className="text-sm font-mono font-bold text-[#23C48E] block">
                   {successResult.registration.ticketCode}
                 </span>
-                <span className="text-sm font-bold text-slate-900 block mt-1">
+                <span className="text-sm font-bold text-white block mt-1">
                   {successResult.registration.fullName}
                 </span>
-                <span className="text-xs text-slate-500 font-mono">
+                <span className="text-xs text-[#D2FCE3]/70 font-mono">
                   {successResult.registration.attendeesCount}{' '}
                   {successResult.registration.attendeesCount > 1 ? 'attendees' : 'attendee'} ·{' '}
                   {successResult.registration.attendanceType === 'in_person'
@@ -128,9 +127,9 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
               <div className="flex flex-wrap gap-2">
                 <button
                   onClick={() => downloadIcsFile(OFFICIAL_MILESTONES.fullMarathon)}
-                  className="flex-1 min-w-[140px] inline-flex items-center justify-center gap-1.5 px-3 py-2.5 bg-emerald-950 hover:bg-emerald-900 text-white font-mono text-xs uppercase tracking-wider font-semibold rounded-lg transition-colors cursor-pointer"
+                  className="flex-1 min-w-[140px] inline-flex items-center justify-center gap-1.5 px-3 py-2.5 bg-[#23C48E] hover:bg-[#40FFBC] text-[#001410] font-mono text-xs uppercase tracking-wider font-bold rounded-lg transition-colors cursor-pointer"
                 >
-                  <Calendar className="w-3.5 h-3.5 text-amber-400" />
+                  <Calendar className="w-3.5 h-3.5" />
                   <span>Calendar (.ics)</span>
                 </button>
 
@@ -138,47 +137,47 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
                   href={generateGoogleCalendarUrl(OFFICIAL_MILESTONES.fullMarathon)}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex-1 min-w-[140px] inline-flex items-center justify-center gap-1.5 px-3 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-mono text-xs uppercase tracking-wider font-semibold rounded-lg transition-colors cursor-pointer"
+                  className="flex-1 min-w-[140px] inline-flex items-center justify-center gap-1.5 px-3 py-2.5 bg-[#003734] hover:bg-[#003734]/80 text-[#D2FCE3] border border-[#23C48E]/30 font-mono text-xs uppercase tracking-wider font-semibold rounded-lg transition-colors cursor-pointer"
                 >
                   <span>Google Cal</span>
-                  <ExternalLink className="w-3 h-3 text-slate-500" />
+                  <ExternalLink className="w-3 h-3 text-[#23C48E]" />
                 </a>
 
                 <a
                   href={landmarkMapUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-mono text-xs uppercase tracking-wider font-semibold rounded-lg transition-colors cursor-pointer"
+                  className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 bg-[#003734] hover:bg-[#003734]/80 text-[#D2FCE3] border border-[#23C48E]/30 font-mono text-xs uppercase tracking-wider font-semibold rounded-lg transition-colors cursor-pointer"
                 >
-                  <MapPin className="w-3.5 h-3.5 text-emerald-800" />
+                  <MapPin className="w-3.5 h-3.5 text-[#23C48E]" />
                   <span>Map</span>
                 </a>
               </div>
 
               <button
                 onClick={onClose}
-                className="w-full py-2.5 text-xs font-mono uppercase tracking-wider text-slate-500 hover:text-slate-800 cursor-pointer pt-2"
+                className="w-full py-2.5 text-xs font-mono uppercase tracking-wider text-[#D2FCE3]/60 hover:text-white cursor-pointer pt-2"
               >
                 Close Window
               </button>
             </div>
           </div>
         ) : (
-          <div className="p-6 sm:p-8 space-y-6">
+          <div className="p-2 sm:p-4 space-y-6">
             <div className="space-y-1">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-emerald-800 font-bold block">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-[#23C48E] font-bold block">
                 LANDMARK, LAGOS · ENTRY IS FREE
               </span>
-              <h3 className="text-2xl sm:text-3xl font-display font-black text-emerald-950 uppercase tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-display font-black text-white uppercase tracking-tight">
                 REGISTER TO ATTEND
               </h3>
-              <p className="text-xs text-slate-600 font-normal">
+              <p className="text-xs text-[#D2FCE3]/80 font-normal">
                 You don’t have to speak French. You just have to show up.
               </p>
             </div>
 
             {errors.form && (
-              <div className="p-3 bg-rose-50 border border-rose-200 text-rose-700 text-xs rounded-lg">
+              <div className="p-3 bg-rose-950/80 border border-rose-500 text-rose-200 text-xs rounded-lg">
                 {errors.form}
               </div>
             )}
@@ -196,7 +195,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
               </div>
 
               <div>
-                <label className="block text-xs font-mono font-semibold uppercase text-slate-800 mb-1">
+                <label className="block text-xs font-mono font-semibold uppercase text-[#D2FCE3] mb-1">
                   Full Name *
                 </label>
                 <input
@@ -205,14 +204,14 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
                   placeholder="Your full name"
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-800"
+                  className="w-full px-3.5 py-2.5 bg-[#003734]/40 border border-[#23C48E]/30 rounded-lg text-base sm:text-sm text-white placeholder:text-[#D2FCE3]/40 focus:outline-none focus:ring-2 focus:ring-[#23C48E]"
                 />
-                {errors.fullName && <p className="text-xs text-rose-600 mt-1">{errors.fullName}</p>}
+                {errors.fullName && <p className="text-xs text-rose-400 mt-1">{errors.fullName}</p>}
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-mono font-semibold uppercase text-slate-800 mb-1">
+                  <label className="block text-xs font-mono font-semibold uppercase text-[#D2FCE3] mb-1">
                     Email Address *
                   </label>
                   <input
@@ -221,13 +220,13 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
                     placeholder="name@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-800"
+                    className="w-full px-3.5 py-2.5 bg-[#003734]/40 border border-[#23C48E]/30 rounded-lg text-base sm:text-sm text-white placeholder:text-[#D2FCE3]/40 focus:outline-none focus:ring-2 focus:ring-[#23C48E]"
                   />
-                  {errors.email && <p className="text-xs text-rose-600 mt-1">{errors.email}</p>}
+                  {errors.email && <p className="text-xs text-rose-400 mt-1">{errors.email}</p>}
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono font-semibold uppercase text-slate-800 mb-1">
+                  <label className="block text-xs font-mono font-semibold uppercase text-[#D2FCE3] mb-1">
                     Phone / WhatsApp *
                   </label>
                   <input
@@ -236,15 +235,15 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
                     placeholder="+234..."
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-800"
+                    className="w-full px-3.5 py-2.5 bg-[#003734]/40 border border-[#23C48E]/30 rounded-lg text-base sm:text-sm text-white placeholder:text-[#D2FCE3]/40 focus:outline-none focus:ring-2 focus:ring-[#23C48E]"
                   />
-                  {errors.phone && <p className="text-xs text-rose-600 mt-1">{errors.phone}</p>}
+                  {errors.phone && <p className="text-xs text-rose-400 mt-1">{errors.phone}</p>}
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-mono font-semibold uppercase text-slate-800 mb-1">
+                  <label className="block text-xs font-mono font-semibold uppercase text-[#D2FCE3] mb-1">
                     Attendees (1-10) *
                   </label>
                   <select
@@ -252,10 +251,10 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
                     onChange={(e) =>
                       setFormData({ ...formData, attendeesCount: parseInt(e.target.value, 10) || 1 })
                     }
-                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-800"
+                    className="w-full px-3.5 py-2.5 bg-[#003734]/40 border border-[#23C48E]/30 rounded-lg text-base sm:text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#23C48E]"
                   >
                     {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
-                      <option key={n} value={n}>
+                      <option key={n} value={n} className="bg-[#001410] text-white">
                         {n} {n === 1 ? 'Person' : 'People'}
                       </option>
                     ))}
@@ -263,7 +262,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono font-semibold uppercase text-slate-800 mb-1">
+                  <label className="block text-xs font-mono font-semibold uppercase text-[#D2FCE3] mb-1">
                     Mode *
                   </label>
                   <div className="grid grid-cols-2 gap-1.5">
@@ -272,8 +271,8 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
                       onClick={() => setFormData({ ...formData, attendanceType: 'in_person' })}
                       className={`py-2 px-2 text-xs font-mono rounded-lg border text-center transition-colors cursor-pointer ${
                         formData.attendanceType === 'in_person'
-                          ? 'bg-emerald-950 text-white font-bold border-emerald-950'
-                          : 'bg-slate-50 text-slate-700 border-slate-300'
+                          ? 'bg-[#23C48E] text-[#001410] font-bold border-[#23C48E]'
+                          : 'bg-[#003734]/40 text-[#D2FCE3] border-[#23C48E]/30'
                       }`}
                     >
                       In Person
@@ -283,8 +282,8 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
                       onClick={() => setFormData({ ...formData, attendanceType: 'online' })}
                       className={`py-2 px-2 text-xs font-mono rounded-lg border text-center transition-colors cursor-pointer ${
                         formData.attendanceType === 'online'
-                          ? 'bg-emerald-950 text-white font-bold border-emerald-950'
-                          : 'bg-slate-50 text-slate-700 border-slate-300'
+                          ? 'bg-[#23C48E] text-[#001410] font-bold border-[#23C48E]'
+                          : 'bg-[#003734]/40 text-[#D2FCE3] border-[#23C48E]/30'
                       }`}
                     >
                       Online
@@ -297,7 +296,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3.5 bg-amber-400 hover:bg-amber-300 text-emerald-950 font-display font-black text-xs uppercase tracking-wider rounded-lg shadow-md transition-all cursor-pointer disabled:opacity-60"
+                  className="w-full py-3.5 bg-[#23C48E] hover:bg-[#40FFBC] text-[#001410] font-display font-black text-xs uppercase tracking-wider rounded-lg shadow-md transition-all cursor-pointer disabled:opacity-60"
                 >
                   {isSubmitting ? 'GENERATING PASS...' : 'REGISTER FREE'}
                 </button>

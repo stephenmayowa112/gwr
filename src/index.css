@@ -2,13 +2,25 @@
 
 @layer base {
   :root {
-    --font-display: 'Syne', sans-serif;
-    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-display: 'Outfit', sans-serif;
+    --font-body: 'Outfit', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
+
+    /* Brand Guideline Primary Colors (60-30-10) */
+    --color-midnight-forest: #001410;
+    --color-mint-mist: #D2FCE3;
+    --color-energetic-teal: #23C48E;
+
+    /* Brand Guideline Secondary Colors */
+    --color-deep-pine: #003734;
+    --color-electric-mint: #40FFBC;
+    --color-blaze-orange: #FF6B1A;
   }
 
   body {
     font-family: var(--font-body);
+    background-color: var(--color-midnight-forest);
+    color: var(--color-mint-mist);
   }
 
   h1, h2, h3, h4, .font-display {
@@ -21,6 +33,7 @@
     font-variant-numeric: tabular-nums;
   }
 }
+
 
 @keyframes pulse-subtle {
   0%, 100% { opacity: 1; }

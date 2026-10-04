@@ -172,10 +172,12 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
   };
 
   // Save Phrase
+  const [phraseSaved, setPhraseSaved] = useState(false);
   const handleSavePhrase = (e: React.FormEvent) => {
     e.preventDefault();
     store.saveDailyPhrase(phrase, phrase.id);
-    alert('Daily phrase updated successfully!');
+    setPhraseSaved(true);
+    setTimeout(() => setPhraseSaved(false), 3000);
   };
 
   // Filtered registrations
@@ -901,7 +903,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                   type="submit"
                   className="w-full py-3 bg-emerald-950 hover:bg-emerald-900 text-amber-400 font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer"
                 >
-                  Save Daily Phrase
+                  {phraseSaved ? 'Saved! ✓' : 'Save Daily Phrase'}
                 </button>
               </form>
             </div>
