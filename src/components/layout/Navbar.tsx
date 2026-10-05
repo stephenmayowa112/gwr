@@ -48,7 +48,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRegister, onScrollTo }) =>
           aria-label="Ugegbe - SEE BEYOND WORDS."
         >
           <UgegbeBrandLogo
-            variant="light"
+            variant="gwr-light"
             size="sm"
             withGwrBadge={true}
             showTagline={false}

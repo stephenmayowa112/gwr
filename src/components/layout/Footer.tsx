@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
         {/* Official Brand Logo Mark */}
         <div className="flex justify-center pb-2">
-          <UgegbeBrandLogo variant="light" size="lg" withGwrBadge={true} />
+          <UgegbeBrandLogo variant="gwr-light" size="lg" withGwrBadge={true} showTagline={true} />
         </div>
 
         <h2 className="text-2xl sm:text-3xl font-display font-black tracking-tight uppercase text-white">

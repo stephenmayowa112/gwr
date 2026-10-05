@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 182" fill="none">
+  <!-- Ugegbe - SEE BEYOND WORDS. Official Co-branded GWR Logo -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700&amp;display=swap');
+      .tagline-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 6.5px;
+        fill: #D2FCE3;
+      }
+    </style>
+  </defs>
+
+  <!-- 1. LETTER 'u' with Central Eye Pupil Dot ("Seeing Beyond") -->
+  <g stroke="#23C48E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 24 38 L 24 74 C 24 94, 76 94, 76 74 L 76 38" />
+  </g>
+  <circle cx="50" cy="62" r="7.5" fill="#D2FCE3" />
+
+  <!-- 2. LETTER 'g' - Descender Loop -->
+  <g stroke="#23C48E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="126" cy="64" r="26" />
+    <path d="M 152 64 L 152 110 C 152 134, 106 138, 102 120" />
+  </g>
+
+  <!-- 3. LETTER 'e' - Intersecting Crossbar -->
+  <g stroke="#23C48E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="202" cy="64" r="26" />
+    <path d="M 176 64 L 228 64" />
+  </g>
+
+  <!-- 4. LETTER 'g' - Second Descender Loop -->
+  <g stroke="#D2FCE3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="278" cy="64" r="26" />
+    <path d="M 304 64 L 304 110 C 304 134, 258 138, 254 120" />
+  </g>
+
+  <!-- 5. LETTER 'b' - Tall Ascender Stem & Circular Bowl -->
+  <g stroke="#D2FCE3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 326 12 L 326 90" />
+    <circle cx="352" cy="64" r="26" />
+  </g>
+
+  <!-- Inside 'b': Guinness World Records Co-Branded Seal -->
+  <g transform="translate(0, -4)">
+    <circle cx="352" cy="68" r="23" fill="#00486D" stroke="#FFFFFF" stroke-width="1.5" />
+    <circle cx="352" cy="68" r="20" fill="none" stroke="#FFFFFF" stroke-width="0.8" stroke-dasharray="2 1.5" />
+
+    <path id="gwr-top-seal" d="M 335 68 A 17 17 0 0 1 369 68" fill="none" />
+    <text fill="#FFFFFF" font-size="4.6" font-weight="bold" letter-spacing="0.6" text-anchor="middle">
+      <textPath href="#gwr-top-seal" startOffset="50%">GUINNESS</textPath>
+    </text>
+
+    <path id="gwr-bot-seal" d="M 369 68 A 17 17 0 0 1 335 68" fill="none" />
+    <text fill="#FFFFFF" font-size="3.8" font-weight="bold" letter-spacing="0.4" text-anchor="middle">
+      <textPath href="#gwr-bot-seal" startOffset="50%">WORLD RECORDS</textPath>
+    </text>
+
+    <polygon points="352,58 353.5,62.5 358,62.5 354.5,65.5 356,70 352,67 348,70 349.5,65.5 346,62.5 350.5,62.5" fill="#F5B800" />
+
+    <rect x="344" y="70.5" width="16" height="1.8" fill="#FFFFFF" rx="0.5" />
+    <line x1="347" y1="73" x2="347" y2="79" stroke="#FFFFFF" stroke-width="0.9" />
+    <line x1="350" y1="73" x2="350" y2="79" stroke="#FFFFFF" stroke-width="0.9" />
+    <line x1="352" y1="73" x2="352" y2="79" stroke="#FFFFFF" stroke-width="0.9" />
+    <line x1="354" y1="73" x2="354" y2="79" stroke="#FFFFFF" stroke-width="0.9" />
+    <line x1="357" y1="73" x2="357" y2="79" stroke="#FFFFFF" stroke-width="0.9" />
+    <rect x="345.5" y="79" width="13" height="1.5" fill="#FFFFFF" rx="0.4" />
+  </g>
+
+  <!-- 6. LETTER 'e' - Terminal Loop -->
+  <g stroke="#D2FCE3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="428" cy="64" r="26" />
+    <path d="M 402 64 L 454 64" />
+  </g>
+
+  <!-- Mandatory Tagline: "SEE BEYOND WORDS." -->
+  <text x="240" y="172" text-anchor="middle" class="tagline-text">SEE BEYOND WORDS.</text>
+</svg>
