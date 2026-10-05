@@ -1,80 +1,107 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 182" fill="none">
-  <!-- Ugegbe - SEE BEYOND WORDS. Official Co-branded GWR Logo -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 372" width="2048" height="744" fill="none">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700&amp;display=swap');
-      .tagline-text {
-        font-family: 'Outfit', sans-serif;
-        font-weight: 700;
-        font-size: 16px;
-        letter-spacing: 6.5px;
-        fill: #D2FCE3;
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@800&amp;family=Montserrat:wght@900&amp;display=swap");
+      .tagline-font {
+        font-family: "Outfit", "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 22px;
+        letter-spacing: 16.5px;
+        fill: #DFE4E8;
+      }
+      .gwr-font {
+        font-family: "Arial Black", "Montserrat", sans-serif;
+        font-weight: 900;
+        fill: #FFFFFF;
       }
     </style>
+    <!-- Paths for curved text around the seal -->
+    <path id="gwr-top-arc" d="M 708 160 A 48 48 0 0 1 804 160" />
+    <path id="gwr-bottom-arc" d="M 804 160 A 48 48 0 0 1 708 160" />
   </defs>
 
-  <!-- 1. LETTER 'u' with Central Eye Pupil Dot ("Seeing Beyond") -->
-  <g stroke="#23C48E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M 24 38 L 24 74 C 24 94, 76 94, 76 74 L 76 38" />
-  </g>
-  <circle cx="50" cy="62" r="7.5" fill="#D2FCE3" />
+  <!-- 1. Floating Silver Dot to the left of "u" -->
+  <circle cx="70" cy="126" r="18.5" fill="#DFE4E8" />
 
-  <!-- 2. LETTER 'g' - Descender Loop -->
-  <g stroke="#23C48E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="126" cy="64" r="26" />
-    <path d="M 152 64 L 152 110 C 152 134, 106 138, 102 120" />
-  </g>
+  <!-- 2. Letter "u" (Vibrant Mint) -->
+  <path d="M 136 76 L 136 172 C 136 226, 206 226, 206 172 L 206 76" 
+        stroke="#23E2A0" stroke-width="16.5" stroke-linecap="round" stroke-linejoin="round" />
 
-  <!-- 3. LETTER 'e' - Intersecting Crossbar -->
-  <g stroke="#23C48E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="202" cy="64" r="26" />
-    <path d="M 176 64 L 228 64" />
-  </g>
+  <!-- 3. Letter "g" (First "g", Vibrant Mint) -->
+  <!-- Bowl circle opening on right -->
+  <path d="M 346 112 A 68 68 0 1 0 340 206" 
+        stroke="#23E2A0" stroke-width="16.5" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Upper-right spur pointing at 45° -->
+  <line x1="346" y1="112" x2="374" y2="84" 
+        stroke="#23E2A0" stroke-width="16.5" stroke-linecap="round" />
+  <!-- Descender tail curving down-right -->
+  <path d="M 340 206 C 348 222, 362 250, 366 274" 
+        stroke="#23E2A0" stroke-width="16.5" stroke-linecap="round" />
 
-  <!-- 4. LETTER 'g' - Second Descender Loop -->
-  <g stroke="#D2FCE3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="278" cy="64" r="26" />
-    <path d="M 304 64 L 304 110 C 304 134, 258 138, 254 120" />
-  </g>
+  <!-- 4. Letter "e" (First "e", Vibrant Mint) -->
+  <!-- Circular arc with slanted crossbar -->
+  <path d="M 494 122 A 68 68 0 1 0 496 196" 
+        stroke="#23E2A0" stroke-width="16.5" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Slanted crossbar cutting through circle at ~32 degrees -->
+  <line x1="388" y1="198" x2="512" y2="122" 
+        stroke="#23E2A0" stroke-width="16.5" stroke-linecap="round" />
 
-  <!-- 5. LETTER 'b' - Tall Ascender Stem & Circular Bowl -->
-  <g stroke="#D2FCE3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M 326 12 L 326 90" />
-    <circle cx="352" cy="64" r="26" />
-  </g>
+  <!-- 5. Letter "g" (Second "g", Light Silver) -->
+  <!-- Exact twin of first "g" in silver -->
+  <path d="M 642 112 A 68 68 0 1 0 636 206" 
+        stroke="#DFE4E8" stroke-width="16.5" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Upper-right spur pointing at 45° -->
+  <line x1="642" y1="112" x2="670" y2="84" 
+        stroke="#DFE4E8" stroke-width="16.5" stroke-linecap="round" />
+  <!-- Descender tail curving down-right -->
+  <path d="M 636 206 C 644 222, 658 250, 662 274" 
+        stroke="#DFE4E8" stroke-width="16.5" stroke-linecap="round" />
 
-  <!-- Inside 'b': Guinness World Records Co-Branded Seal -->
-  <g transform="translate(0, -4)">
-    <circle cx="352" cy="68" r="23" fill="#00486D" stroke="#FFFFFF" stroke-width="1.5" />
-    <circle cx="352" cy="68" r="20" fill="none" stroke="#FFFFFF" stroke-width="0.8" stroke-dasharray="2 1.5" />
+  <!-- 6. Letter "b" (Light Silver) -->
+  <!-- Tall ascender extending to the very top edge (y=12) -->
+  <line x1="688" y1="12" x2="688" y2="228" 
+        stroke="#DFE4E8" stroke-width="16.5" stroke-linecap="round" />
+  <!-- Circular bowl -->
+  <circle cx="756" cy="160" r="68" 
+          stroke="#DFE4E8" stroke-width="16.5" stroke-linecap="round" stroke-linejoin="round" />
 
-    <path id="gwr-top-seal" d="M 335 68 A 17 17 0 0 1 369 68" fill="none" />
-    <text fill="#FFFFFF" font-size="4.6" font-weight="bold" letter-spacing="0.6" text-anchor="middle">
-      <textPath href="#gwr-top-seal" startOffset="50%">GUINNESS</textPath>
+  <!-- GUINNESS WORLD RECORDS OFFICIAL SEAL INSIDE "b" BOWL -->
+  <g id="official-gwr-seal">
+    <!-- Deep Navy Disc -->
+    <circle cx="756" cy="160" r="59" fill="#00385A" stroke="#FFFFFF" stroke-width="2.5" />
+    <circle cx="756" cy="160" r="53" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-dasharray="3 2" />
+
+    <!-- Arched Text GUINNESS -->
+    <text class="gwr-font" font-size="11.5" letter-spacing="1.2" text-anchor="middle">
+      <textPath href="#gwr-top-arc" startOffset="50%">GUINNESS</textPath>
     </text>
 
-    <path id="gwr-bot-seal" d="M 369 68 A 17 17 0 0 1 335 68" fill="none" />
-    <text fill="#FFFFFF" font-size="3.8" font-weight="bold" letter-spacing="0.4" text-anchor="middle">
-      <textPath href="#gwr-bot-seal" startOffset="50%">WORLD RECORDS</textPath>
+    <!-- Arched Text WORLD RECORDS -->
+    <text class="gwr-font" font-size="9.5" letter-spacing="0.8" text-anchor="middle">
+      <textPath href="#gwr-bottom-arc" startOffset="50%">WORLD RECORDS</textPath>
     </text>
 
-    <polygon points="352,58 353.5,62.5 358,62.5 354.5,65.5 356,70 352,67 348,70 349.5,65.5 346,62.5 350.5,62.5" fill="#F5B800" />
+    <!-- Golden 5-point Star -->
+    <polygon points="756,133 760,144 771,144 762,151 765,162 756,155 747,162 750,151 741,144 752,144" 
+             fill="#E2A316" stroke="#C88E08" stroke-width="0.5" />
 
-    <rect x="344" y="70.5" width="16" height="1.8" fill="#FFFFFF" rx="0.5" />
-    <line x1="347" y1="73" x2="347" y2="79" stroke="#FFFFFF" stroke-width="0.9" />
-    <line x1="350" y1="73" x2="350" y2="79" stroke="#FFFFFF" stroke-width="0.9" />
-    <line x1="352" y1="73" x2="352" y2="79" stroke="#FFFFFF" stroke-width="0.9" />
-    <line x1="354" y1="73" x2="354" y2="79" stroke="#FFFFFF" stroke-width="0.9" />
-    <line x1="357" y1="73" x2="357" y2="79" stroke="#FFFFFF" stroke-width="0.9" />
-    <rect x="345.5" y="79" width="13" height="1.5" fill="#FFFFFF" rx="0.4" />
+    <!-- Official Guinness Harp Silhouette -->
+    <!-- Soundbox on right, pillar on left, neck on top, strings in center -->
+    <path d="M 744 167 C 742 173, 743 182, 747 188 L 766 188 C 769 184, 768 174, 764 167 Z" fill="#FFFFFF" />
+    <rect x="744" y="188" width="24" height="2.5" fill="#FFFFFF" rx="0.8" />
+    <line x1="749" y1="168" x2="749" y2="187" stroke="#00385A" stroke-width="1.2" />
+    <line x1="753" y1="168" x2="753" y2="187" stroke="#00385A" stroke-width="1.2" />
+    <line x1="757" y1="168" x2="757" y2="187" stroke="#00385A" stroke-width="1.2" />
+    <line x1="761" y1="168" x2="761" y2="187" stroke="#00385A" stroke-width="1.2" />
   </g>
 
-  <!-- 6. LETTER 'e' - Terminal Loop -->
-  <g stroke="#D2FCE3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="428" cy="64" r="26" />
-    <path d="M 402 64 L 454 64" />
-  </g>
+  <!-- 7. Letter "e" (Second "e", Light Silver) -->
+  <path d="M 952 132 A 68 68 0 1 0 948 196" 
+        stroke="#DFE4E8" stroke-width="16.5" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Horizontal crossbar -->
+  <line x1="838" y1="160" x2="952" y2="160" 
+        stroke="#DFE4E8" stroke-width="16.5" stroke-linecap="round" />
 
-  <!-- Mandatory Tagline: "SEE BEYOND WORDS." -->
-  <text x="240" y="172" text-anchor="middle" class="tagline-text">SEE BEYOND WORDS.</text>
+  <!-- 8. Tagline: "SEE BEYOND WORDS." -->
+  <text x="512" y="352" text-anchor="middle" class="tagline-font">SEE BEYOND WORDS.</text>
 </svg>

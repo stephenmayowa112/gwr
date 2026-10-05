@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export interface UgegbeBrandLogoProps {
   className?: string;
@@ -22,41 +22,19 @@ export const UgegbeBrandLogo: React.FC<UgegbeBrandLogoProps> = ({
     xl: 'h-24 sm:h-32',
   }[size];
 
-  // Candidates for the uploaded logo file (SVG and PNG formats supported)
-  const sources = showTagline
-    ? [
-        '/ugegbe-logo.png',
-        '/ugegbe-logo.svg',
-        '/logo.png',
-        '/logo.svg',
-        '/brand-logo.png',
-        '/brand-logo.svg',
-      ]
-    : [
-        '/ugegbe-logo-compact.png',
-        '/ugegbe-logo-compact.svg',
-        '/ugegbe-logo.png',
-        '/ugegbe-logo.svg',
-        '/logo.svg',
-        '/logo.png',
-      ];
-
-  const [srcIndex, setSrcIndex] = useState(0);
-
-  const handleError = () => {
-    if (srcIndex < sources.length - 1) {
-      setSrcIndex((prev) => prev + 1);
-    }
-  };
+  // Directly load the uploaded logo image file
+  const logoSrc = showTagline
+    ? '/UGEGBE X GWR_Light.png'
+    : '/UGEGBE X GWR_Light_Compact.png';
 
   return (
     <div className={`inline-flex items-center justify-center select-none ${className}`}>
       <img
-        src={sources[srcIndex]}
+        src={logoSrc}
         alt="Ugegbe - SEE BEYOND WORDS."
-        onError={handleError}
         className={`${heights} w-auto max-w-full object-contain`}
         loading="eager"
+        decoding="sync"
       />
     </div>
   );
