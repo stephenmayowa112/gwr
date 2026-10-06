@@ -1,0 +1,213 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Global reusable security helpers
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == 'stephenmayowa112@gmail.com' ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    // Entity validation helpers
+    function isValidRegistration(data) {
+      return data.keys().hasAll(['fullName', 'email', 'phone', 'attendeesCount', 'attendanceType', 'ticketCode', 'checkedIn']) &&
+        data.fullName is string && data.fullName.size() > 0 && data.fullName.size() <= 100 &&
+        data.email is string && data.email.size() > 0 && data.email.size() <= 120 &&
+        data.phone is string && data.phone.size() > 0 && data.phone.size() <= 40 &&
+        data.attendeesCount is number && data.attendeesCount >= 1 && data.attendeesCount <= 5 &&
+        (data.attendanceType == 'in_person' || data.attendanceType == 'online') &&
+        data.ticketCode is string && data.ticketCode.size() > 0 && data.ticketCode.size() <= 30 &&
+        data.checkedIn is bool &&
+        (!('hearAbout' in data) || (data.hearAbout is string && data.hearAbout.size() <= 100)) &&
+        (!('consent' in data) || data.consent is bool) &&
+        (!('qrCodeDataUrl' in data) || (data.qrCodeDataUrl is string && data.qrCodeDataUrl.size() <= 100000)) &&
+        (!('checkedInAt' in data) || (data.checkedInAt is string && data.checkedInAt.size() <= 50)) &&
+        (!('utmSource' in data) || (data.utmSource is string && data.utmSource.size() <= 100)) &&
+        (!('utmMedium' in data) || (data.utmMedium is string && data.utmMedium.size() <= 100)) &&
+        (!('utmCampaign' in data) || (data.utmCampaign is string && data.utmCampaign.size() <= 100)) &&
+        (!('createdAt' in data) || (data.createdAt is string && data.createdAt.size() <= 50)) &&
+        (!('updatedAt' in data) || (data.updatedAt is string && data.updatedAt.size() <= 50)) &&
+        (!('id' in data) || (data.id is string && data.id.size() <= 128));
+    }
+
+    function isValidPartnerInquiry(data) {
+      return data.keys().hasAll(['name', 'organization', 'email', 'tierInterest', 'message', 'status']) &&
+        data.name is string && data.name.size() > 0 && data.name.size() <= 100 &&
+        data.organization is string && data.organization.size() > 0 && data.organization.size() <= 120 &&
+        data.email is string && data.email.size() > 0 && data.email.size() <= 120 &&
+        data.tierInterest is string && data.tierInterest.size() <= 60 &&
+        data.message is string && data.message.size() <= 2000 &&
+        (data.status == 'new' || data.status == 'replied') &&
+        (!('createdAt' in data) || (data.createdAt is string && data.createdAt.size() <= 50)) &&
+        (!('updatedAt' in data) || (data.updatedAt is string && data.updatedAt.size() <= 50)) &&
+        (!('id' in data) || (data.id is string && data.id.size() <= 128));
+    }
+
+    function isValidPressRequest(data) {
+      return data.keys().hasAll(['name', 'outlet', 'email', 'coverageType', 'status']) &&
+        data.name is string && data.name.size() > 0 && data.name.size() <= 100 &&
+        data.outlet is string && data.outlet.size() > 0 && data.outlet.size() <= 120 &&
+        data.email is string && data.email.size() > 0 && data.email.size() <= 120 &&
+        data.coverageType is string && data.coverageType.size() <= 60 &&
+        (data.status == 'new' || data.status == 'replied') &&
+        (!('role' in data) || (data.role is string && data.role.size() <= 80)) &&
+        (!('notes' in data) || (data.notes is string && data.notes.size() <= 2000)) &&
+        (!('createdAt' in data) || (data.createdAt is string && data.createdAt.size() <= 50)) &&
+        (!('updatedAt' in data) || (data.updatedAt is string && data.updatedAt.size() <= 50)) &&
+        (!('id' in data) || (data.id is string && data.id.size() <= 128));
+    }
+
+    function isValidLiveUpdate(data) {
+      return data.keys().hasAll(['title', 'message', 'isPinned']) &&
+        data.title is string && data.title.size() > 0 && data.title.size() <= 200 &&
+        data.message is string && data.message.size() > 0 && data.message.size() <= 3000 &&
+        data.isPinned is bool &&
+        (!('milestoneHour' in data) || data.milestoneHour == null || data.milestoneHour is number) &&
+        (!('createdAt' in data) || (data.createdAt is string && data.createdAt.size() <= 50)) &&
+        (!('updatedAt' in data) || (data.updatedAt is string && data.updatedAt.size() <= 50)) &&
+        (!('id' in data) || (data.id is string && data.id.size() <= 128));
+    }
+
+    function isValidDailyPhrase(data) {
+      return data.keys().hasAll(['french', 'english', 'phonetic', 'context']) &&
+        data.french is string && data.french.size() > 0 && data.french.size() <= 250 &&
+        data.english is string && data.english.size() > 0 && data.english.size() <= 250 &&
+        data.phonetic is string && data.phonetic.size() <= 250 &&
+        data.context is string && data.context.size() <= 500 &&
+        (!('dateStr' in data) || (data.dateStr is string && data.dateStr.size() <= 20)) &&
+        (!('createdAt' in data) || (data.createdAt is string && data.createdAt.size() <= 50)) &&
+        (!('id' in data) || (data.id is string && data.id.size() <= 128));
+    }
+
+    function isValidFaqItem(data) {
+      return data.keys().hasAll(['question', 'answer', 'category']) &&
+        data.question is string && data.question.size() > 0 && data.question.size() <= 300 &&
+        data.answer is string && data.answer.size() > 0 && data.answer.size() <= 3000 &&
+        data.category is string && data.category.size() <= 50 &&
+        (!('id' in data) || (data.id is string && data.id.size() <= 128));
+    }
+
+    function isValidEventConfig(data) {
+      return data.keys().hasAll(['status', 'officialStartTime', 'goalHours', 'waitlistActive']) &&
+        (data.status == 'upcoming' || data.status == 'live' || data.status == 'break' || data.status == 'completed') &&
+        data.officialStartTime is string && data.officialStartTime.size() <= 50 &&
+        data.goalHours is number && data.goalHours > 0 && data.goalHours <= 100 &&
+        data.waitlistActive is bool &&
+        (!('livestreamEmbedUrl' in data) || (data.livestreamEmbedUrl is string && data.livestreamEmbedUrl.size() <= 300)) &&
+        (!('updatedAt' in data) || (data.updatedAt is string && data.updatedAt.size() <= 50));
+    }
+
+    // 1. Registrations Collection
+    match /registrations/{registrationId} {
+      allow get: if isValidId(registrationId);
+      allow list: if isAdmin();
+      allow create: if isValidId(registrationId) &&
+        isValidRegistration(incoming()) &&
+        incoming().checkedIn == false;
+      allow update: if isValidId(registrationId) &&
+        isValidRegistration(incoming()) &&
+        (
+          isAdmin() ||
+          (
+            // Non-admin can only update attendee details or contact info, not checkedIn status or ticketCode
+            incoming().ticketCode == existing().ticketCode &&
+            incoming().checkedIn == existing().checkedIn &&
+            incoming().diff(existing()).affectedKeys().hasOnly(['fullName', 'phone', 'attendeesCount', 'attendanceType', 'hearAbout', 'updatedAt'])
+          )
+        );
+      allow delete: if isValidId(registrationId) && isAdmin();
+    }
+
+    // 2. Partner Inquiries
+    match /partnerInquiries/{inquiryId} {
+      allow get, list: if isValidId(inquiryId) && isAdmin();
+      allow create: if isValidId(inquiryId) &&
+        isValidPartnerInquiry(incoming()) &&
+        incoming().status == 'new';
+      allow update: if isValidId(inquiryId) &&
+        isValidPartnerInquiry(incoming()) &&
+        isAdmin();
+      allow delete: if isValidId(inquiryId) && isAdmin();
+    }
+
+    // 3. Press Requests
+    match /pressRequests/{requestId} {
+      allow get, list: if isValidId(requestId) && isAdmin();
+      allow create: if isValidId(requestId) &&
+        isValidPressRequest(incoming()) &&
+        incoming().status == 'new';
+      allow update: if isValidId(requestId) &&
+        isValidPressRequest(incoming()) &&
+        isAdmin();
+      allow delete: if isValidId(requestId) && isAdmin();
+    }
+
+    // 4. Live Updates
+    match /liveUpdates/{updateId} {
+      allow read: if true;
+      allow create: if isValidId(updateId) &&
+        isValidLiveUpdate(incoming()) &&
+        isAdmin();
+      allow update: if isValidId(updateId) &&
+        isValidLiveUpdate(incoming()) &&
+        isAdmin();
+      allow delete: if isValidId(updateId) && isAdmin();
+    }
+
+    // 5. Daily Phrases
+    match /dailyPhrases/{phraseId} {
+      allow read: if true;
+      allow create, update: if isValidId(phraseId) &&
+        isValidDailyPhrase(incoming()) &&
+        isAdmin();
+      allow delete: if isValidId(phraseId) && isAdmin();
+    }
+
+    // 6. FAQs
+    match /faqs/{faqId} {
+      allow read: if true;
+      allow create, update: if isValidId(faqId) &&
+        isValidFaqItem(incoming()) &&
+        isAdmin();
+      allow delete: if isValidId(faqId) && isAdmin();
+    }
+
+    // 7. Event Config
+    match /eventConfig/{configId} {
+      allow read: if true;
+      allow create, update: if isValidId(configId) &&
+        isValidEventConfig(incoming()) &&
+        isAdmin();
+      allow delete: if false;
+    }
+
+    // 8. Admins Registry
+    match /admins/{adminId} {
+      allow read: if isSignedIn();
+      allow write: if false; // Provisioned exclusively via backend or administrative setup
+    }
+  }
+}

@@ -1,0 +1,404 @@
+{
+  "entities": {
+    "Registration": {
+      "title": "Registration",
+      "description": "Attendee registration and ticket for the Ugegbe French Marathon",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique registration identifier"
+        },
+        "fullName": {
+          "type": "string",
+          "description": "Full name of the registrant",
+          "maxLength": 100
+        },
+        "email": {
+          "type": "string",
+          "description": "Registrant email address",
+          "maxLength": 120
+        },
+        "phone": {
+          "type": "string",
+          "description": "WhatsApp or phone number",
+          "maxLength": 40
+        },
+        "attendeesCount": {
+          "type": "number",
+          "description": "Number of attendees included in this ticket (1 to 5)"
+        },
+        "attendanceType": {
+          "type": "string",
+          "description": "In-person at Landmark Centre or online stream",
+          "enum": ["in_person", "online"]
+        },
+        "hearAbout": {
+          "type": "string",
+          "description": "Discovery channel attribution",
+          "maxLength": 100
+        },
+        "consent": {
+          "type": "boolean",
+          "description": "Agreement to terms, media recording, and privacy"
+        },
+        "ticketCode": {
+          "type": "string",
+          "description": "Unique ticket barcode identifier (e.g. UGB-2026-XXXX)",
+          "maxLength": 30
+        },
+        "qrCodeDataUrl": {
+          "type": "string",
+          "description": "High-density QR code representation",
+          "maxLength": 100000
+        },
+        "checkedIn": {
+          "type": "boolean",
+          "description": "Physical entry verification state"
+        },
+        "checkedInAt": {
+          "type": "string",
+          "description": "Timestamp when attendee scanned in at Landmark Centre",
+          "maxLength": 50
+        },
+        "utmSource": {
+          "type": "string",
+          "description": "Marketing campaign source",
+          "maxLength": 100
+        },
+        "utmMedium": {
+          "type": "string",
+          "description": "Marketing medium",
+          "maxLength": 100
+        },
+        "utmCampaign": {
+          "type": "string",
+          "description": "Marketing campaign name",
+          "maxLength": 100
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp of registration creation",
+          "maxLength": 50
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of registration update",
+          "maxLength": 50
+        }
+      },
+      "required": ["fullName", "email", "phone", "attendeesCount", "attendanceType", "ticketCode", "checkedIn"]
+    },
+    "PartnerInquiry": {
+      "title": "PartnerInquiry",
+      "description": "Corporate partnership and sponsorship inquiry",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique inquiry identifier"
+        },
+        "name": {
+          "type": "string",
+          "description": "Contact person name",
+          "maxLength": 100
+        },
+        "organization": {
+          "type": "string",
+          "description": "Company or brand name",
+          "maxLength": 120
+        },
+        "email": {
+          "type": "string",
+          "description": "Contact email address",
+          "maxLength": 120
+        },
+        "tierInterest": {
+          "type": "string",
+          "description": "Sponsorship tier level",
+          "maxLength": 60
+        },
+        "message": {
+          "type": "string",
+          "description": "Partnership proposal message",
+          "maxLength": 2000
+        },
+        "status": {
+          "type": "string",
+          "description": "Workflow status",
+          "enum": ["new", "replied"]
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp of submission",
+          "maxLength": 50
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of status change",
+          "maxLength": 50
+        }
+      },
+      "required": ["name", "organization", "email", "tierInterest", "message", "status"]
+    },
+    "PressRequest": {
+      "title": "PressRequest",
+      "description": "Media accreditation and press inquiry",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique press request identifier"
+        },
+        "name": {
+          "type": "string",
+          "description": "Journalist or producer name",
+          "maxLength": 100
+        },
+        "outlet": {
+          "type": "string",
+          "description": "Media house or platform",
+          "maxLength": 120
+        },
+        "role": {
+          "type": "string",
+          "description": "Role / Title",
+          "maxLength": 80
+        },
+        "email": {
+          "type": "string",
+          "description": "Official press email",
+          "maxLength": 120
+        },
+        "coverageType": {
+          "type": "string",
+          "description": "Format of intended coverage",
+          "maxLength": 60
+        },
+        "notes": {
+          "type": "string",
+          "description": "Technical requirements and arrival window",
+          "maxLength": 2000
+        },
+        "status": {
+          "type": "string",
+          "description": "Accreditation review status",
+          "enum": ["new", "replied"]
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp of accreditation request",
+          "maxLength": 50
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of status change",
+          "maxLength": 50
+        }
+      },
+      "required": ["name", "outlet", "email", "coverageType", "status"]
+    },
+    "LiveUpdate": {
+      "title": "LiveUpdate",
+      "description": "Real-time timeline update broadcast during the 48-hour attempt",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique update identifier"
+        },
+        "title": {
+          "type": "string",
+          "description": "Headline of the update",
+          "maxLength": 200
+        },
+        "message": {
+          "type": "string",
+          "description": "Detailed text of the update",
+          "maxLength": 3000
+        },
+        "milestoneHour": {
+          "type": "number",
+          "description": "Marathon hour mark (0 to 48)"
+        },
+        "isPinned": {
+          "type": "boolean",
+          "description": "Pinned to top of live feed"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation timestamp",
+          "maxLength": 50
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Last edit timestamp",
+          "maxLength": 50
+        }
+      },
+      "required": ["title", "message", "isPinned"]
+    },
+    "DailyPhrase": {
+      "title": "DailyPhrase",
+      "description": "French phrase curriculum entry with phonetics and cultural context",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique phrase identifier"
+        },
+        "french": {
+          "type": "string",
+          "description": "French phrase text",
+          "maxLength": 250
+        },
+        "english": {
+          "type": "string",
+          "description": "English translation",
+          "maxLength": 250
+        },
+        "phonetic": {
+          "type": "string",
+          "description": "Phonetic pronunciation guide",
+          "maxLength": 250
+        },
+        "context": {
+          "type": "string",
+          "description": "Usage context or grammatical note",
+          "maxLength": 500
+        },
+        "dateStr": {
+          "type": "string",
+          "description": "Scheduled display date (YYYY-MM-DD)",
+          "maxLength": 20
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation timestamp",
+          "maxLength": 50
+        }
+      },
+      "required": ["french", "english", "phonetic", "context"]
+    },
+    "FaqItem": {
+      "title": "FaqItem",
+      "description": "Event FAQ entry",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique FAQ identifier"
+        },
+        "question": {
+          "type": "string",
+          "description": "Question text",
+          "maxLength": 300
+        },
+        "answer": {
+          "type": "string",
+          "description": "Answer text",
+          "maxLength": 3000
+        },
+        "category": {
+          "type": "string",
+          "description": "FAQ category",
+          "maxLength": 50
+        }
+      },
+      "required": ["question", "answer", "category"]
+    },
+    "EventConfig": {
+      "title": "EventConfig",
+      "description": "Global event operational settings",
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "Current status of the attempt",
+          "enum": ["upcoming", "live", "break", "completed"]
+        },
+        "officialStartTime": {
+          "type": "string",
+          "description": "Official marathon start ISO timestamp",
+          "maxLength": 50
+        },
+        "goalHours": {
+          "type": "number",
+          "description": "Goal marathon duration in hours"
+        },
+        "livestreamEmbedUrl": {
+          "type": "string",
+          "description": "YouTube or Twitch embed video URL",
+          "maxLength": 300
+        },
+        "waitlistActive": {
+          "type": "boolean",
+          "description": "Whether capacity is reached and new registrations enter waitlist"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Last update timestamp",
+          "maxLength": 50
+        }
+      },
+      "required": ["status", "officialStartTime", "goalHours", "waitlistActive"]
+    },
+    "Admin": {
+      "title": "Admin",
+      "description": "Designated administrator identity record",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "Admin verified email address",
+          "maxLength": 120
+        },
+        "role": {
+          "type": "string",
+          "description": "Privilege level",
+          "maxLength": 30
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation timestamp",
+          "maxLength": 50
+        }
+      },
+      "required": ["email", "role"]
+    }
+  },
+  "firestore": {
+    "/registrations/{registrationId}": {
+      "schema": "Registration",
+      "description": "Attendee registrations and digital tickets"
+    },
+    "/partnerInquiries/{inquiryId}": {
+      "schema": "PartnerInquiry",
+      "description": "Sponsorship and corporate partnership submissions"
+    },
+    "/pressRequests/{requestId}": {
+      "schema": "PressRequest",
+      "description": "Media accreditation and press coverage requests"
+    },
+    "/liveUpdates/{updateId}": {
+      "schema": "LiveUpdate",
+      "description": "Real-time updates posted during the marathon attempt"
+    },
+    "/dailyPhrases/{phraseId}": {
+      "schema": "DailyPhrase",
+      "description": "French phrases of the day and curriculum highlights"
+    },
+    "/faqs/{faqId}": {
+      "schema": "FaqItem",
+      "description": "Event questions and answers"
+    },
+    "/eventConfig/{configId}": {
+      "schema": "EventConfig",
+      "description": "Global event status and configuration document"
+    },
+    "/admins/{adminId}": {
+      "schema": "Admin",
+      "description": "Administrator UID registry for event staff and organizers"
+    }
+  }
+}

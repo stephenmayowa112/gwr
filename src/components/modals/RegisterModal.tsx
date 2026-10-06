@@ -30,6 +30,16 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
     waitlisted: boolean;
   } | null>(null);
 
+  // Close on Escape key
+  React.useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -66,8 +76,13 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
     'https://www.google.com/maps/search/?api=1&query=Landmark+Centre+Victoria+Island+Lagos+Nigeria';
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-xs overflow-y-auto">
-      <div className="relative w-full max-w-xl max-h-[92vh] overflow-y-auto bg-[#001410] text-[#D2FCE3] rounded-2xl shadow-2xl p-5 sm:p-8 border border-[#23C48E]/30 my-auto">
+    <div
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-sm overflow-y-auto animate-in fade-in duration-200"
+    >
+      <div className="relative w-full max-w-xl max-h-[92vh] overflow-y-auto bg-[#001410] text-[#D2FCE3] rounded-2xl shadow-2xl p-5 sm:p-8 border border-[#23C48E]/40 my-auto animate-in zoom-in-95 duration-200">
         {/* Modal Close Button */}
         <button
           onClick={onClose}

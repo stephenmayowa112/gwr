@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { DocumentPage } from './pages/DocumentPage';
@@ -10,6 +10,27 @@ export default function App() {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [isPartnerOpen, setIsPartnerOpen] = useState(false);
   const [isPressOpen, setIsPressOpen] = useState(false);
+
+  // Auto Pop out registration form when users first visit the site
+  useEffect(() => {
+    try {
+      const hasVisited = sessionStorage.getItem('ugegbe_first_visit_popup_shown');
+      if (!hasVisited) {
+        sessionStorage.setItem('ugegbe_first_visit_popup_shown', 'true');
+        // Brief delay of 750ms so page and brand identity load cleanly before pop out
+        const timer = setTimeout(() => {
+          setIsRegisterOpen(true);
+        }, 750);
+        return () => clearTimeout(timer);
+      }
+    } catch {
+      // Fallback if storage access is restricted
+      const timer = setTimeout(() => {
+        setIsRegisterOpen(true);
+      }, 750);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const scrollTo = (id: string) => {
     if (id === 'top') {
