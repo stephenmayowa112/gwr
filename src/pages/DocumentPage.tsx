@@ -123,9 +123,9 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
           <img 
             src="/IMG_3314.JPG.webp" 
             alt="Background" 
-            className="w-full h-full object-cover opacity-10"
+            className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#001410]/98 via-[#001410]/95 to-[#001410]/98" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001410]/90 via-[#001410]/85 to-[#001410]/90" />
         </div>
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12 z-10">
@@ -199,9 +199,9 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
           <img 
             src="/IMG_3319.webp" 
             alt="Background" 
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#001410]/95 via-[#001410]/90 to-[#001410]/95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001410]/88 via-[#001410]/82 to-[#001410]/88" />
         </div>
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12 z-10">
@@ -280,9 +280,9 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
           <img 
             src="/IMG_6517.webp" 
             alt="Background" 
-            className="w-full h-full object-cover opacity-15"
+            className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#001410]/95 via-[#001410]/92 to-[#001410]/95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001410]/88 via-[#001410]/85 to-[#001410]/88" />
         </div>
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12 z-10">
@@ -441,9 +441,9 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
           <img 
             src="/IMG_6521.JPG.webp" 
             alt="Background" 
-            className="w-full h-full object-cover opacity-8"
+            className="w-full h-full object-cover opacity-25"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#001410]/98 via-[#001410]/96 to-[#001410]/98" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001410]/90 via-[#001410]/85 to-[#001410]/90" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,55,52,0.3),transparent)]" />
         </div>
 
