@@ -79,11 +79,11 @@ EVENT FACTS:
 - Dates: Friday, 30 October 2026, 18:00 WAT through Sunday, 1 November 2026, 18:00 WAT.
 - Admission: 100% Free Public Admission.
 - Social Handles: @UGEGBEGWR (Instagram, X, TikTok, YouTube).
-- Official Hashtags: #UgegbeGWR #FavourUgegbe #FrenchLanguageMarathon.
+- Official Hashtags: #UgegbeGWR #FavourNwobodo #FrenchLanguageMarathon.
 - Press Office Contact: press@ugegbegwr.com | info@ugegbegwr.com.
 
 BOILERPLATE:
-Favour Chisimdi Ugegbe is a Nigerian educator and polyglot dedicated to bridging linguistic and cultural boundaries across Africa. For 48 continuous hours at Landmark Lagos, she will deliver an extraordinary French masterclass before independent adjudicators, setting a historic new Guinness World Records title and celebrating Nigeria's relationship with its Francophone neighbors.`;
+Favour Chisimdi Nwobodo is a Nigerian educator and polyglot dedicated to bridging linguistic and cultural boundaries across Africa. For 48 continuous hours at Landmark Centre, Lagos, Nigeria, she will deliver an extraordinary French masterclass before independent adjudicators, setting a historic new Guinness World Records title and celebrating Nigeria's relationship with its Francophone neighbors.`;
 
     const blob = new Blob([kitText], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
@@ -140,7 +140,7 @@ Favour Chisimdi Ugegbe is a Nigerian educator and polyglot dedicated to bridging
                   Challenger
                 </span>
                 <span className="font-bold text-slate-900">
-                  Favour Chisimdi Ugegbe (Nigerian Polyglot, 11 Languages)
+                  Favour Chisimdi Nwobodo (Nigerian Polyglot, 11 Languages)
                 </span>
               </div>
               <div>
@@ -175,7 +175,7 @@ Favour Chisimdi Ugegbe is a Nigerian educator and polyglot dedicated to bridging
                   Venue & Admission
                 </span>
                 <span className="font-semibold text-slate-700">
-                  Landmark Centre, Victoria Island, Lagos. Entry is 100% Free.
+                  Landmark Centre, Victoria Island, Lagos, Nigeria. Entry is 100% Free.
                 </span>
               </div>
               <div>
@@ -196,7 +196,7 @@ Favour Chisimdi Ugegbe is a Nigerian educator and polyglot dedicated to bridging
             OFFICIAL BOILERPLATE
           </span>
           <p className="text-sm sm:text-base text-slate-700 leading-relaxed italic">
-            “For 48 hours, Favour Chisimdi Ugegbe will teach, speak, engage and keep going, turning a French lesson into a live celebration of language, culture, endurance and possibility. From 30 October to 1 November 2026, Lagos will become the stage for an extraordinary 48-hour French Language Marathon — an audacious attempt to set a new Guinness World Records title. Not in Paris. In Nigeria.”
+            “For 48 hours, Favour Chisimdi Nwobodo will teach, speak, engage and keep going, turning a French lesson into a live celebration of language, culture, endurance and possibility. From 30 October to 1 November 2026, Lagos, Nigeria will become the stage for an extraordinary 48-hour French Language Marathon — an audacious attempt to set a new Guinness World Records title. Not in Paris. In Nigeria.”
           </p>
         </div>
 

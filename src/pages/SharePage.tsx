@@ -39,7 +39,7 @@ export const SharePage: React.FC<SharePageProps> = ({ onNavigate }) => {
     }
   };
 
-  const shareText = `Join me in supporting Nigerian polyglot Favour Chisimdi Ugegbe as she attempts the Guinness World Record for the longest language lesson (48-hour French marathon)! 30 Oct – 1 Nov 2026 at Landmark, Lagos. Entry is FREE: https://ugegbegwr.com`;
+  const shareText = `Join me in supporting Nigerian polyglot Favour Chisimdi Nwobodo as she attempts the Guinness World Record for the longest language lesson (48-hour French marathon)! 30 Oct – 1 Nov 2026 at Landmark Centre, Lagos, Nigeria. Entry is FREE: https://ugegbegwr.com`;
 
   const handleCopyText = (text: string, type: string) => {
     navigator.clipboard.writeText(text);
@@ -71,8 +71,8 @@ export const SharePage: React.FC<SharePageProps> = ({ onNavigate }) => {
 
   const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`;
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-    `Witness history! Nigerian polyglot Favour Chisimdi Ugegbe goes for 48 hours of continuous French teaching in a @GuinnessWorldRecord attempt at Landmark, Lagos.`
-  )}&hashtags=UgegbeGWR,FavourUgegbe,FrenchLanguageMarathon&url=${encodeURIComponent('https://ugegbegwr.com')}`;
+    `Witness history! Nigerian polyglot Favour Chisimdi Nwobodo goes for 48 hours of continuous French teaching in a @GuinnessWorldRecord attempt at Landmark Centre, Lagos, Nigeria.`
+  )}&hashtags=UgegbeGWR,FavourNwobodo,FrenchLanguageMarathon&url=${encodeURIComponent('https://ugegbegwr.com')}`;
 
   return (
     <div className="w-full bg-[#FAF8F5] py-12 sm:py-20">
@@ -284,14 +284,14 @@ export const SharePage: React.FC<SharePageProps> = ({ onNavigate }) => {
                 #UgegbeGWR
               </span>
               <span className="px-3 py-1.5 bg-emerald-50 text-emerald-900 border border-emerald-200 rounded font-mono text-xs font-bold">
-                #FavourUgegbe
+                #FavourNwobodo
               </span>
               <span className="px-3 py-1.5 bg-emerald-50 text-emerald-900 border border-emerald-200 rounded font-mono text-xs font-bold">
                 #FrenchLanguageMarathon
               </span>
 
               <button
-                onClick={() => handleCopyText('#UgegbeGWR #FavourUgegbe #FrenchLanguageMarathon', 'hashtags')}
+                onClick={() => handleCopyText('#UgegbeGWR #FavourNwobodo #FrenchLanguageMarathon', 'hashtags')}
                 className="text-xs font-mono text-emerald-800 hover:text-amber-600 underline font-semibold ml-2 cursor-pointer"
               >
                 {copiedType === 'hashtags' ? 'Copied all!' : 'Copy all tags'}
@@ -353,7 +353,7 @@ export const SharePage: React.FC<SharePageProps> = ({ onNavigate }) => {
                 </div>
               </div>
               <p className="text-slate-700">
-                “Our Francophone neighbours (Benin, Niger, Chad, Cameroon) speak French every day. Favour is breaking down borders with this marathon. #FavourUgegbe #UgegbeGWR”
+                “Our Francophone neighbours (Benin, Niger, Chad, Cameroon) speak French every day. Favour is breaking down borders with this marathon. #FavourNwobodo #UgegbeGWR”
               </p>
             </div>
           </div>

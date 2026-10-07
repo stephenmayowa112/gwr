@@ -36,11 +36,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           {/* Main Display Headline (exact verbatim from copy) */}
           <div className="space-y-4 max-w-4xl">
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-black tracking-tight leading-[0.95] text-white uppercase text-balance">
-              FAVOUR UGEGBE’S 48-HOUR FRENCH LANGUAGE MARATHON
+              FAVOUR CHISIMDI NWOBODO’S 48-HOUR FRENCH LANGUAGE MARATHON
             </h1>
 
             <p className="text-lg sm:text-2xl text-emerald-100/90 font-light leading-relaxed max-w-3xl pt-2">
-              For 48 hours, Favour Chisimdi Ugegbe will teach, speak, engage and keep going, turning a French lesson into a live celebration of language, culture, endurance and possibility.
+              For 48 hours, Favour Chisimdi Nwobodo will teach, speak, engage and keep going, turning a French lesson into a live celebration of language, culture, endurance and possibility.
             </p>
           </div>
 
@@ -274,7 +274,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             {/* Left Photo Placeholder */}
             <div className="lg:col-span-5">
               <EditorialPlaceholder
-                label="Favour Chisimdi Ugegbe"
+                label="Favour Chisimdi Nwobodo"
                 subtext="Nigerian polyglot (11 languages: 9 foreign, 2 Nigerian). Educator & record challenger."
                 aspectRatio="3:4"
               />

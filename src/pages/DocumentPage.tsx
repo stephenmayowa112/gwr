@@ -40,14 +40,14 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
 
   const handleCopyShare = () => {
     navigator.clipboard.writeText(
-      'Join me in supporting Nigerian polyglot Favour Chisimdi Ugegbe for the 48-Hour French Language Marathon at Landmark, Lagos! Entry is 100% FREE. #UgegbeGWR #FavourUgegbe https://ugegbegwr.com'
+      'Join me in supporting Nigerian polyglot Favour Chisimdi Nwobodo for the 48-Hour French Language Marathon at Landmark Centre, Lagos, Nigeria! Entry is 100% FREE. #UgegbeGWR #FavourNwobodo #FrenchLanguageMarathon https://ugegbegwr.com'
     );
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
 
   const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(
-    '🇫🇷 Join me in supporting Nigerian polyglot Favour Chisimdi Ugegbe for the 48-Hour French Language Marathon at Landmark, Lagos! Entry is 100% FREE. #UgegbeGWR #FavourUgegbe https://ugegbegwr.com'
+    '🇫🇷 Join me in supporting Nigerian polyglot Favour Chisimdi Nwobodo for the 48-Hour French Language Marathon at Landmark Centre, Lagos, Nigeria! Entry is 100% FREE. #UgegbeGWR #FavourNwobodo https://ugegbegwr.com'
   )}`;
 
   const handleCheer = () => {
@@ -71,11 +71,11 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
           {/* 🔴 THE COUNTDOWN IS THE FIRST THING VISITORS SEE */}
           <div
             id="countdown-section"
-            className="p-4 sm:p-6 md:p-8 bg-[#001D17]/90 border-2 border-[#23C48E]/50 rounded-2xl shadow-[0_8px_32px_rgba(0,20,16,0.8)] backdrop-blur-md transition-all hover:border-[#23C48E]"
+            className="p-5 sm:p-8 md:p-10 bg-[#001914] border-2 border-[#23C48E] rounded-3xl shadow-[0_16px_50px_rgba(0,18,14,0.9),0_0_30px_rgba(35,196,142,0.2)] backdrop-blur-xl transition-all"
           >
             <TimezoneCountdown
               targetDateIso="2026-10-30T18:00:00+01:00"
-              title="TIME UNTIL OFFICIAL START (LAGOS WAT)"
+              title="TIME UNTIL OFFICIAL START (LAGOS, NIGERIA · WAT)"
               variant="prominent"
             />
           </div>
@@ -94,11 +94,11 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
           {/* Punchy Event Title & Tagline */}
           <div className="space-y-4">
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black tracking-tight uppercase text-white leading-[1.06]">
-              FAVOUR UGEGBE’S 48-HOUR FRENCH LANGUAGE MARATHON
+              FAVOUR CHISIMDI NWOBODO’S 48-HOUR FRENCH LANGUAGE MARATHON
             </h1>
 
             <p className="text-lg sm:text-2xl text-[#D2FCE3]/90 font-light leading-relaxed max-w-3xl">
-              One woman. 11 languages. 48 continuous hours. A historic Guinness World Records attempt turning a French lesson into an unforgettable celebration of endurance and African excellence.
+              One woman. 11 languages. 48 continuous hours. Nigerian polyglot <strong className="text-white font-bold">Favour Chisimdi Nwobodo</strong> will deliver a historic Guinness World Records attempt at Landmark Centre, Lagos, Nigeria — turning a French lesson into a live celebration of endurance and African excellence.
             </p>
           </div>
 
@@ -116,7 +116,7 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
               <MapPin className="w-4 h-4 text-[#23C48E] shrink-0" />
               <div>
                 <span className="text-[#D2FCE3]/60 text-[10px] block font-sans">VENUE</span>
-                <span className="font-bold text-white">LANDMARK, LAGOS</span>
+                <span className="font-bold text-white">LANDMARK, LAGOS, NIGERIA</span>
               </div>
             </div>
 
@@ -258,7 +258,7 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
                 11 Languages Spoken
               </h3>
               <p className="text-sm text-[#D2FCE3]/80 leading-relaxed font-light">
-                Favour Chisimdi Ugegbe speaks 9 foreign languages and 2 Nigerian languages. She is taking Nigerian intellect and grit straight into the Guinness World Records.
+                <strong className="text-white font-semibold">Favour Chisimdi Nwobodo</strong> speaks 9 foreign languages and 2 Nigerian languages. She is taking Nigerian intellect and grit straight into the Guinness World Records.
               </p>
             </div>
 
@@ -416,7 +416,7 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
               }`}
             >
               <Heart className={`w-4 h-4 ${hasCheered ? 'fill-current' : ''}`} />
-              <span>{hasCheered ? 'Cheer Sent!' : 'Send Cheer to Favour'}</span>
+              <span>{hasCheered ? 'Cheer Sent!' : 'Send Cheer to Favour Nwobodo'}</span>
               <span className="ml-1 opacity-75 font-normal">({cheerCount.toLocaleString()})</span>
             </button>
 
