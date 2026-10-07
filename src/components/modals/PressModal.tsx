@@ -85,7 +85,7 @@ export const PressModal: React.FC<PressModalProps> = ({ isOpen, onClose }) => {
           <div className="space-y-4">
             <div className="flex justify-center pb-1">
               <img
-                src="/UGEGBE_X_GWR_Light_Compact.png"
+                src="/UGEGBE_X_GWR_White.png"
                 alt="Ugegbe x Guinness World Records"
                 className="h-10 sm:h-12 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(35,196,142,0.3)]"
               />

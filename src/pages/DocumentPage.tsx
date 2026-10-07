@@ -1,20 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { TimezoneCountdown } from '../components/common/TimezoneCountdown';
 import {
   Calendar,
   MapPin,
-  Clock,
   Sparkles,
-  ArrowRight,
-  Check,
-  Copy,
   Share2,
   Trophy,
-  Flame,
   Globe2,
   Users,
-  ExternalLink,
-  Heart,
 } from 'lucide-react';
 import { OFFICIAL_MILESTONES, downloadIcsFile } from '../services/calendar';
 
@@ -33,28 +26,9 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
   onScrollToCountdown,
   onScrollToFavour,
 }) => {
-  const [copied, setCopied] = useState(false);
-  const [cheerCount, setCheerCount] = useState(2480);
-  const [hasCheered, setHasCheered] = useState(false);
-
-  const handleCopyShare = () => {
-    navigator.clipboard.writeText(
-      'Join me in supporting Nigerian polyglot Favour Chisimdi Nwobodo for the 48-Hour French Language Marathon at Landmark Centre, Lagos, Nigeria! Entry is 100% FREE. #UgegbeGWR #FavourNwobodo #FrenchLanguageMarathon https://ugegbegwr.com'
-    );
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
-
   const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(
     '🇫🇷 Join me in supporting Nigerian polyglot Favour Chisimdi Nwobodo for the 48-Hour French Language Marathon at Landmark Centre, Lagos, Nigeria! Entry is 100% FREE. #UgegbeGWR #FavourNwobodo https://ugegbegwr.com'
   )}`;
-
-  const handleCheer = () => {
-    if (!hasCheered) {
-      setCheerCount((c) => c + 1);
-      setHasCheered(true);
-    }
-  };
 
   return (
     <div className="w-full bg-[#001410] text-[#D2FCE3] selection:bg-[#23C48E] selection:text-[#001410] overflow-hidden">
@@ -82,7 +56,7 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
           {/* 🌟 UPLOADED CO-BRANDED LOGO PROMINENTLY DISPLAYED */}
           <div className="flex justify-center pt-2 sm:pt-4">
             <img
-              src="/UGEGBE_X_GWR_Light.png"
+              src="/UGEGBE_X_GWR_White.png"
               alt="Ugegbe x Guinness World Records - Official Attempt"
               className="w-full max-w-xs sm:max-w-md md:max-w-lg h-auto object-contain filter drop-shadow-[0_4px_24px_rgba(35,196,142,0.35)]"
               loading="eager"
@@ -163,9 +137,9 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
                 THE BENCHMARK VS THE LAGOS TARGET
               </h2>
             </div>
-            {/* Uploaded compact badge */}
+            {/* Uploaded logo badge */}
             <img
-              src="/UGEGBE_X_GWR_Light_Compact.png"
+              src="/UGEGBE_X_GWR_White.png"
               alt="Ugegbe GWR"
               className="h-9 sm:h-11 w-auto object-contain hidden sm:block filter drop-shadow-[0_2px_8px_rgba(35,196,142,0.25)]"
             />
@@ -228,7 +202,7 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
       </section>
 
       {/* ============================================================ */}
-      {/* 3. WHY THIS MATTERS (Concise, Punchy 3 Pillars)              */}
+      {/* 3. WHY THIS MATTERS (Concise, Visual 3 Pillars)              */}
       {/* ============================================================ */}
       <section id="language-connects-us" className="w-full py-14 sm:py-20 border-b border-[#23C48E]/20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -243,42 +217,56 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {/* Pillar 1: Francophone Borders */}
-            <div className="p-6 bg-[#002821] border border-[#23C48E]/25 rounded-2xl space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-[#23C48E]/15 border border-[#23C48E]/30 flex items-center justify-center text-[#23C48E]">
-                <Globe2 className="w-5 h-5" />
+            <div className="p-6 bg-[#002821] border border-[#23C48E]/25 rounded-2xl space-y-4 flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-[#23C48E]/15 border border-[#23C48E]/30 flex items-center justify-center text-[#23C48E]">
+                  <Globe2 className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-display font-black uppercase text-white">
+                  4 Francophone Borders
+                </h3>
+                <p className="text-xs sm:text-sm text-[#D2FCE3]/80 leading-relaxed font-light">
+                  Nigeria is surrounded by <strong className="text-white">Benin, Niger, Chad, and Cameroon</strong>. French is our neighboring passport to trade, diplomacy, and culture.
+                </p>
               </div>
-              <h3 className="text-lg font-display font-black uppercase text-white">
-                4 Francophone Borders
-              </h3>
-              <p className="text-xs sm:text-sm text-[#D2FCE3]/80 leading-relaxed font-light">
-                Nigeria is surrounded by <strong className="text-white">Benin, Niger, Chad, and Cameroon</strong>. French is our neighboring passport to trade, diplomacy, and culture.
-              </p>
             </div>
 
-            {/* Pillar 2: 11 Languages */}
-            <div className="p-6 bg-[#002821] border border-[#23C48E]/25 rounded-2xl space-y-3" id="favour-nwobodo">
-              <div className="w-10 h-10 rounded-xl bg-[#23C48E]/15 border border-[#23C48E]/30 flex items-center justify-center text-[#23C48E]">
-                <Trophy className="w-5 h-5" />
+            {/* Pillar 2: 11 Languages / Favour Photo Feature */}
+            <div className="p-6 bg-[#002821] border-2 border-[#23C48E]/50 rounded-2xl space-y-4 flex flex-col justify-between shadow-lg" id="favour-nwobodo">
+              <div className="space-y-3">
+                <div className="w-full h-44 sm:h-48 overflow-hidden rounded-xl border border-[#23C48E]/30 relative bg-[#001410]">
+                  <img
+                    src="/favour-portrait-1.webp"
+                    alt="Favour Chisimdi Nwobodo"
+                    className="w-full h-full object-cover object-top filter contrast-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-2 right-2 px-2 py-0.5 bg-[#001410]/85 backdrop-blur-xs border border-[#23C48E]/40 rounded text-[10px] font-mono text-[#23C48E] uppercase font-bold">
+                    11 LANGUAGES
+                  </div>
+                </div>
+                <h3 className="text-lg font-display font-black uppercase text-white">
+                  Favour Chisimdi Nwobodo
+                </h3>
+                <p className="text-xs sm:text-sm text-[#D2FCE3]/80 leading-relaxed font-light">
+                  Speaks 9 foreign languages and 2 Nigerian languages (Igbo & Yoruba). Nigerian excellence stepping straight into the Guinness World Records.
+                </p>
               </div>
-              <h3 className="text-lg font-display font-black uppercase text-white">
-                11 Languages Spoken
-              </h3>
-              <p className="text-xs sm:text-sm text-[#D2FCE3]/80 leading-relaxed font-light">
-                <strong className="text-white font-semibold">Favour Chisimdi Nwobodo</strong> speaks 9 foreign languages and 2 Nigerian languages (Igbo & Yoruba). Nigerian excellence on the world stage.
-              </p>
             </div>
 
             {/* Pillar 3: Open To Everyone */}
-            <div className="p-6 bg-[#002821] border border-[#23C48E]/25 rounded-2xl space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-[#23C48E]/15 border border-[#23C48E]/30 flex items-center justify-center text-[#23C48E]">
-                <Users className="w-5 h-5" />
+            <div className="p-6 bg-[#002821] border border-[#23C48E]/25 rounded-2xl space-y-4 flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-[#23C48E]/15 border border-[#23C48E]/30 flex items-center justify-center text-[#23C48E]">
+                  <Users className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-display font-black uppercase text-white">
+                  100% Free For All
+                </h3>
+                <p className="text-xs sm:text-sm text-[#D2FCE3]/80 leading-relaxed font-light">
+                  You do not need to speak French. Come for 10 minutes or 10 hours. Learn a phrase, make noise, and cheer Favour across the finish line.
+                </p>
               </div>
-              <h3 className="text-lg font-display font-black uppercase text-white">
-                100% Free For All
-              </h3>
-              <p className="text-xs sm:text-sm text-[#D2FCE3]/80 leading-relaxed font-light">
-                You do not need to speak French. Come for 10 minutes or 10 hours. Learn a phrase, make noise, and cheer Favour across the finish line.
-              </p>
             </div>
           </div>
         </div>
@@ -396,49 +384,7 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
       </section>
 
       {/* ============================================================ */}
-      {/* 5. INTERACTIVE LIVE CHEERING & MOTTO                         */}
-      {/* ============================================================ */}
-      <section className="w-full py-12 sm:py-16 border-b border-[#23C48E]/20 bg-[radial-gradient(circle_at_center,rgba(0,55,52,0.4),rgba(0,20,16,1))]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
-          <div className="space-y-1.5">
-            <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#23C48E]">
-              SEND YOUR ENERGY
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-display font-black uppercase text-white">
-              “ENSEMBLE, NOUS ÉCRIVONS L’HISTOIRE.”
-            </h2>
-            <p className="text-xs sm:text-sm text-[#D2FCE3]/70 italic">
-              Together, we are writing history.
-            </p>
-          </div>
-
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <button
-              onClick={handleCheer}
-              className={`px-7 py-3 rounded-xl font-mono text-xs uppercase tracking-wider font-bold transition-all flex items-center gap-2 cursor-pointer ${
-                hasCheered
-                  ? 'bg-[#23C48E] text-[#001410] scale-105'
-                  : 'bg-[#003734] hover:bg-[#23C48E] text-white hover:text-[#001410] border border-[#23C48E]/40'
-              }`}
-            >
-              <Heart className={`w-4 h-4 ${hasCheered ? 'fill-current' : ''}`} />
-              <span>{hasCheered ? 'Cheer Sent!' : 'Send Cheer to Favour Nwobodo'}</span>
-              <span className="ml-1 opacity-75 font-normal">({cheerCount.toLocaleString()})</span>
-            </button>
-
-            <button
-              onClick={handleCopyShare}
-              className="px-5 py-3 bg-[#001410] hover:bg-[#002821] border border-[#23C48E]/40 text-[#D2FCE3] font-mono text-xs uppercase tracking-wider rounded-xl flex items-center gap-2 transition-colors cursor-pointer"
-            >
-              {copied ? <Check className="w-4 h-4 text-[#23C48E]" /> : <Copy className="w-4 h-4" />}
-              <span>{copied ? 'Share Text Copied!' : 'Copy Invitation'}</span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================================ */}
-      {/* 6. ACTION HUB & TICKET RESERVATION                           */}
+      {/* 5. ACTION HUB & TICKET RESERVATION                           */}
       {/* ============================================================ */}
       <section id="be-part-of-the-story" className="w-full py-14 sm:py-20 border-b border-[#23C48E]/20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -522,14 +468,14 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
       </section>
 
       {/* ============================================================ */}
-      {/* 7. CLOSING TRIUMPH & OFFICIAL EMBLEM                          */}
+      {/* 6. CLOSING TRIUMPH & OFFICIAL EMBLEM                          */}
       {/* ============================================================ */}
       <section className="w-full py-16 sm:py-24 text-center bg-[radial-gradient(circle_at_center,rgba(0,55,52,0.6),rgba(0,20,16,1))]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           {/* Uploaded official emblem */}
           <div className="flex justify-center pb-2">
             <img
-              src="/UGEGBE_X_GWR_Light.png"
+              src="/UGEGBE_X_GWR_White.png"
               alt="Ugegbe x Guinness World Records"
               className="w-full max-w-xs sm:max-w-sm h-auto object-contain filter drop-shadow-[0_4px_20px_rgba(35,196,142,0.3)]"
             />
