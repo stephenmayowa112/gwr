@@ -22,10 +22,7 @@ export const UgegbeBrandLogo: React.FC<UgegbeBrandLogoProps> = ({
     xl: 'h-24 sm:h-32',
   }[size];
 
-  // Directly load the uploaded logo image file
-  const logoSrc = showTagline
-    ? '/UGEGBE X GWR_Light.png'
-    : '/UGEGBE X GWR_Light_Compact.png';
+  const logoSrc = '/UGEGBE X GWR_Dark.png';
 
   return (
     <div className={`inline-flex items-center justify-center select-none ${className}`}>
