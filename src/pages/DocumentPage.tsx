@@ -73,12 +73,10 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
         <div className="relative max-w-7xl mx-auto space-y-8 sm:space-y-12 text-center z-10">
           {/* MASSIVE COUNTDOWN - FIRST AND BIGGEST */}
           <div className="max-w-6xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-1000">
-            <div className="p-10 sm:p-16 md:p-20 bg-[#001410]/40 border-4 border-[#23C48E] rounded-3xl shadow-[0_0_100px_rgba(35,196,142,0.4)] backdrop-blur-md">
-              <TimezoneCountdown
-                targetDateIso="2026-10-30T18:00:00+01:00"
-                title="MARATHON STARTS IN"
-              />
-            </div>
+            <TimezoneCountdown
+              targetDateIso="2026-10-30T18:00:00+01:00"
+              variant="prominent"
+            />
           </div>
 
           {/* Main Heading - After countdown with animation */}
