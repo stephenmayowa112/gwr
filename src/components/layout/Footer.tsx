@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="pt-2 text-xs sm:text-sm font-mono text-[#D2FCE3]/75 tracking-wide">
-          #UgegbeGWR · #FavourNwobodo · #FrenchLanguageMarathon
+          #UgegbeGWR · #FavourUgegbe · #FrenchLanguageMarathon
         </div>
 
         <div className="pt-8 border-t border-[#23C48E]/20 text-xs font-mono text-[#D2FCE3]/50">
