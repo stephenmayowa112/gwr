@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 interface TimezoneCountdownProps {
   targetDateIso?: string; // default: 2026-10-30T18:00:00+01:00
   title?: string;
-  variant?: 'hero' | 'compact' | 'live';
+  variant?: 'hero' | 'compact' | 'live' | 'prominent';
 }
 
 interface TimeRemaining {
@@ -88,6 +88,66 @@ export const TimezoneCountdown: React.FC<TimezoneCountdownProps> = ({
         <span>{String(timeLeft.minutes).padStart(2, '0')}m</span>
         <span>:</span>
         <span>{String(timeLeft.seconds).padStart(2, '0')}s</span>
+      </div>
+    );
+  }
+
+  if (variant === 'prominent') {
+    return (
+      <div className="w-full">
+        {/* Header row with live pulsing indicator */}
+        <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono uppercase tracking-widest text-[#D2FCE3]/90 mb-3 px-1">
+          <div className="inline-flex items-center gap-2">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#23C48E] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#40FFBC]"></span>
+            </span>
+            <span className="font-bold text-white tracking-wider">OFFICIAL MARATHON COUNTDOWN</span>
+          </div>
+          <div className="flex items-center gap-2 text-[11px] text-[#23C48E]">
+            <span className="text-[#D2FCE3]/50">START:</span>
+            <span className="font-bold">FRI 30 OCT · 6:00 PM WAT</span>
+          </div>
+        </div>
+
+        {/* Big high-voltage countdown boxes */}
+        <div className="grid grid-cols-4 gap-2 sm:gap-4">
+          <div className="relative group flex flex-col items-center justify-center p-3 sm:p-5 md:p-6 bg-[#002B24] border border-[#23C48E]/40 hover:border-[#23C48E] rounded-xl sm:rounded-2xl shadow-[0_4px_24px_rgba(0,20,16,0.6)] transition-all">
+            <span className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white font-mono tabular-nums tracking-tight">
+              {String(timeLeft.days).padStart(2, '0')}
+            </span>
+            <span className="text-[10px] sm:text-xs font-mono font-bold tracking-widest text-[#D2FCE3]/70 uppercase mt-1">
+              DAYS
+            </span>
+          </div>
+
+          <div className="relative group flex flex-col items-center justify-center p-3 sm:p-5 md:p-6 bg-[#002B24] border border-[#23C48E]/40 hover:border-[#23C48E] rounded-xl sm:rounded-2xl shadow-[0_4px_24px_rgba(0,20,16,0.6)] transition-all">
+            <span className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white font-mono tabular-nums tracking-tight">
+              {String(timeLeft.hours).padStart(2, '0')}
+            </span>
+            <span className="text-[10px] sm:text-xs font-mono font-bold tracking-widest text-[#D2FCE3]/70 uppercase mt-1">
+              HOURS
+            </span>
+          </div>
+
+          <div className="relative group flex flex-col items-center justify-center p-3 sm:p-5 md:p-6 bg-[#002B24] border border-[#23C48E]/40 hover:border-[#23C48E] rounded-xl sm:rounded-2xl shadow-[0_4px_24px_rgba(0,20,16,0.6)] transition-all">
+            <span className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white font-mono tabular-nums tracking-tight">
+              {String(timeLeft.minutes).padStart(2, '0')}
+            </span>
+            <span className="text-[10px] sm:text-xs font-mono font-bold tracking-widest text-[#D2FCE3]/70 uppercase mt-1">
+              MINS
+            </span>
+          </div>
+
+          <div className="relative group flex flex-col items-center justify-center p-3 sm:p-5 md:p-6 bg-[#001410] border-2 border-[#23C48E] rounded-xl sm:rounded-2xl shadow-[0_0_30px_rgba(35,196,142,0.35)] transition-all">
+            <span className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#23C48E] font-mono tabular-nums tracking-tight">
+              {String(timeLeft.seconds).padStart(2, '0')}
+            </span>
+            <span className="text-[10px] sm:text-xs font-mono font-black tracking-widest text-[#40FFBC] uppercase mt-1">
+              SECS
+            </span>
+          </div>
+        </div>
       </div>
     );
   }

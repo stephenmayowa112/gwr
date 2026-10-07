@@ -20,11 +20,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRegister, onScrollTo }) =>
   }, []);
 
   const navItems = [
-    { label: 'Language', id: 'language-connects-us' },
+    { label: 'Countdown', id: 'countdown-section' },
     { label: 'The Record', id: 'the-record' },
-    { label: 'Favour', id: 'favour-ugegbe' },
-    { label: 'Three Days', id: 'three-days' },
-    { label: 'Be Part', id: 'be-part-of-the-story' },
+    { label: 'Why It Matters', id: 'language-connects-us' },
+    { label: 'Schedule', id: 'three-days' },
+    { label: 'Get Pass', id: 'be-part-of-the-story' },
   ];
 
   const handleNavClick = (id: string) => {
