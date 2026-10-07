@@ -421,7 +421,7 @@ export const LivePage: React.FC<LivePageProps> = ({ onNavigate }) => {
               {config.youtubeUrl ? (
                 <iframe
                   src={getEmbedUrl(config.youtubeUrl)}
-                  title="Favour Ugegbe 48-Hour French Marathon Livestream"
+                  title="Favour Chisimdi Nwobodo 48-Hour French Marathon Livestream"
                   className="w-full h-full border-0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -442,7 +442,7 @@ export const LivePage: React.FC<LivePageProps> = ({ onNavigate }) => {
             <div className="bg-white p-5 rounded-xl border border-slate-200 flex flex-wrap items-center justify-between gap-4">
               <div>
                 <h3 className="font-display font-bold text-slate-900 uppercase">
-                  Favour Ugegbe's 48-Hour French Language Marathon
+                  Favour Chisimdi Nwobodo's 48-Hour French Language Marathon
                 </h3>
                 <p className="text-xs text-slate-500 font-mono">
                   Official Guinness World Records Attempt · Landmark, Lagos, Nigeria

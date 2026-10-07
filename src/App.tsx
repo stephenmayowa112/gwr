@@ -58,7 +58,7 @@ export default function App() {
           onOpenPartner={() => setIsPartnerOpen(true)}
           onOpenPress={() => setIsPressOpen(true)}
           onScrollToCountdown={() => scrollTo('countdown-section')}
-          onScrollToFavour={() => scrollTo('favour-ugegbe')}
+          onScrollToFavour={() => scrollTo('favour-nwobodo')}
         />
       </main>
 
