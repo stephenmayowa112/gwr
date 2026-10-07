@@ -65,15 +65,15 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
             className="w-full h-full object-cover"
           />
           {/* Dark overlay for readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#001410]/95 via-[#001410]/90 to-[#001410]/95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001410]/95 via-[#001410]/85 to-[#001410]/95" />
           {/* Additional gradient for better text contrast */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent,rgba(0,20,16,0.8))]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto space-y-8 sm:space-y-12 text-center z-10">
           {/* MASSIVE COUNTDOWN - FIRST AND BIGGEST */}
-          <div className="max-w-6xl mx-auto">
-            <div className="p-10 sm:p-16 md:p-20 bg-[#001410]/70 border-4 border-[#23C48E] rounded-3xl shadow-[0_0_100px_rgba(35,196,142,0.4)] backdrop-blur-xl">
+          <div className="max-w-6xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-1000">
+            <div className="p-10 sm:p-16 md:p-20 bg-[#001410]/40 border-4 border-[#23C48E] rounded-3xl shadow-[0_0_100px_rgba(35,196,142,0.4)] backdrop-blur-md">
               <TimezoneCountdown
                 targetDateIso="2026-10-30T18:00:00+01:00"
                 title="MARATHON STARTS IN"
@@ -81,21 +81,25 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
             </div>
           </div>
 
-          {/* Main Heading - After countdown */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black tracking-tight uppercase text-white leading-[1.05] drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
-            48 HOURS.<br/>ONE LANGUAGE.<br/>ONE RECORD.
+          {/* Main Heading - After countdown with animation */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black tracking-tight uppercase text-white leading-[1.05] drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)] animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
+            <span className="inline-block animate-in fade-in zoom-in duration-700 delay-500">48 HOURS.</span>
+            <br/>
+            <span className="inline-block animate-in fade-in zoom-in duration-700 delay-700">ONE LANGUAGE.</span>
+            <br/>
+            <span className="inline-block animate-in fade-in zoom-in duration-700 delay-900 text-[#23C48E]">ONE RECORD.</span>
           </h1>
 
-          {/* Subheading */}
-          <p className="text-lg sm:text-2xl md:text-3xl font-mono tracking-wider uppercase text-[#23C48E] font-bold drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+          {/* Subheading with glow animation */}
+          <p className="text-lg sm:text-2xl md:text-3xl font-mono tracking-wider uppercase text-[#23C48E] font-bold drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-1100">
             LANDMARK, LAGOS · FREE ENTRY
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-8">
+          {/* CTA Buttons with animation */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-1300">
             <button
               onClick={onOpenRegister}
-              className="px-12 py-6 bg-[#23C48E] hover:bg-[#40FFBC] text-[#001410] font-display font-black text-lg sm:text-xl tracking-wider uppercase rounded-2xl shadow-[0_8px_40px_rgba(35,196,142,0.6)] transition-all transform hover:scale-110 hover:-translate-y-2 cursor-pointer"
+              className="px-12 py-6 bg-[#23C48E] hover:bg-[#40FFBC] text-[#001410] font-display font-black text-lg sm:text-xl tracking-wider uppercase rounded-2xl shadow-[0_8px_40px_rgba(35,196,142,0.6)] transition-all transform hover:scale-110 hover:-translate-y-2 cursor-pointer animate-pulse"
             >
               [ REGISTER FREE ]
             </button>
@@ -180,9 +184,19 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
       {/* ============================================================ */}
       <section 
         id="gallery" 
-        className="w-full py-20 sm:py-28 lg:py-32 border-b border-[#23C48E]/20 bg-[radial-gradient(ellipse_at_center,rgba(0,55,52,0.4),rgba(0,20,16,1))]"
+        className="relative w-full py-20 sm:py-28 lg:py-32 border-b border-[#23C48E]/20 overflow-hidden"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/IMG_3319.webp" 
+            alt="Background" 
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001410]/95 via-[#001410]/90 to-[#001410]/95" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 z-10">
           {/* Section Header */}
           <div className="text-center space-y-4">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#23C48E]/10 border border-[#23C48E]/30 text-xs font-mono uppercase text-[#23C48E] tracking-widest font-semibold">
@@ -251,9 +265,19 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
       {/* ============================================================ */}
       <section 
         id="three-days" 
-        className="w-full py-20 sm:py-28 lg:py-32 border-b border-[#23C48E]/20"
+        className="relative w-full py-20 sm:py-28 lg:py-32 border-b border-[#23C48E]/20 overflow-hidden"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/IMG_6517.webp" 
+            alt="Background" 
+            className="w-full h-full object-cover opacity-15"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001410]/95 via-[#001410]/92 to-[#001410]/95" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 z-10">
           {/* Section Header */}
           <div className="text-center space-y-3">
             <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#23C48E]">
