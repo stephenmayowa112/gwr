@@ -479,7 +479,7 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
                   className="w-4 h-4 mt-1 text-emerald-800 rounded border-slate-300 focus:ring-emerald-800 cursor-pointer"
                 />
                 <span className="text-xs text-slate-600 leading-normal">
-                  I agree to receive event updates, schedule alerts, and entry instructions for Favour Ugegbe's 48-Hour French Language Marathon in accordance with the event's NDPR privacy policy.
+                  I agree to receive event updates, schedule alerts, and entry instructions for Favour Chisimdi Nwobodo's 48-Hour French Language Marathon in accordance with the event's NDPR privacy policy.
                 </span>
               </label>
               {errors.consent && (

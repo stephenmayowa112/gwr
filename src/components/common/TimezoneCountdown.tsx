@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 interface TimezoneCountdownProps {
   targetDateIso?: string; // default: 2026-10-30T18:00:00+01:00
   title?: string;
-  variant?: 'hero' | 'compact' | 'live';
+  variant?: 'hero' | 'compact' | 'live' | 'prominent';
 }
 
 interface TimeRemaining {
@@ -88,6 +88,72 @@ export const TimezoneCountdown: React.FC<TimezoneCountdownProps> = ({
         <span>{String(timeLeft.minutes).padStart(2, '0')}m</span>
         <span>:</span>
         <span>{String(timeLeft.seconds).padStart(2, '0')}s</span>
+      </div>
+    );
+  }
+
+  if (variant === 'prominent') {
+    return (
+      <div className="w-full">
+        {/* Header row with live pulsing indicator & bold branding */}
+        <div className="flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm font-mono uppercase tracking-widest text-[#D2FCE3] mb-4 sm:mb-6 px-1 border-b border-[#23C48E]/30 pb-3">
+          <div className="inline-flex items-center gap-2.5">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#23C48E] opacity-90"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-[#40FFBC]"></span>
+            </span>
+            <span className="font-black text-white tracking-wider text-xs sm:text-sm">
+              GUINNESS WORLD RECORDS™ COUNTDOWN
+            </span>
+          </div>
+          <div className="flex items-center gap-2 font-bold text-xs sm:text-sm text-[#40FFBC]">
+            <span className="text-[#D2FCE3]/60 font-medium">STARTS:</span>
+            <span>FRI 30 OCT · 6:00 PM WAT</span>
+          </div>
+        </div>
+
+        {/* ULTRA-BOLD HIGH-VOLTAGE COUNTDOWN SCOREBOARD */}
+        <div className="grid grid-cols-4 gap-2.5 sm:gap-4 md:gap-6">
+          {/* DAYS */}
+          <div className="relative group flex flex-col items-center justify-center py-4 px-2 sm:py-7 sm:px-4 md:py-8 bg-[#00241E] border-2 border-[#23C48E]/60 hover:border-[#23C48E] rounded-2xl sm:rounded-3xl shadow-[0_10px_30px_rgba(0,14,11,0.8)] transition-all">
+            <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white font-mono tabular-nums tracking-tighter drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+              {String(timeLeft.days).padStart(2, '0')}
+            </span>
+            <span className="text-xs sm:text-sm md:text-base font-mono font-black tracking-[0.2em] sm:tracking-[0.25em] text-[#23C48E] uppercase mt-2 sm:mt-3">
+              DAYS
+            </span>
+          </div>
+
+          {/* HOURS */}
+          <div className="relative group flex flex-col items-center justify-center py-4 px-2 sm:py-7 sm:px-4 md:py-8 bg-[#00241E] border-2 border-[#23C48E]/60 hover:border-[#23C48E] rounded-2xl sm:rounded-3xl shadow-[0_10px_30px_rgba(0,14,11,0.8)] transition-all">
+            <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white font-mono tabular-nums tracking-tighter drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+              {String(timeLeft.hours).padStart(2, '0')}
+            </span>
+            <span className="text-xs sm:text-sm md:text-base font-mono font-black tracking-[0.2em] sm:tracking-[0.25em] text-[#23C48E] uppercase mt-2 sm:mt-3">
+              HOURS
+            </span>
+          </div>
+
+          {/* MINUTES */}
+          <div className="relative group flex flex-col items-center justify-center py-4 px-2 sm:py-7 sm:px-4 md:py-8 bg-[#00241E] border-2 border-[#23C48E]/60 hover:border-[#23C48E] rounded-2xl sm:rounded-3xl shadow-[0_10px_30px_rgba(0,14,11,0.8)] transition-all">
+            <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white font-mono tabular-nums tracking-tighter drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+              {String(timeLeft.minutes).padStart(2, '0')}
+            </span>
+            <span className="text-xs sm:text-sm md:text-base font-mono font-black tracking-[0.2em] sm:tracking-[0.25em] text-[#23C48E] uppercase mt-2 sm:mt-3">
+              MINS
+            </span>
+          </div>
+
+          {/* SECONDS (ELECTRIFYING PULSE) */}
+          <div className="relative group flex flex-col items-center justify-center py-4 px-2 sm:py-7 sm:px-4 md:py-8 bg-[#001410] border-2 sm:border-[3px] border-[#23C48E] rounded-2xl sm:rounded-3xl shadow-[0_0_40px_rgba(35,196,142,0.4)] transition-all">
+            <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-[#40FFBC] font-mono tabular-nums tracking-tighter drop-shadow-[0_0_20px_rgba(64,255,188,0.5)]">
+              {String(timeLeft.seconds).padStart(2, '0')}
+            </span>
+            <span className="text-xs sm:text-sm md:text-base font-mono font-black tracking-[0.2em] sm:tracking-[0.25em] text-[#40FFBC] uppercase mt-2 sm:mt-3">
+              SECS
+            </span>
+          </div>
+        </div>
       </div>
     );
   }
