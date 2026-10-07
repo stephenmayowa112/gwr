@@ -93,45 +93,44 @@ export const TimezoneCountdown: React.FC<TimezoneCountdownProps> = ({
   }
 
   return (
-    <div className="w-full max-w-xl">
-      <div className="flex flex-wrap items-center justify-between gap-1 text-[10px] sm:text-[11px] tracking-[0.15em] uppercase font-mono text-[#D2FCE3]/80 mb-2">
-        <span>{title}</span>
-        <span className="text-[#23C48E] font-bold">WAT (UTC+1)</span>
+    <div className="w-full max-w-7xl mx-auto">
+      <div className="flex flex-wrap items-center justify-center gap-1 text-xs sm:text-sm tracking-[0.15em] uppercase font-mono text-[#D2FCE3]/80 mb-6">
+        <span className="text-[#23C48E] font-bold text-lg sm:text-xl">{title}</span>
       </div>
 
-      <div className="grid grid-cols-4 gap-1.5 sm:gap-3">
-        <div className="flex flex-col items-center justify-center p-2.5 sm:p-4 bg-[#003734]/50 border border-[#23C48E]/30 backdrop-blur-sm rounded-lg sm:rounded-xl">
-          <span className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white font-mono tabular-nums">
+      <div className="grid grid-cols-4 gap-3 sm:gap-6 md:gap-8">
+        <div className="flex flex-col items-center justify-center p-4 sm:p-6 md:p-10 bg-[#003734]/60 border-2 border-[#23C48E]/40 backdrop-blur-sm rounded-2xl sm:rounded-3xl">
+          <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold text-white font-mono tabular-nums leading-none">
             {String(timeLeft.days).padStart(2, '0')}
           </span>
-          <span className="text-[9px] sm:text-xs font-mono tracking-wider text-[#D2FCE3]/75 uppercase mt-0.5 sm:mt-1">
+          <span className="text-xs sm:text-sm md:text-base lg:text-lg font-mono tracking-wider text-[#D2FCE3]/75 uppercase mt-2 sm:mt-4">
             Days
           </span>
         </div>
 
-        <div className="flex flex-col items-center justify-center p-2.5 sm:p-4 bg-[#003734]/50 border border-[#23C48E]/30 backdrop-blur-sm rounded-lg sm:rounded-xl">
-          <span className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white font-mono tabular-nums">
+        <div className="flex flex-col items-center justify-center p-4 sm:p-6 md:p-10 bg-[#003734]/60 border-2 border-[#23C48E]/40 backdrop-blur-sm rounded-2xl sm:rounded-3xl">
+          <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold text-white font-mono tabular-nums leading-none">
             {String(timeLeft.hours).padStart(2, '0')}
           </span>
-          <span className="text-[9px] sm:text-xs font-mono tracking-wider text-[#D2FCE3]/75 uppercase mt-0.5 sm:mt-1">
+          <span className="text-xs sm:text-sm md:text-base lg:text-lg font-mono tracking-wider text-[#D2FCE3]/75 uppercase mt-2 sm:mt-4">
             Hours
           </span>
         </div>
 
-        <div className="flex flex-col items-center justify-center p-2.5 sm:p-4 bg-[#003734]/50 border border-[#23C48E]/30 backdrop-blur-sm rounded-lg sm:rounded-xl">
-          <span className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white font-mono tabular-nums">
+        <div className="flex flex-col items-center justify-center p-4 sm:p-6 md:p-10 bg-[#003734]/60 border-2 border-[#23C48E]/40 backdrop-blur-sm rounded-2xl sm:rounded-3xl">
+          <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold text-white font-mono tabular-nums leading-none">
             {String(timeLeft.minutes).padStart(2, '0')}
           </span>
-          <span className="text-[9px] sm:text-xs font-mono tracking-wider text-[#D2FCE3]/75 uppercase mt-0.5 sm:mt-1">
+          <span className="text-xs sm:text-sm md:text-base lg:text-lg font-mono tracking-wider text-[#D2FCE3]/75 uppercase mt-2 sm:mt-4">
             Mins
           </span>
         </div>
 
-        <div className="flex flex-col items-center justify-center p-2.5 sm:p-4 bg-[#001410] border-2 border-[#23C48E] backdrop-blur-sm rounded-lg sm:rounded-xl shadow-lg">
-          <span className="text-xl sm:text-3xl md:text-4xl font-extrabold text-[#23C48E] font-mono tabular-nums">
+        <div className="flex flex-col items-center justify-center p-4 sm:p-6 md:p-10 bg-[#001410]/80 border-4 border-[#23C48E] backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-[0_0_40px_rgba(35,196,142,0.4)]">
+          <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold text-[#23C48E] font-mono tabular-nums leading-none animate-pulse">
             {String(timeLeft.seconds).padStart(2, '0')}
           </span>
-          <span className="text-[9px] sm:text-xs font-mono tracking-wider text-[#23C48E] uppercase mt-0.5 sm:mt-1 font-bold">
+          <span className="text-xs sm:text-sm md:text-base lg:text-lg font-mono tracking-wider text-[#23C48E] uppercase mt-2 sm:mt-4 font-bold">
             Secs
           </span>
         </div>
