@@ -125,7 +125,7 @@ export async function generateShareCardBlob(options: ShareCardOptions): Promise<
   ctx.fillText('Follow the journey: @UGEGBEGWR · info@ugegbegwr.com', width / 2, bottomY);
   ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
   ctx.font = '400 22px -apple-system, sans-serif';
-  ctx.fillText('#UgegbeGWR   #FavourUgegbe   #FrenchLanguageMarathon', width / 2, bottomY + 40);
+  ctx.fillText('#UgegbeGWR   #FavourNwobodo   #FrenchLanguageMarathon', width / 2, bottomY + 40);
 
   return new Promise((resolve, reject) => {
     canvas.toBlob(blob => {

@@ -1,5 +1,5 @@
 /**
- * Calendar utilities for Favour Ugegbe's 48-Hour French Language Marathon
+ * Calendar utilities for Favour Chisimdi Nwobodo's 48-Hour French Language Marathon
  * Generates Google Calendar web links and downloadable RFC-5545 .ics files.
  */
 

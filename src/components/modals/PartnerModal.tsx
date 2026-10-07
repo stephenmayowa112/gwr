@@ -82,15 +82,23 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
           </div>
         ) : (
           <div className="space-y-4">
+            <div className="flex justify-center pb-1">
+              <img
+                src="/UGEGBE_X_GWR_Light_Compact.png"
+                alt="Ugegbe x Guinness World Records"
+                className="h-10 sm:h-12 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(35,196,142,0.3)]"
+              />
+            </div>
+
             <div>
               <span className="text-[11px] font-mono uppercase tracking-widest text-[#23C48E] font-bold block">
-                PARTNER
+                CORPORATE & CULTURAL PARTNERSHIP
               </span>
               <h3 className="text-2xl font-display font-black text-white uppercase tracking-tight">
                 PARTNER WITH US
               </h3>
               <p className="text-xs text-[#D2FCE3]/80 leading-relaxed">
-                Put your organisation alongside a story about language, culture, connection and possibility.
+                Associate your brand with Favour Chisimdi Nwobodo's historic Guinness World Records attempt at Landmark Centre, Lagos, Nigeria.
               </p>
             </div>
 

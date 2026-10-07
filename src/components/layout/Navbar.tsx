@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRegister, onScrollTo }) =>
         >
           <UgegbeBrandLogo
             variant="gwr-light"
-            size="sm"
+            size="md"
             withGwrBadge={true}
             showTagline={false}
             className="transition-transform group-hover:scale-[1.02]"

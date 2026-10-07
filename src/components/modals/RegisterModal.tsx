@@ -178,16 +178,24 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
             </div>
           </div>
         ) : (
-          <div className="p-2 sm:p-4 space-y-6">
-            <div className="space-y-1">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-[#23C48E] font-bold block">
-                LANDMARK, LAGOS · ENTRY IS FREE
+          <div className="p-2 sm:p-4 space-y-5">
+            <div className="flex justify-center pb-1">
+              <img
+                src="/UGEGBE_X_GWR_Light_Compact.png"
+                alt="Ugegbe x Guinness World Records"
+                className="h-10 sm:h-12 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(35,196,142,0.3)]"
+              />
+            </div>
+
+            <div className="space-y-1 text-center sm:text-left">
+              <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-[#23C48E] font-bold block">
+                LANDMARK CENTRE, LAGOS, NIGERIA · 100% FREE PASS
               </span>
-              <h3 className="text-2xl sm:text-3xl font-display font-black text-white uppercase tracking-tight">
-                REGISTER TO ATTEND
+              <h3 className="text-xl sm:text-2xl font-display font-black text-white uppercase tracking-tight">
+                FAVOUR CHISIMDI NWOBODO’S 48-HOUR MARATHON
               </h3>
               <p className="text-xs text-[#D2FCE3]/80 font-normal">
-                You don’t have to speak French. You just have to show up.
+                You don’t have to speak French. Just show up and make history.
               </p>
             </div>
 
