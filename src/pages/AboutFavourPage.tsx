@@ -33,7 +33,7 @@ export const AboutFavourPage: React.FC<AboutFavourPageProps> = ({ onNavigate }) 
             THE EDUCATOR · POLYGLOT · RECORD CHALLENGER
           </div>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-black text-emerald-950 uppercase tracking-tight">
-            FAVOUR CHISIMDI UGEGBE
+            FAVOUR CHISIMDI NWOBODO
           </h1>
           <p className="text-base sm:text-xl text-slate-700 leading-relaxed font-normal">
             Favour is a Nigerian polyglot who speaks 11 languages: nine foreign languages and two Nigerian languages. French became one of the languages through which she discovered a bigger world.
@@ -44,8 +44,8 @@ export const AboutFavourPage: React.FC<AboutFavourPageProps> = ({ onNavigate }) 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           <div className="md:col-span-5">
             <EditorialPlaceholder
-              label="Favour Chisimdi Ugegbe"
-              subtext="TODO: Official portrait in Lagos studio featuring Nigerian emerald and gold tones"
+              label="Favour Chisimdi Nwobodo"
+              subtext="Official portrait in Lagos studio featuring Nigerian emerald and gold tones"
               aspectRatio="3:4"
             />
           </div>
@@ -56,7 +56,7 @@ export const AboutFavourPage: React.FC<AboutFavourPageProps> = ({ onNavigate }) 
                 “Learning another language does not take anything away from the language you already speak. It does not mean leaving those things behind. It means becoming capable of meeting someone else’s world without losing your own.”
               </p>
               <footer className="text-xs font-mono uppercase tracking-wider text-slate-500 font-semibold">
-                — FAVOUR CHISIMDI UGEGBE
+                — FAVOUR CHISIMDI NWOBODO
               </footer>
             </blockquote>
 

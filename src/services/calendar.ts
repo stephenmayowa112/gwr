@@ -1,5 +1,5 @@
 /**
- * Calendar utilities for Favour Ugegbe's 48-Hour French Language Marathon
+ * Calendar utilities for Favour Chisimdi Nwobodo's 48-Hour French Language Marathon
  * Generates Google Calendar web links and downloadable RFC-5545 .ics files.
  */
 
@@ -13,15 +13,15 @@ export interface CalendarEventPayload {
 
 export const OFFICIAL_MILESTONES: Record<string, CalendarEventPayload> = {
   fullMarathon: {
-    title: "Favour Ugegbe's 48-Hour French Language Marathon (Guinness Record Attempt)",
-    description: "48-Hour French lesson marathon by Nigerian polyglot Favour Chisimdi Ugegbe aiming for the Guinness World Records title for the longest language lesson. Free entry! Drop in anytime. Landmark, Lagos.",
+    title: "Favour Chisimdi Nwobodo's 48-Hour French Language Marathon (Guinness Record Attempt)",
+    description: "48-Hour French lesson marathon by Nigerian polyglot Favour Chisimdi Nwobodo aiming for the Guinness World Records title for the longest language lesson. Free entry! Drop in anytime. Landmark Centre, Lagos, Nigeria.",
     location: "Landmark Centre, Plot 2 & 3 Water Corporation Dr, Victoria Island, Lagos, Nigeria",
     startDate: "2026-10-30T10:00:00+01:00",
     endDate: "2026-11-01T18:00:00+01:00",
   },
   sendOff: {
-    title: "The Send-Off: Favour Ugegbe's 48-Hour French Marathon",
-    description: "Music, comedy, spoken word, French, and Lagos energy. Come and send Favour into the 48-hour marathon!",
+    title: "The Send-Off: Favour Chisimdi Nwobodo's 48-Hour French Marathon",
+    description: "Music, comedy, spoken word, French, and Lagos energy. Come and send Favour Chisimdi Nwobodo into the 48-hour marathon!",
     location: "Landmark Centre, Victoria Island, Lagos, Nigeria",
     startDate: "2026-10-30T10:00:00+01:00",
     endDate: "2026-10-30T15:00:00+01:00",

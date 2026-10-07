@@ -32,7 +32,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type, onNavigate }) => {
                 1. Data Controller & Scope
               </h2>
               <p>
-                This Privacy Policy explains how the organizers of <strong>Favour Ugegbe's 48-Hour French Language Marathon</strong> (“we”, “us”, or “our”) collect, process, and safeguard personal data collected via this website and at the event venue (Landmark Centre, Lagos). We comply with the Nigeria Data Protection Act (NDPA) and the Nigeria Data Protection Regulation (NDPR).
+                This Privacy Policy explains how the organizers of <strong>Favour Chisimdi Nwobodo's 48-Hour French Language Marathon</strong> (“we”, “us”, or “our”) collect, process, and safeguard personal data collected via this website and at the event venue (Landmark Centre, Lagos). We comply with the Nigeria Data Protection Act (NDPA) and the Nigeria Data Protection Regulation (NDPR).
               </p>
             </section>
 
@@ -84,7 +84,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type, onNavigate }) => {
                 1. Free Admission & Ticketing
               </h2>
               <p>
-                Admission to Favour Ugegbe's 48-Hour French Language Marathon at Landmark Lagos is 100% free of charge. Your digital pass guarantees entry subject to auditorium safe capacity limits established by Landmark Centre safety authorities.
+                Admission to Favour Chisimdi Nwobodo's 48-Hour French Language Marathon at Landmark Lagos is 100% free of charge. Your digital pass guarantees entry subject to auditorium safe capacity limits established by Landmark Centre safety authorities.
               </p>
             </section>
 

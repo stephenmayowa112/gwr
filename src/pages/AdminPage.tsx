@@ -217,7 +217,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                 STAFF & OPERATIONS PORTAL
               </h1>
               <p className="text-xs font-mono text-slate-500">
-                Favour Ugegbe 48-Hour French Language Marathon
+                Favour Chisimdi Nwobodo 48-Hour French Language Marathon
               </p>
             </div>
 
