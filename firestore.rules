@@ -33,14 +33,14 @@ service cloud.firestore {
 
     // Entity validation helpers
     function isValidRegistration(data) {
-      return data.keys().hasAll(['fullName', 'email', 'phone', 'attendeesCount', 'attendanceType', 'ticketCode', 'checkedIn']) &&
+      return data.keys().hasAll(['fullName', 'email', 'phone', 'attendeesCount', 'attendanceType', 'checkedIn']) &&
         data.fullName is string && data.fullName.size() > 0 && data.fullName.size() <= 100 &&
         data.email is string && data.email.size() > 0 && data.email.size() <= 120 &&
         data.phone is string && data.phone.size() > 0 && data.phone.size() <= 40 &&
-        data.attendeesCount is number && data.attendeesCount >= 1 && data.attendeesCount <= 5 &&
+        data.attendeesCount is number && data.attendeesCount >= 1 && data.attendeesCount <= 10 &&
         (data.attendanceType == 'in_person' || data.attendanceType == 'online') &&
-        data.ticketCode is string && data.ticketCode.size() > 0 && data.ticketCode.size() <= 30 &&
         data.checkedIn is bool &&
+        (!('ticketCode' in data) || (data.ticketCode is string && data.ticketCode.size() <= 30)) &&
         (!('hearAbout' in data) || (data.hearAbout is string && data.hearAbout.size() <= 100)) &&
         (!('consent' in data) || data.consent is bool) &&
         (!('qrCodeDataUrl' in data) || (data.qrCodeDataUrl is string && data.qrCodeDataUrl.size() <= 100000)) &&
@@ -132,7 +132,6 @@ service cloud.firestore {
         (
           isAdmin() ||
           (
-            incoming().ticketCode == existing().ticketCode &&
             incoming().checkedIn == existing().checkedIn &&
             incoming().diff(existing()).affectedKeys().hasOnly(['fullName', 'phone', 'attendeesCount', 'attendanceType', 'hearAbout', 'updatedAt'])
           )

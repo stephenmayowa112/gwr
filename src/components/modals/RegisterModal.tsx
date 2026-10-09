@@ -99,41 +99,40 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
                 <CheckCircle2 className="w-8 h-8 text-[#23C48E]" />
               </div>
               <h3 className="text-2xl font-display font-black text-white uppercase tracking-tight">
-                {successResult.isUpdate ? 'REGISTRATION UPDATED' : 'YOU ARE REGISTERED. BE THERE.'}
+                {successResult.isUpdate ? 'REGISTRATION UPDATED' : 'YOU ARE REGISTERED!'}
               </h3>
               <p className="text-xs text-[#D2FCE3]/80 font-mono">
                 Landmark, Lagos · 30 October – 1 November 2026 · Entry is free
               </p>
             </div>
 
-            {/* Official Pass Display */}
+            {/* Registration Confirmation */}
             <div className="bg-[#003734]/40 border border-[#23C48E]/30 rounded-xl p-5 text-center space-y-3">
               <span className="text-[10px] font-mono tracking-widest uppercase text-[#23C48E] font-bold block">
-                OFFICIAL ATTENDEE PASS
+                REGISTRATION CONFIRMED
               </span>
 
-              {successResult.registration.qrCodeDataUrl && (
-                <img
-                  src={successResult.registration.qrCodeDataUrl}
-                  alt={`QR Pass for ${successResult.registration.ticketCode}`}
-                  className="w-36 h-36 mx-auto object-contain bg-white p-2 rounded-lg border border-[#23C48E]/40 shadow-xs"
-                />
-              )}
-
-              <div>
-                <span className="text-sm font-mono font-bold text-[#23C48E] block">
-                  {successResult.registration.ticketCode}
-                </span>
-                <span className="text-sm font-bold text-white block mt-1">
+              <div className="space-y-2">
+                <span className="text-lg sm:text-xl font-bold text-white block">
                   {successResult.registration.fullName}
                 </span>
-                <span className="text-xs text-[#D2FCE3]/70 font-mono">
+                <span className="text-sm text-[#23C48E] font-mono block">
+                  {successResult.registration.email}
+                </span>
+                <span className="text-xs text-[#D2FCE3]/70 font-mono block">
                   {successResult.registration.attendeesCount}{' '}
                   {successResult.registration.attendeesCount > 1 ? 'attendees' : 'attendee'} ·{' '}
                   {successResult.registration.attendanceType === 'in_person'
                     ? 'In Person (Landmark)'
                     : 'Online Stream'}
                 </span>
+              </div>
+
+              <div className="pt-3 border-t border-[#23C48E]/20">
+                <p className="text-xs text-[#D2FCE3]/80 leading-relaxed">
+                  A confirmation email has been sent to {successResult.registration.email}. 
+                  Entry is 100% free. See you at Landmark Centre, Lagos!
+                </p>
               </div>
             </div>
 

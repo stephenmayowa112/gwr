@@ -1,4 +1,3 @@
-import QRCode from 'qrcode';
 import {
   collection,
   doc,
@@ -44,7 +43,7 @@ const STORAGE_KEYS = {
   ADMIN_SESSION: 'ugegbe_admin_session_v1',
 };
 
-const SAMPLE_REGISTRATIONS: Omit<Registration, 'qrCodeDataUrl'>[] = [
+const SAMPLE_REGISTRATIONS: Registration[] = [
   {
     id: 'reg_1',
     fullName: 'Chinedu Okafor',
@@ -54,7 +53,8 @@ const SAMPLE_REGISTRATIONS: Omit<Registration, 'qrCodeDataUrl'>[] = [
     attendanceType: 'in_person',
     hearAbout: 'Instagram @UGEGBEGWR',
     consent: true,
-    ticketCode: 'UGB-2026-CH01',
+    ticketCode: '',
+    qrCodeDataUrl: '',
     checkedIn: true,
     checkedInAt: '2026-10-30T10:15:00+01:00',
     utmSource: 'instagram',
@@ -70,7 +70,8 @@ const SAMPLE_REGISTRATIONS: Omit<Registration, 'qrCodeDataUrl'>[] = [
     attendanceType: 'in_person',
     hearAbout: 'Friend / Word of Mouth',
     consent: true,
-    ticketCode: 'UGB-2026-AM02',
+    ticketCode: '',
+    qrCodeDataUrl: '',
     checkedIn: false,
     utmSource: 'direct',
     createdAt: '2026-09-15T09:10:00Z',
@@ -85,7 +86,8 @@ const SAMPLE_REGISTRATIONS: Omit<Registration, 'qrCodeDataUrl'>[] = [
     attendanceType: 'online',
     hearAbout: 'X (Twitter)',
     consent: true,
-    ticketCode: 'UGB-2026-DM03',
+    ticketCode: '',
+    qrCodeDataUrl: '',
     checkedIn: false,
     utmSource: 'twitter',
     createdAt: '2026-09-20T11:45:00Z',
@@ -294,24 +296,6 @@ class StoreService {
     });
   }
 
-  // Generate QR Code data URL
-  async generateTicketQr(ticketCode: string): Promise<string> {
-    try {
-      return await QRCode.toDataURL(ticketCode, {
-        errorCorrectionLevel: 'H',
-        margin: 2,
-        width: 320,
-        color: {
-          dark: '#064E3B',
-          light: '#FFFFFF',
-        },
-      });
-    } catch (err) {
-      console.error('QR generation error', err);
-      return '';
-    }
-  }
-
   // --- REGISTRATIONS ---
   async getRegistrations(): Promise<Registration[]> {
     const registrationsPath = 'registrations';
@@ -335,14 +319,9 @@ class StoreService {
 
     const stored = this.getItem<Registration[]>(STORAGE_KEYS.REGISTRATIONS, []);
     if (stored.length === 0) {
-      const hydrated: Registration[] = [];
-      for (const item of SAMPLE_REGISTRATIONS) {
-        const qr = await this.generateTicketQr(item.ticketCode);
-        hydrated.push({ ...item, qrCodeDataUrl: qr });
-      }
-      this.inMemoryRegistrations = hydrated;
-      this.setItem(STORAGE_KEYS.REGISTRATIONS, hydrated);
-      return hydrated;
+      this.inMemoryRegistrations = SAMPLE_REGISTRATIONS;
+      this.setItem(STORAGE_KEYS.REGISTRATIONS, SAMPLE_REGISTRATIONS);
+      return SAMPLE_REGISTRATIONS;
     }
     this.inMemoryRegistrations = stored;
     return stored;
@@ -374,7 +353,6 @@ class StoreService {
       this.setItem(STORAGE_KEYS.REGISTRATIONS, list);
 
       // Write update to Firebase Firestore
-      const docPath = `registrations/${updated.id}`;
       try {
         await updateDoc(doc(db, 'registrations', updated.id), {
           fullName: updated.fullName,
@@ -391,19 +369,9 @@ class StoreService {
       return { registration: updated, isUpdate: true, waitlisted: isWaitlisted };
     }
 
-    // Generate fresh ticket code: UGB-2026-XXXX
-    const randomHex = Math.random().toString(36).substring(2, 6).toUpperCase();
-    const initials =
-      data.fullName
-        .split(' ')
-        .map((w) => w[0])
-        .join('')
-        .slice(0, 2)
-        .toUpperCase() || 'UG';
-    const ticketCode = `UGB-2026-${initials}${randomHex}`;
-    const qrCodeDataUrl = await this.generateTicketQr(ticketCode);
-
+    // Generate simple registration ID
     const docId = `reg_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`;
+    
     const newRecord: Registration = {
       id: docId,
       fullName: data.fullName,
@@ -413,8 +381,8 @@ class StoreService {
       attendanceType: data.attendanceType,
       hearAbout: data.hearAbout || '',
       consent: data.consent,
-      ticketCode,
-      qrCodeDataUrl,
+      ticketCode: '', // No longer needed
+      qrCodeDataUrl: '', // No longer needed
       checkedIn: false,
       utmSource: utmParams?.utmSource || '',
       utmMedium: utmParams?.utmMedium || '',
@@ -427,11 +395,10 @@ class StoreService {
     this.setItem(STORAGE_KEYS.REGISTRATIONS, list);
 
     // Persist new registration to Firebase Firestore
-    const writePath = `registrations/${newRecord.id}`;
     try {
       await setDoc(doc(db, 'registrations', newRecord.id), newRecord);
     } catch (err) {
-      handleFirestoreError(err, OperationType.CREATE, writePath);
+      handleFirestoreError(err, OperationType.CREATE, `registrations/${newRecord.id}`);
     }
 
     return { registration: newRecord, isUpdate: false, waitlisted: isWaitlisted };
