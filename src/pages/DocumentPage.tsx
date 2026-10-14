@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TimezoneCountdown } from '../components/common/TimezoneCountdown';
+import { UgegbeBrandLogo } from '../components/common/UgegbeBrandLogo';
 import {
   Calendar,
   MapPin,
+  Clock,
   Sparkles,
+  ArrowRight,
+  Check,
+  Copy,
   Share2,
   Trophy,
+  Flame,
   Globe2,
   Users,
+  Compass,
+  ArrowUpRight,
 } from 'lucide-react';
-import { OFFICIAL_MILESTONES, downloadIcsFile } from '../services/calendar';
+import { OFFICIAL_MILESTONES, downloadIcsFile, generateGoogleCalendarUrl } from '../services/calendar';
 
 interface DocumentPageProps {
   onOpenRegister: () => void;
@@ -26,174 +34,394 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
   onScrollToCountdown,
   onScrollToFavour,
 }) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyShare = () => {
+    navigator.clipboard.writeText(
+      'Join me in supporting Nigerian polyglot Favour Chisimdi Ugegbe for the 48-Hour French Language Marathon at Landmark, Lagos! Entry is FREE. #UgegbeGWR #FavourUgegbe #FrenchLanguageMarathon https://ugegbegwr.com'
+    );
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
+
   const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(
-    '🇫🇷 Join me in supporting Nigerian polyglot Favour Chisimdi Nwobodo for the 48-Hour French Language Marathon at Landmark Centre, Lagos, Nigeria! Entry is 100% FREE. #UgegbeGWR #FavourNwobodo https://ugegbegwr.com'
+    'Join me in supporting Nigerian polyglot Favour Chisimdi Ugegbe for the 48-Hour French Language Marathon at Landmark, Lagos! Entry is FREE. #UgegbeGWR #FavourUgegbe https://ugegbegwr.com'
   )}`;
 
   return (
     <div className="w-full bg-[#001410] text-[#D2FCE3] selection:bg-[#23C48E] selection:text-[#001410] overflow-hidden">
       {/* ============================================================ */}
-      {/* 1. HERO SECTION WITH COUNTDOWN FIRST AT THE TOP               */}
+      {/* SECTION 1: FULL-SCREEN HERO WITH COUNTDOWN                   */}
       {/* ============================================================ */}
-      <section className="relative w-full pt-6 pb-14 sm:pt-8 sm:pb-20 lg:pt-10 lg:pb-24 border-b border-[#23C48E]/20 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(0,55,52,0.7),rgba(0,20,16,1))]">
-        {/* Subtle decorative atmospheric ambient glows */}
-        <div className="absolute top-10 right-1/4 w-96 h-96 bg-[#23C48E]/10 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-10 left-10 w-80 h-80 bg-[#003734]/40 rounded-full blur-[120px] pointer-events-none" />
+      <section 
+        id="countdown-section" 
+        className="relative min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32"
+      >
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/IMG_6521.JPG.webp" 
+            alt="Event Background" 
+            className="w-full h-full object-cover"
+          />
+          {/* Dark overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001410]/95 via-[#001410]/85 to-[#001410]/95" />
+          {/* Additional gradient for better text contrast */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent,rgba(0,20,16,0.8))]" />
+        </div>
 
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
-          {/* 🔴 THE COUNTDOWN IS THE FIRST THING VISITORS SEE */}
-          <div
-            id="countdown-section"
-            className="p-4 sm:p-7 md:p-9 bg-[#001914] border-2 sm:border-[3px] border-[#23C48E] rounded-2xl sm:rounded-3xl shadow-[0_16px_50px_rgba(0,18,14,0.9),0_0_35px_rgba(35,196,142,0.25)] backdrop-blur-xl transition-all"
-          >
+        <div className="relative max-w-7xl mx-auto space-y-8 sm:space-y-12 text-center z-10">
+          {/* MASSIVE COUNTDOWN - FIRST AND BIGGEST */}
+          <div className="max-w-6xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-1000">
             <TimezoneCountdown
               targetDateIso="2026-10-30T18:00:00+01:00"
-              title="TIME UNTIL OFFICIAL START (LAGOS, NIGERIA · WAT)"
               variant="prominent"
             />
           </div>
 
-          {/* 🌟 UPLOADED CO-BRANDED LOGO PROMINENTLY DISPLAYED */}
-          <div className="flex justify-center pt-2 sm:pt-4">
-            <img
-              src="/UGEGBE_X_GWR_White.png"
-              alt="Ugegbe x Guinness World Records - Official Attempt"
-              className="w-full max-w-xs sm:max-w-md md:max-w-lg h-auto object-contain filter drop-shadow-[0_4px_24px_rgba(35,196,142,0.35)]"
-              loading="eager"
-            />
-          </div>
+          {/* Main Heading - After countdown with animation */}
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black tracking-tight uppercase text-white leading-[1.05] drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)] animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300 px-4">
+            <span className="inline-block animate-in fade-in zoom-in duration-700 delay-500">48 HOURS.</span>
+            <br/>
+            <span className="inline-block animate-in fade-in zoom-in duration-700 delay-700">ONE LANGUAGE.</span>
+            <br/>
+            <span className="inline-block animate-in fade-in zoom-in duration-700 delay-900 text-[#23C48E]">ONE RECORD.</span>
+          </h1>
 
-          {/* Punchy Event Title & Tagline (Lively, Less Wordy) */}
-          <div className="text-center space-y-3 sm:space-y-4">
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black tracking-tight uppercase text-white leading-tight">
-              FAVOUR CHISIMDI NWOBODO’S 48-HOUR FRENCH LANGUAGE MARATHON
-            </h1>
+          {/* Subheading with glow animation */}
+          <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-mono tracking-wider uppercase text-[#23C48E] font-bold drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-1100 px-4">
+            LANDMARK, LAGOS · FREE ENTRY
+          </p>
 
-            <p className="text-base sm:text-xl text-[#D2FCE3]/90 font-light max-w-2xl mx-auto leading-relaxed">
-              One Nigerian woman. 11 languages. 48 non-stop hours in <strong className="text-white font-semibold">Lagos, Nigeria</strong>. A Guinness World Records attempt turning French learning into history.
-            </p>
-          </div>
-
-          {/* Key Facts Strip (Zero-Pill, Clean & Bold) */}
-          <div className="py-3 sm:py-4 border-y border-[#23C48E]/25 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 font-mono text-xs sm:text-sm tracking-wider uppercase text-center sm:text-left">
-            <div className="flex items-center justify-center sm:justify-start gap-3">
-              <Calendar className="w-4 h-4 text-[#23C48E] shrink-0" />
-              <div>
-                <span className="text-[#D2FCE3]/60 text-[10px] block font-sans">DATES</span>
-                <span className="font-bold text-white">30 OCT – 1 NOV 2026</span>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-center sm:justify-start gap-3">
-              <MapPin className="w-4 h-4 text-[#23C48E] shrink-0" />
-              <div>
-                <span className="text-[#D2FCE3]/60 text-[10px] block font-sans">VENUE</span>
-                <span className="font-bold text-white">LANDMARK CENTRE, LAGOS</span>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-center sm:justify-start gap-3">
-              <Sparkles className="w-4 h-4 text-[#40FFBC] shrink-0" />
-              <div>
-                <span className="text-[#D2FCE3]/60 text-[10px] block font-sans">ADMISSION</span>
-                <span className="font-black text-[#23C48E]">100% FREE PASS</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Primary Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 pt-1 sm:pt-2">
+          {/* CTA Buttons with animation */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 pt-6 sm:pt-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-1300 w-full px-4">
             <button
               onClick={onOpenRegister}
-              className="px-8 py-3.5 sm:px-10 sm:py-4 bg-[#23C48E] hover:bg-[#40FFBC] text-[#001410] font-display font-black text-xs sm:text-sm tracking-wider uppercase rounded-xl shadow-[0_4px_24px_rgba(35,196,142,0.4)] transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-center"
+              className="w-full sm:w-auto px-10 sm:px-12 py-5 sm:py-6 bg-[#23C48E] hover:bg-[#40FFBC] text-[#001410] font-display font-black text-base sm:text-lg md:text-xl tracking-wider uppercase rounded-xl sm:rounded-2xl shadow-[0_8px_40px_rgba(35,196,142,0.6)] transition-all transform hover:scale-110 hover:-translate-y-2 cursor-pointer animate-pulse"
             >
-              GET FREE PASS
+GET FREE PASS
             </button>
-
-            <a
-              href={whatsappShareUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="px-6 py-3.5 sm:py-4 bg-[#003734]/80 hover:bg-[#003734] border border-[#23C48E]/40 text-[#D2FCE3] font-display font-bold text-xs sm:text-sm tracking-wider uppercase rounded-xl transition-colors cursor-pointer text-center flex items-center justify-center gap-2"
+            <button
+              onClick={() => {
+                document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-transparent hover:bg-[#003734] border-2 border-[#23C48E] text-[#D2FCE3] font-display font-black text-sm sm:text-base tracking-wider uppercase rounded-lg sm:rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2"
             >
-              <Share2 className="w-4 h-4 text-[#23C48E]" />
-              <span>Share to WhatsApp</span>
-            </a>
+              <span>[ LEARN MORE ]</span>
+              <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5" />
+            </button>
           </div>
         </div>
       </section>
 
       {/* ============================================================ */}
-      {/* 2. THE RECORD: 26 HOURS VS 48 HOURS (High-Energy Contrast)   */}
+      {/* SECTION 2: WHY THIS MATTERS — 3 STAT CARDS                   */}
       {/* ============================================================ */}
-      <section id="the-record" className="w-full py-14 sm:py-20 border-b border-[#23C48E]/20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="space-y-1">
-              <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#23C48E]">
-                GUINNESS WORLD RECORDS CHALLENGE
-              </span>
-              <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tight text-white">
-                THE BENCHMARK VS THE LAGOS TARGET
-              </h2>
-            </div>
-            {/* Uploaded logo badge */}
-            <img
-              src="/UGEGBE_X_GWR_White.png"
-              alt="Ugegbe GWR"
-              className="h-9 sm:h-11 w-auto object-contain hidden sm:block filter drop-shadow-[0_2px_8px_rgba(35,196,142,0.25)]"
-            />
+      <section className="relative w-full py-16 sm:py-20 md:py-28 lg:py-32 border-b border-[#23C48E]/20 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/IMG_3314.JPG.webp" 
+            alt="Background" 
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001410]/90 via-[#001410]/85 to-[#001410]/90" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12 z-10">
+          {/* Section Heading */}
+          <div className="text-center space-y-3 sm:space-y-4">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black uppercase tracking-tight text-white px-4">
+              ONE WOMAN. ONE LANGUAGE. HISTORY.
+            </h2>
           </div>
 
-          {/* Record Comparison Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-stretch">
-            {/* 26 HOURS CARD */}
-            <div className="md:col-span-5 p-6 sm:p-7 bg-[#002821] border border-[#23C48E]/25 rounded-2xl flex flex-col justify-between space-y-4">
-              <div className="space-y-2">
-                <span className="text-[11px] font-mono font-bold uppercase text-[#D2FCE3]/60 block tracking-wider">
-                  CURRENT GLOBAL RECORD
-                </span>
-                <div className="text-5xl sm:text-6xl font-display font-black text-[#D2FCE3]/80">
-                  26 <span className="text-2xl font-sans font-normal text-[#D2FCE3]/50">HOURS</span>
-                </div>
-                <p className="text-sm text-[#D2FCE3]/80 leading-relaxed font-light">
-                  The standing world record for the longest continuous language lesson.
-                </p>
+          {/* Three Stat Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+            {/* Card 1: 48 Hours */}
+            <div className="p-6 sm:p-8 md:p-10 bg-[#003734]/40 border-2 border-[#23C48E]/30 rounded-2xl text-center space-y-3 backdrop-blur-sm">
+              <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black text-[#23C48E]">
+                48
               </div>
-
-              <div className="pt-3 border-t border-[#23C48E]/15 text-xs font-mono text-[#D2FCE3]/50 uppercase">
-                Global Benchmark to Shatter
+              <div className="text-lg sm:text-xl md:text-2xl font-display font-bold text-white uppercase">
+                Hours of French
+              </div>
+              <div className="text-xs sm:text-sm md:text-base text-[#D2FCE3]/70 font-light">
+                vs the current 26hr record
               </div>
             </div>
 
-            {/* 48 HOURS CARD (HEROIC) */}
-            <div className="md:col-span-7 p-6 sm:p-7 bg-[#001410] border-2 border-[#23C48E] rounded-2xl shadow-[0_0_35px_rgba(35,196,142,0.25)] flex flex-col justify-between space-y-4 relative overflow-hidden">
-              <div className="absolute top-0 right-0 px-3.5 py-1.5 bg-[#23C48E] text-[#001410] text-[10px] font-mono font-black uppercase tracking-widest rounded-bl-xl">
-                TARGET RECORD
+            {/* Card 2: 11 Languages */}
+            <div className="p-6 sm:p-8 md:p-10 bg-[#003734]/40 border-2 border-[#23C48E]/30 rounded-2xl text-center space-y-3 backdrop-blur-sm">
+              <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black text-[#23C48E]">
+                11
               </div>
+              <div className="text-lg sm:text-xl md:text-2xl font-display font-bold text-white uppercase">
+                Languages spoken
+              </div>
+              <div className="text-xs sm:text-sm md:text-base text-[#D2FCE3]/70 font-light">
+                by Favour Ugegbe
+              </div>
+            </div>
 
-              <div className="space-y-2.5">
-                <span className="text-[11px] font-mono font-bold uppercase text-[#23C48E] block tracking-wider">
-                  THE NEW MILESTONE IN LAGOS, NIGERIA
-                </span>
-                <div className="text-6xl sm:text-7xl font-display font-black text-[#23C48E]">
-                  48 <span className="text-3xl font-sans font-normal text-white">HOURS</span>
+            {/* Card 3: FREE Entry */}
+            <div className="p-6 sm:p-8 md:p-10 bg-[#001410] border-2 border-[#23C48E] rounded-2xl text-center space-y-3 shadow-[0_0_30px_rgba(35,196,142,0.25)] sm:col-span-2 md:col-span-1">
+              <div className="text-5xl sm:text-6xl lg:text-7xl font-display font-black text-[#23C48E]">
+                FREE
+              </div>
+              <div className="text-lg sm:text-xl md:text-2xl font-display font-bold text-white uppercase">
+                Entry for all
+              </div>
+              <div className="text-xs sm:text-sm md:text-base text-[#D2FCE3]/70 font-light">
+                Landmark, Lagos
+              </div>
+            </div>
+          </div>
+
+          {/* Punchy Paragraph */}
+          <div className="max-w-4xl mx-auto pt-4 sm:pt-8">
+            <p className="text-base sm:text-xl md:text-2xl lg:text-3xl text-[#D2FCE3] font-light leading-relaxed text-center px-4">
+              Nigerian polyglot Favour Chisimdi Ugegbe is attempting to shatter the Guinness World Record for the longest French language lesson — going from 26 to 48 hours. This is Lagos putting the world on notice.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* SECTION 3: PHOTO GALLERY — MEET FAVOUR                       */}
+      {/* ============================================================ */}
+      <section 
+        id="gallery" 
+        className="relative w-full py-16 sm:py-20 md:py-28 lg:py-32 border-b border-[#23C48E]/20 overflow-hidden"
+      >
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/IMG_3319.webp" 
+            alt="Background" 
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001410]/88 via-[#001410]/82 to-[#001410]/88" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12 z-10">
+          {/* Section Header */}
+          <div className="text-center space-y-3 sm:space-y-4 px-4">
+            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#23C48E]/10 border border-[#23C48E]/30 text-xs font-mono uppercase text-[#23C48E] tracking-widest font-semibold">
+              <Sparkles className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
+              <span className="text-[10px] sm:text-xs">THE WOMAN BEHIND THE RECORD</span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black uppercase tracking-tight text-white">
+              MEET FAVOUR
+            </h2>
+          </div>
+
+          {/* 2x2 Image Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+            <div className="relative overflow-hidden rounded-xl sm:rounded-2xl border-2 border-[#23C48E]/40 group aspect-square sm:aspect-auto">
+              <img
+                src="/IMG_3314.JPG.webp"
+                alt="Favour Ugegbe"
+                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+              />
+            </div>
+
+            <div className="relative overflow-hidden rounded-xl sm:rounded-2xl border-2 border-[#23C48E]/40 group aspect-square sm:aspect-auto">
+              <img
+                src="/IMG_3319.webp"
+                alt="Favour Ugegbe"
+                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+              />
+            </div>
+
+            <div className="relative overflow-hidden rounded-xl sm:rounded-2xl border-2 border-[#23C48E]/40 group aspect-square sm:aspect-auto">
+              <img
+                src="/IMG_6517.webp"
+                alt="Favour Ugegbe"
+                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+              />
+            </div>
+
+            <div className="relative overflow-hidden rounded-xl sm:rounded-2xl border-2 border-[#23C48E]/40 group aspect-square sm:aspect-auto">
+              <img
+                src="/IMG_6521.JPG.webp"
+                alt="Favour Ugegbe"
+                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+              />
+            </div>
+          </div>
+
+          {/* Bio Card */}
+          <div className="max-w-3xl mx-auto pt-2 sm:pt-4">
+            <div className="p-6 sm:p-8 md:p-10 bg-[#003734]/50 border border-[#23C48E]/30 rounded-xl sm:rounded-2xl text-center space-y-4 sm:space-y-6 backdrop-blur-sm">
+              <p className="text-base sm:text-lg md:text-2xl text-[#D2FCE3] font-light leading-relaxed">
+                A Nigerian polyglot who speaks 11 languages, Favour is bringing French — and history — to Lagos.
+              </p>
+              <button
+                onClick={onOpenRegister}
+                className="px-8 sm:px-10 py-3 sm:py-4 bg-[#23C48E] hover:bg-[#40FFBC] text-[#001410] font-display font-black text-xs sm:text-sm uppercase tracking-wider rounded-lg shadow-lg transition-all cursor-pointer"
+              >
+                [ REGISTER TO ATTEND ]
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* SECTION 4: SCHEDULE TIMELINE — THREE DAYS. FOUR MOMENTS.     */}
+      {/* ============================================================ */}
+      <section 
+        id="three-days" 
+        className="relative w-full py-16 sm:py-20 md:py-28 lg:py-32 border-b border-[#23C48E]/20 overflow-hidden"
+      >
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/IMG_6517.webp" 
+            alt="Background" 
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001410]/88 via-[#001410]/85 to-[#001410]/88" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12 z-10">
+          {/* Section Header */}
+          <div className="text-center space-y-2 sm:space-y-3 px-4">
+            <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#23C48E]">
+              OFFICIAL EVENT SCHEDULE
+            </span>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black tracking-tight uppercase text-white">
+              THREE DAYS. FOUR MOMENTS.
+            </h2>
+          </div>
+
+          {/* Timeline Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            {/* Moment 1: The Send-Off */}
+            <div className="p-5 sm:p-6 md:p-8 bg-[#003734]/40 border border-[#23C48E]/25 rounded-2xl space-y-4 flex flex-col justify-between backdrop-blur-sm">
+              <div className="space-y-2 sm:space-y-3">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                  <span className="text-[10px] sm:text-[11px] font-mono uppercase font-bold text-[#23C48E] tracking-wider">
+                    FRI 30 OCT · 10AM
+                  </span>
+                  <span className="text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded bg-[#23C48E]/10 text-[#23C48E] border border-[#23C48E]/25">
+                    WAT
+                  </span>
                 </div>
-                <p className="text-base sm:text-lg font-bold text-white">
-                  +22 hours beyond the existing global record.
-                </p>
-                <p className="text-xs sm:text-sm text-[#D2FCE3]/90 font-light leading-relaxed">
-                  Two full nights of non-stop French instruction at Landmark Centre under official GWR precision cameras and independent linguists.
+
+                <h3 className="text-xl sm:text-2xl font-display font-black text-white uppercase">
+                  THE SEND-OFF
+                </h3>
+
+                <p className="text-sm sm:text-base text-[#D2FCE3] leading-relaxed font-light">
+                  Music. Comedy. French. Lagos energy.
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-[#23C48E]/25 flex items-center justify-between text-xs font-mono uppercase text-[#23C48E]">
-                <span>Witness History Live</span>
+              <div className="pt-3 sm:pt-4 border-t border-[#23C48E]/15">
                 <button
-                  onClick={onOpenRegister}
-                  className="font-bold underline hover:text-[#40FFBC] cursor-pointer"
+                  onClick={() => downloadIcsFile(OFFICIAL_MILESTONES.sendOff)}
+                  className="text-xs font-mono text-[#23C48E] hover:text-[#40FFBC] uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-colors"
                 >
-                  Reserve Free Pass →
+                  <Calendar className="w-3.5 h-3.5" />
+                  <span>Add to Calendar</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Moment 2: The Clock Starts */}
+            <div className="p-5 sm:p-6 md:p-8 bg-[#003734]/60 border-2 border-[#23C48E]/50 rounded-2xl space-y-4 flex flex-col justify-between shadow-lg backdrop-blur-sm">
+              <div className="space-y-2 sm:space-y-3">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                  <span className="text-[10px] sm:text-[11px] font-mono uppercase font-bold text-[#23C48E] tracking-wider">
+                    FRI 30 OCT · 6PM
+                  </span>
+                  <span className="text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded bg-[#23C48E] text-[#001410] font-black">
+                    START
+                  </span>
+                </div>
+
+                <h3 className="text-xl sm:text-2xl font-display font-black text-white uppercase">
+                  THE CLOCK STARTS
+                </h3>
+
+                <p className="text-sm sm:text-base text-[#D2FCE3] leading-relaxed font-light">
+                  48 hours begins.
+                </p>
+              </div>
+
+              <div className="pt-3 sm:pt-4 border-t border-[#23C48E]/25">
+                <button
+                  onClick={() => downloadIcsFile(OFFICIAL_MILESTONES.challengeStart)}
+                  className="text-xs font-mono text-[#23C48E] hover:text-[#40FFBC] uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-colors"
+                >
+                  <Calendar className="w-3.5 h-3.5" />
+                  <span>Add to Calendar</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Moment 3: Hour 26 — Record Reached */}
+            <div className="p-6 sm:p-8 bg-[#003734]/40 border border-[#23C48E]/25 rounded-2xl space-y-4 flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[11px] font-mono uppercase font-bold text-[#FF6B1A] tracking-wider">
+                    SAT 31 OCT · ~8PM
+                  </span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#FF6B1A]/20 text-[#FF6B1A] border border-[#FF6B1A]/40 font-bold">
+                    RECORD REACHED
+                  </span>
+                </div>
+
+                <h3 className="text-2xl font-display font-black text-white uppercase">
+                  HOUR 26
+                </h3>
+
+                <p className="text-base text-[#D2FCE3] leading-relaxed font-light">
+                  The record is within reach.
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-[#23C48E]/15">
+                <button
+                  onClick={() => downloadIcsFile(OFFICIAL_MILESTONES.recordFalls)}
+                  className="text-xs font-mono text-[#23C48E] hover:text-[#40FFBC] uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-colors"
+                >
+                  <Calendar className="w-3.5 h-3.5" />
+                  <span>Add to Calendar</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Moment 4: Hour 48 — Final Bell */}
+            <div className="p-6 sm:p-8 bg-[#001410] border-2 border-[#23C48E] rounded-2xl space-y-4 flex flex-col justify-between shadow-[0_0_30px_rgba(35,196,142,0.25)]">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[11px] font-mono uppercase font-bold text-[#23C48E] tracking-wider">
+                    SUN 1 NOV · 6PM
+                  </span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#23C48E] text-[#001410] font-black">
+                    FINAL BELL
+                  </span>
+                </div>
+
+                <h3 className="text-2xl font-display font-black text-[#23C48E] uppercase">
+                  HOUR 48
+                </h3>
+
+                <p className="text-base text-[#D2FCE3] leading-relaxed font-light">
+                  The final bell. New history.
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-[#23C48E]/25">
+                <button
+                  onClick={() => downloadIcsFile(OFFICIAL_MILESTONES.finalBell)}
+                  className="text-xs font-mono text-[#23C48E] hover:text-[#40FFBC] uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-colors"
+                >
+                  <Calendar className="w-3.5 h-3.5" />
+                  <span>Add to Calendar</span>
                 </button>
               </div>
             </div>
@@ -202,217 +430,51 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
       </section>
 
       {/* ============================================================ */}
-      {/* 3. WHY THIS MATTERS (Concise, Visual 3 Pillars)              */}
+      {/* SECTION 5: ENGAGEMENT CARDS — BE PART OF IT                  */}
       {/* ============================================================ */}
-      <section id="language-connects-us" className="w-full py-14 sm:py-20 border-b border-[#23C48E]/20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="space-y-1">
+      <section 
+        id="be-part-of-the-story" 
+        className="relative w-full py-16 sm:py-20 md:py-28 lg:py-32 border-b border-[#23C48E]/20 overflow-hidden"
+      >
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/IMG_6521.JPG.webp" 
+            alt="Background" 
+            className="w-full h-full object-cover opacity-25"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001410]/90 via-[#001410]/85 to-[#001410]/90" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,55,52,0.3),transparent)]" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12 z-10">
+          {/* Section Header */}
+          <div className="text-center space-y-2 sm:space-y-3 px-4">
             <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#23C48E]">
-              WHY THIS STORY MATTERS
+              ENGAGE & PARTICIPATE
             </span>
-            <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tight text-white">
-              LANGUAGE IS POWER. THIS IS OUR MOMENT.
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black tracking-tight uppercase text-white">
+              BE PART OF IT.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {/* Pillar 1: Francophone Borders */}
-            <div className="p-6 bg-[#002821] border border-[#23C48E]/25 rounded-2xl space-y-4 flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#23C48E]/15 border border-[#23C48E]/30 flex items-center justify-center text-[#23C48E]">
-                  <Globe2 className="w-5 h-5" />
-                </div>
-                <h3 className="text-lg font-display font-black uppercase text-white">
-                  4 Francophone Borders
-                </h3>
-                <p className="text-xs sm:text-sm text-[#D2FCE3]/80 leading-relaxed font-light">
-                  Nigeria is surrounded by <strong className="text-white">Benin, Niger, Chad, and Cameroon</strong>. French is our neighboring passport to trade, diplomacy, and culture.
-                </p>
-              </div>
-            </div>
-
-            {/* Pillar 2: 11 Languages / Favour Photo Feature */}
-            <div className="p-6 bg-[#002821] border-2 border-[#23C48E]/50 rounded-2xl space-y-4 flex flex-col justify-between shadow-lg" id="favour-nwobodo">
-              <div className="space-y-3">
-                <div className="w-full h-44 sm:h-48 overflow-hidden rounded-xl border border-[#23C48E]/30 relative bg-[#001410]">
-                  <img
-                    src="/favour-portrait-1.webp"
-                    alt="Favour Chisimdi Nwobodo"
-                    className="w-full h-full object-cover object-top filter contrast-105"
-                    loading="lazy"
-                  />
-                  <div className="absolute top-2 right-2 px-2 py-0.5 bg-[#001410]/85 backdrop-blur-xs border border-[#23C48E]/40 rounded text-[10px] font-mono text-[#23C48E] uppercase font-bold">
-                    11 LANGUAGES
-                  </div>
-                </div>
-                <h3 className="text-lg font-display font-black uppercase text-white">
-                  Favour Chisimdi Nwobodo
-                </h3>
-                <p className="text-xs sm:text-sm text-[#D2FCE3]/80 leading-relaxed font-light">
-                  Speaks 9 foreign languages and 2 Nigerian languages (Igbo & Yoruba). Nigerian excellence stepping straight into the Guinness World Records.
-                </p>
-              </div>
-            </div>
-
-            {/* Pillar 3: Open To Everyone */}
-            <div className="p-6 bg-[#002821] border border-[#23C48E]/25 rounded-2xl space-y-4 flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#23C48E]/15 border border-[#23C48E]/30 flex items-center justify-center text-[#23C48E]">
-                  <Users className="w-5 h-5" />
-                </div>
-                <h3 className="text-lg font-display font-black uppercase text-white">
-                  100% Free For All
-                </h3>
-                <p className="text-xs sm:text-sm text-[#D2FCE3]/80 leading-relaxed font-light">
-                  You do not need to speak French. Come for 10 minutes or 10 hours. Learn a phrase, make noise, and cheer Favour across the finish line.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================================ */}
-      {/* 4. THREE DAYS OF HISTORY (Crisp Timeline Cards)              */}
-      {/* ============================================================ */}
-      <section id="three-days" className="w-full py-14 sm:py-20 border-b border-[#23C48E]/20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
-            <div className="space-y-1">
-              <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#23C48E]">
-                SCHEDULE OF EVENTS
-              </span>
-              <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tight text-white">
-                THREE DAYS. FOUR KEY MOMENTS.
-              </h2>
-            </div>
-            <button
-              onClick={() => downloadIcsFile(OFFICIAL_MILESTONES.fullMarathon)}
-              className="inline-flex items-center gap-2 px-3.5 py-2 bg-[#003734] border border-[#23C48E]/40 text-xs font-mono uppercase text-[#23C48E] hover:text-[#40FFBC] rounded-lg transition-colors cursor-pointer"
-            >
-              <Calendar className="w-3.5 h-3.5" />
-              <span>Add Schedule (.ics)</span>
-            </button>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {/* Milestone 1 */}
-            <div className="p-5 bg-[#002821] border border-[#23C48E]/20 rounded-xl space-y-3 flex flex-col justify-between">
-              <div>
-                <span className="text-[10px] font-mono text-[#23C48E] block uppercase font-bold">
-                  FRI 30 OCT · 10AM
+          {/* 2x2 Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            {/* Card 1: ATTEND */}
+            <div className="p-5 sm:p-6 md:p-8 bg-[#003734]/40 border border-[#23C48E]/25 rounded-2xl space-y-4 flex flex-col justify-between backdrop-blur-sm">
+              <div className="space-y-2 sm:space-y-3">
+                <span className="text-xs font-mono font-bold uppercase text-[#23C48E] tracking-widest block">
+                  01 / ATTENDANCE
                 </span>
-                <h3 className="text-base font-display font-black text-white uppercase mt-1">
-                  THE SEND-OFF
+                <h3 className="text-xl sm:text-2xl font-display font-black text-white uppercase">
+                  ATTEND
                 </h3>
-                <p className="text-xs text-[#D2FCE3]/80 font-light mt-1.5 leading-relaxed">
-                  Music, comedy, spoken word, and Lagos energy sending Favour into the challenge.
-                </p>
-              </div>
-              <button
-                onClick={() => downloadIcsFile(OFFICIAL_MILESTONES.sendOff)}
-                className="text-[11px] font-mono text-[#23C48E] hover:underline uppercase text-left cursor-pointer"
-              >
-                + Cal Reminder
-              </button>
-            </div>
-
-            {/* Milestone 2 */}
-            <div className="p-5 bg-[#002821] border-2 border-[#23C48E]/60 rounded-xl space-y-3 flex flex-col justify-between shadow-md">
-              <div>
-                <span className="text-[10px] font-mono text-[#40FFBC] block uppercase font-black">
-                  FRI 30 OCT · 6PM
-                </span>
-                <h3 className="text-base font-display font-black text-white uppercase mt-1">
-                  CLOCK STARTS
-                </h3>
-                <p className="text-xs text-[#D2FCE3]/80 font-light mt-1.5 leading-relaxed">
-                  The official precision timer begins. Lesson module #1 goes live.
-                </p>
-              </div>
-              <button
-                onClick={() => downloadIcsFile(OFFICIAL_MILESTONES.challengeStart)}
-                className="text-[11px] font-mono text-[#40FFBC] hover:underline uppercase text-left cursor-pointer"
-              >
-                + Cal Reminder
-              </button>
-            </div>
-
-            {/* Milestone 3 */}
-            <div className="p-5 bg-[#002821] border border-[#23C48E]/20 rounded-xl space-y-3 flex flex-col justify-between">
-              <div>
-                <span className="text-[10px] font-mono text-[#FF6B1A] block uppercase font-bold">
-                  SAT 31 OCT · ~8PM
-                </span>
-                <h3 className="text-base font-display font-black text-white uppercase mt-1">
-                  HOUR 26: RECORD FALLS
-                </h3>
-                <p className="text-xs text-[#D2FCE3]/80 font-light mt-1.5 leading-relaxed">
-                  Current world record is reached. Every second after creates new world history.
-                </p>
-              </div>
-              <button
-                onClick={() => downloadIcsFile(OFFICIAL_MILESTONES.recordFalls)}
-                className="text-[11px] font-mono text-[#FF6B1A] hover:underline uppercase text-left cursor-pointer"
-              >
-                + Cal Reminder
-              </button>
-            </div>
-
-            {/* Milestone 4 */}
-            <div className="p-5 bg-[#001410] border-2 border-[#23C48E] rounded-xl space-y-3 flex flex-col justify-between shadow-[0_0_20px_rgba(35,196,142,0.2)]">
-              <div>
-                <span className="text-[10px] font-mono text-[#23C48E] block uppercase font-black">
-                  SUN 1 NOV · 6PM
-                </span>
-                <h3 className="text-base font-display font-black text-[#23C48E] uppercase mt-1">
-                  HOUR 48: TRIUMPH
-                </h3>
-                <p className="text-xs text-[#D2FCE3] font-light mt-1.5 leading-relaxed">
-                  The final bell. 48 hours completed. The record book officially rewritten.
-                </p>
-              </div>
-              <button
-                onClick={() => downloadIcsFile(OFFICIAL_MILESTONES.finalBell)}
-                className="text-[11px] font-mono text-[#23C48E] hover:underline uppercase text-left cursor-pointer font-bold"
-              >
-                + Cal Reminder
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================================ */}
-      {/* 5. ACTION HUB & TICKET RESERVATION                           */}
-      {/* ============================================================ */}
-      <section id="be-part-of-the-story" className="w-full py-14 sm:py-20 border-b border-[#23C48E]/20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="text-center space-y-1">
-            <span className="text-xs font-mono font-bold tracking-widest uppercase text-[#23C48E]">
-              JOIN THE MARATHON
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tight text-white">
-              BE PART OF THE RECORD
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {/* ATTEND */}
-            <div className="p-6 bg-[#002821] border-2 border-[#23C48E]/50 rounded-2xl space-y-4 flex flex-col justify-between shadow-lg">
-              <div className="space-y-2">
-                <span className="text-xs font-mono font-bold uppercase text-[#23C48E]">
-                  01 · ATTEND FREE
-                </span>
-                <h3 className="text-xl font-display font-black text-white uppercase">
-                  FREE PASS
-                </h3>
-                <p className="text-xs text-[#D2FCE3]/80 leading-relaxed font-light">
-                  Reserve your Landmark Centre entry ticket pass. Instant QR barcode and schedule sync.
+                <p className="text-sm sm:text-base text-[#D2FCE3]/90 leading-relaxed font-light">
+                  Be in the room when the marathon unfolds.
                 </p>
               </div>
 
-              <button
+<button
                 onClick={onOpenRegister}
                 className="w-full py-3 bg-[#23C48E] hover:bg-[#40FFBC] text-[#001410] font-display font-black text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer text-center"
               >
@@ -420,21 +482,59 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
               </button>
             </div>
 
-            {/* PARTNER */}
-            <div className="p-6 bg-[#002821] border border-[#23C48E]/25 rounded-2xl space-y-4 flex flex-col justify-between">
-              <div className="space-y-2">
-                <span className="text-xs font-mono font-bold uppercase text-[#23C48E]">
-                  02 · SPONSORSHIP
+            {/* Card 2: SHARE */}
+            <div className="p-5 sm:p-6 md:p-8 bg-[#003734]/40 border border-[#23C48E]/25 rounded-2xl space-y-4 flex flex-col justify-between backdrop-blur-sm">
+              <div className="space-y-2 sm:space-y-3">
+                <span className="text-xs font-mono font-bold uppercase text-[#23C48E] tracking-widest block">
+                  02 / ADVOCACY
                 </span>
-                <h3 className="text-xl font-display font-black text-white uppercase">
-                  PARTNER
+                <h3 className="text-xl sm:text-2xl font-display font-black text-white uppercase">
+                  SHARE
                 </h3>
-                <p className="text-xs text-[#D2FCE3]/80 leading-relaxed font-light">
-                  Align your brand with cultural pride, youth education, and record-breaking endurance.
+                <p className="text-xs sm:text-sm md:text-base text-[#D2FCE3]/90 leading-relaxed font-light">
+                  Share the countdown, learn the daily French phrase, tag someone who should be there, and use #UgegbeGWR.
+                </p>
+                <p className="text-xs text-[#D2FCE3]/70 italic">
+                  The bigger the conversation, the further the message travels.
                 </p>
               </div>
 
-              <button
+              <div className="pt-3 sm:pt-4 border-t border-[#23C48E]/20 flex flex-col sm:flex-row items-stretch gap-2 sm:gap-2.5">
+                <button
+                  onClick={handleCopyShare}
+                  className="flex-1 py-2.5 sm:py-3 px-3 bg-[#001410] hover:bg-[#001410]/80 border border-[#23C48E]/40 text-[#D2FCE3] font-mono text-xs uppercase tracking-wider rounded-lg flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                >
+                  {copied ? <Check className="w-3.5 h-3.5 text-[#23C48E]" /> : <Copy className="w-3.5 h-3.5" />}
+                  <span>{copied ? 'Copied!' : 'Copy Text'}</span>
+                </button>
+
+                <a
+                  href={whatsappShareUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex-1 py-2.5 sm:py-3 px-3 bg-[#25D366] hover:bg-[#20ba5a] text-white font-mono text-xs uppercase tracking-wider rounded-lg text-center transition-colors cursor-pointer flex items-center justify-center gap-1.5"
+                >
+                  <Share2 className="w-3.5 h-3.5" />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Card 3: PARTNER */}
+            <div className="p-5 sm:p-6 md:p-8 bg-[#003734]/40 border border-[#23C48E]/25 rounded-2xl space-y-4 flex flex-col justify-between backdrop-blur-sm">
+              <div className="space-y-2 sm:space-y-3">
+                <span className="text-xs font-mono font-bold uppercase text-[#23C48E] tracking-widest block">
+                  03 / COLLABORATION
+                </span>
+                <h3 className="text-xl sm:text-2xl font-display font-black text-white uppercase">
+                  PARTNER
+                </h3>
+                <p className="text-sm sm:text-base text-[#D2FCE3]/90 leading-relaxed font-light">
+                  Put your organisation alongside a story about language, culture, connection and possibility.
+                </p>
+              </div>
+
+<button
                 onClick={onOpenPartner}
                 className="w-full py-3 bg-[#001410] hover:bg-[#003734] border border-[#23C48E] text-[#D2FCE3] font-display font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer text-center"
               >
@@ -442,21 +542,21 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
               </button>
             </div>
 
-            {/* PRESS */}
-            <div className="p-6 bg-[#002821] border border-[#23C48E]/25 rounded-2xl space-y-4 flex flex-col justify-between">
-              <div className="space-y-2">
-                <span className="text-xs font-mono font-bold uppercase text-[#23C48E]">
-                  03 · MEDIA
+            {/* Card 4: MEDIA */}
+            <div className="p-5 sm:p-6 md:p-8 bg-[#003734]/40 border border-[#23C48E]/25 rounded-2xl space-y-4 flex flex-col justify-between backdrop-blur-sm">
+              <div className="space-y-2 sm:space-y-3">
+                <span className="text-xs font-mono font-bold uppercase text-[#23C48E] tracking-widest block">
+                  04 / COVERAGE
                 </span>
-                <h3 className="text-xl font-display font-black text-white uppercase">
-                  PRESS
+                <h3 className="text-xl sm:text-2xl font-display font-black text-white uppercase">
+                  MEDIA
                 </h3>
-                <p className="text-xs text-[#D2FCE3]/80 leading-relaxed font-light">
-                  Media accreditation for television broadcasts, press briefings, and international coverage.
+                <p className="text-sm sm:text-base text-[#D2FCE3]/90 leading-relaxed font-light">
+                  Cover the marathon, the record attempt and the woman behind it.
                 </p>
               </div>
 
-              <button
+<button
                 onClick={onOpenPress}
                 className="w-full py-3 bg-[#001410] hover:bg-[#003734] border border-[#23C48E] text-[#D2FCE3] font-display font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer text-center"
               >
@@ -468,39 +568,54 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
       </section>
 
       {/* ============================================================ */}
-      {/* 6. CLOSING TRIUMPH & OFFICIAL EMBLEM                          */}
+      {/* SECTION 6: CLOSING CTA                                       */}
       {/* ============================================================ */}
-      <section className="w-full py-16 sm:py-24 text-center bg-[radial-gradient(circle_at_center,rgba(0,55,52,0.6),rgba(0,20,16,1))]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          {/* Uploaded official emblem */}
-          <div className="flex justify-center pb-2">
-            <img
-              src="/UGEGBE_X_GWR_White.png"
-              alt="Ugegbe x Guinness World Records"
-              className="w-full max-w-xs sm:max-w-sm h-auto object-contain filter drop-shadow-[0_4px_20px_rgba(35,196,142,0.3)]"
-            />
+      <section className="w-full py-24 sm:py-32 lg:py-40 text-center bg-[radial-gradient(circle_at_center,rgba(0,55,52,0.6),rgba(0,20,16,1))] relative overflow-hidden">
+        {/* Animated Glow Effect */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#23C48E]/10 rounded-full blur-[120px] pointer-events-none animate-pulse" />
+        
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12 relative z-10">
+          {/* Logo Image */}
+          <div className="flex justify-center mb-8">
+            <div className="p-8 bg-[#001410]/90 border-2 border-[#23C48E]/60 rounded-3xl backdrop-blur-xl shadow-[0_0_60px_rgba(35,196,142,0.3)]">
+              <img 
+                src="/UGEGBE X GWR_Light.png" 
+                alt="Ugegbe x Guinness World Records" 
+                className="h-20 sm:h-28 lg:h-32 w-auto mx-auto"
+              />
+            </div>
           </div>
 
-          <div className="space-y-2">
-            <h2 className="text-2xl sm:text-4xl font-display font-black uppercase text-white tracking-tight">
-              ONE LANGUAGE. 48 HOURS.
+          {/* Stacked Headings */}
+          <div className="space-y-3 sm:space-y-4">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black uppercase tracking-tight text-white leading-tight">
+              ONE LANGUAGE.
             </h2>
-            <p className="text-xl sm:text-3xl font-display font-black uppercase text-[#23C48E]">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black uppercase tracking-tight text-[#23C48E] leading-tight">
+              48 HOURS.
+            </h2>
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black uppercase tracking-tight text-white leading-tight">
               ONE EXTRAORDINARY ATTEMPT.
-            </p>
+            </h2>
           </div>
 
-          <p className="text-sm sm:text-base text-[#D2FCE3]/80 font-light max-w-lg mx-auto">
-            Landmark Centre, Victoria Island, Lagos, Nigeria. 30 October – 1 November 2026. Entry is 100% free.
-          </p>
+          {/* Info Line */}
+          <div className="pt-6 space-y-3 font-mono uppercase text-sm sm:text-base md:text-lg text-[#D2FCE3]/90 tracking-wider">
+            <p className="font-bold text-white text-lg sm:text-xl">30 OCTOBER – 1 NOVEMBER 2026</p>
+            <p className="font-bold text-white text-lg sm:text-xl">LANDMARK, LAGOS</p>
+          </div>
 
-          <div className="pt-2">
+          {/* Big CTA Button */}
+          <div className="pt-8 flex flex-col items-center gap-4">
             <button
               onClick={onOpenRegister}
-              className="px-9 py-4 bg-[#23C48E] hover:bg-[#40FFBC] text-[#001410] font-display font-black text-xs sm:text-sm uppercase tracking-wider rounded-xl shadow-[0_4px_30px_rgba(35,196,142,0.4)] transition-all transform hover:scale-105 active:scale-100 cursor-pointer"
+              className="px-12 sm:px-16 py-5 sm:py-6 bg-[#23C48E] hover:bg-[#40FFBC] text-[#001410] font-display font-black text-base sm:text-lg uppercase tracking-wider rounded-2xl shadow-[0_8px_40px_rgba(35,196,142,0.5)] transition-all transform hover:scale-110 hover:-translate-y-2 active:scale-105 active:translate-y-0 cursor-pointer"
             >
-              BE THERE · REGISTER FREE
+BE THERE · REGISTER FREE
             </button>
+            <p className="text-xs sm:text-sm text-[#D2FCE3]/60 font-mono uppercase tracking-widest">
+              Entry is completely free
+            </p>
           </div>
         </div>
       </section>
