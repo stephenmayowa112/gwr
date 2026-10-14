@@ -107,7 +107,7 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
               onClick={onOpenRegister}
               className="px-8 py-3.5 sm:px-10 sm:py-4 bg-[#23C48E] hover:bg-[#40FFBC] text-[#001410] font-display font-black text-xs sm:text-sm tracking-wider uppercase rounded-xl shadow-[0_4px_24px_rgba(35,196,142,0.4)] transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-center"
             >
-              [ GET FREE PASS ]
+              GET FREE PASS
             </button>
 
             <a
@@ -416,7 +416,7 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
                 onClick={onOpenRegister}
                 className="w-full py-3 bg-[#23C48E] hover:bg-[#40FFBC] text-[#001410] font-display font-black text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer text-center"
               >
-                [ GET FREE PASS ]
+                GET FREE PASS
               </button>
             </div>
 
@@ -438,7 +438,7 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
                 onClick={onOpenPartner}
                 className="w-full py-3 bg-[#001410] hover:bg-[#003734] border border-[#23C48E] text-[#D2FCE3] font-display font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer text-center"
               >
-                [ PARTNER WITH US ]
+                PARTNER WITH US
               </button>
             </div>
 
@@ -460,7 +460,7 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
                 onClick={onOpenPress}
                 className="w-full py-3 bg-[#001410] hover:bg-[#003734] border border-[#23C48E] text-[#D2FCE3] font-display font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer text-center"
               >
-                [ PRESS ACCESS ]
+                PRESS ACCESS
               </button>
             </div>
           </div>
@@ -499,7 +499,7 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
               onClick={onOpenRegister}
               className="px-9 py-4 bg-[#23C48E] hover:bg-[#40FFBC] text-[#001410] font-display font-black text-xs sm:text-sm uppercase tracking-wider rounded-xl shadow-[0_4px_30px_rgba(35,196,142,0.4)] transition-all transform hover:scale-105 active:scale-100 cursor-pointer"
             >
-              [ BE THERE · REGISTER FREE ]
+              BE THERE · REGISTER FREE
             </button>
           </div>
         </div>

@@ -235,7 +235,7 @@ export const SchedulePage: React.FC<SchedulePageProps> = ({ onNavigate }) => {
             onClick={() => onNavigate('/register')}
             className="px-8 py-4 bg-amber-400 hover:bg-amber-300 text-emerald-950 font-display font-bold text-sm uppercase tracking-wider rounded-md shadow-md transition-all cursor-pointer"
           >
-            [ REGISTER FREE FOR THE MARATHON ]
+            REGISTER FREE FOR THE MARATHON
           </button>
         </div>
       </div>

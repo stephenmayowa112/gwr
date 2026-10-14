@@ -113,7 +113,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRegister, onScrollTo }) =>
                 }}
                 className="w-full py-3.5 text-center bg-[#23C48E] hover:bg-[#40FFBC] text-[#001410] font-display font-black text-xs sm:text-sm uppercase tracking-wider rounded-lg shadow-sm transition-all"
               >
-                [ REGISTER TO ATTEND — FREE ]
+                REGISTER TO ATTEND — FREE
               </button>
               <p className="text-[11px] text-center font-mono text-[#D2FCE3]/70">
                 Landmark, Lagos · 30 Oct – 1 Nov 2026

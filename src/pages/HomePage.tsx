@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { ArrowRight, Calendar, MapPin, CheckCircle, ShieldCheck, Sparkles, ExternalLink } from 'lucide-react';
 import { TimezoneCountdown } from '../components/common/TimezoneCountdown';
 import { EditorialPlaceholder } from '../components/common/EditorialPlaceholder';
@@ -28,15 +28,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Eyebrow badge / Kicker */}
           <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-amber-400 uppercase mb-6">
-            <span>GUINNESS WORLD RECORDS™ ATTEMPT</span>
-            <span aria-hidden="true">·</span>
+            <span>GUINNESS WORLD RECORDSâ„¢ ATTEMPT</span>
+            <span aria-hidden="true">Â·</span>
             <span>LONGEST LANGUAGE LESSON</span>
           </div>
 
           {/* Main Display Headline (exact verbatim from copy) */}
           <div className="space-y-4 max-w-4xl">
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-black tracking-tight leading-[0.95] text-white uppercase text-balance">
-              FAVOUR CHISIMDI NWOBODO’S 48-HOUR FRENCH LANGUAGE MARATHON
+              FAVOUR CHISIMDI NWOBODOâ€™S 48-HOUR FRENCH LANGUAGE MARATHON
             </h1>
 
             <p className="text-lg sm:text-2xl text-emerald-100/90 font-light leading-relaxed max-w-3xl pt-2">
@@ -48,7 +48,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           <div className="mt-8 pt-6 border-t border-emerald-800/80 flex flex-wrap items-center gap-y-3 gap-x-8 text-sm sm:text-base font-medium text-emerald-200">
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5 text-amber-400 shrink-0" />
-              <span className="font-semibold text-white tracking-wide">30 OCTOBER – 1 NOVEMBER 2026</span>
+              <span className="font-semibold text-white tracking-wide">30 OCTOBER â€“ 1 NOVEMBER 2026</span>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-5 h-5 text-amber-400 shrink-0" />
@@ -144,7 +144,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
             <div className="space-y-4 text-base sm:text-lg text-slate-700 leading-relaxed">
               <p>Across our borders, French is spoken, taught, traded in and lived in every day.</p>
-              <p>Yet Nigeria’s relationship with French is still only beginning to realise its possibilities.</p>
+              <p>Yet Nigeriaâ€™s relationship with French is still only beginning to realise its possibilities.</p>
               <p className="italic text-slate-800">What could happen if more Nigerians could cross those borders with confidence?</p>
               <p className="italic text-slate-800">What could happen if a generation saw language not simply as another subject to pass, but as a passport to a larger world?</p>
               <p className="italic text-slate-800">What could happen if we made learning a language something to celebrate?</p>
@@ -259,7 +259,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <p>Learning another language does not take anything away from the language you already speak.</p>
               <p>It does not mean leaving those things behind.</p>
               <p className="font-bold text-emerald-950 text-lg sm:text-xl">
-                It means becoming capable of meeting someone else’s world without losing your own.
+                It means becoming capable of meeting someone elseâ€™s world without losing your own.
               </p>
               <p className="font-semibold text-emerald-900">French is simply where this particular journey begins.</p>
             </div>
@@ -317,7 +317,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('/favour')}
                   className="inline-flex items-center gap-2 px-6 py-3.5 bg-emerald-900/80 hover:bg-emerald-800 border border-emerald-600 text-white font-display font-bold text-xs uppercase tracking-wider rounded-md transition-colors cursor-pointer"
                 >
-                  [ DISCOVER FAVOUR’S STORY ]
+                  DISCOVER FAVOUR'S STORY
                 </button>
               </div>
             </div>
@@ -330,7 +330,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="space-y-3">
             <span className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-semibold">
-              OFFICIAL TIMELINE · LANDMARK LAGOS (WAT, UTC+1)
+              OFFICIAL TIMELINE Â· LANDMARK LAGOS (WAT, UTC+1)
             </span>
             <h2 className="text-3xl sm:text-5xl font-display font-black tracking-tight uppercase text-emerald-950">
               THREE DAYS. ONE CITY. A LOT OF FRENCH.
@@ -341,7 +341,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             {/* 1. Friday 30 Oct, 10am - 3pm */}
             <div className="p-6 sm:p-8 bg-white border border-slate-200 rounded-xl space-y-3">
               <div className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-semibold">
-                FRIDAY · 30 OCTOBER · 10AM – 3PM
+                FRIDAY Â· 30 OCTOBER Â· 10AM â€“ 3PM
               </div>
               <h3 className="text-2xl font-display font-black text-slate-900 uppercase">
                 THE SEND-OFF
@@ -357,7 +357,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             {/* 2. Friday 30 Oct, 6pm */}
             <div className="p-6 sm:p-8 bg-white border-2 border-emerald-800/40 rounded-xl space-y-3 shadow-xs">
               <div className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-semibold">
-                FRIDAY · 30 OCTOBER · 6PM
+                FRIDAY Â· 30 OCTOBER Â· 6PM
               </div>
               <h3 className="text-2xl font-display font-black text-emerald-950 uppercase">
                 THE CLOCK STARTS.
@@ -370,7 +370,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             {/* 3. Saturday 31 Oct, Around 8pm */}
             <div className="p-6 sm:p-8 bg-white border border-slate-200 rounded-xl space-y-3">
               <div className="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold">
-                SATURDAY · 31 OCTOBER · AROUND 8PM
+                SATURDAY Â· 31 OCTOBER Â· AROUND 8PM
               </div>
               <h3 className="text-2xl font-display font-black text-slate-900 uppercase">
                 HOUR 26.
@@ -386,7 +386,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             {/* 4. Sunday 1 Nov, 6pm */}
             <div className="p-6 sm:p-8 bg-emerald-950 text-white border border-amber-500/40 rounded-xl space-y-3 shadow-md">
               <div className="text-xs font-mono uppercase tracking-widest text-amber-400 font-semibold">
-                SUNDAY · 1 NOVEMBER · 6PM
+                SUNDAY Â· 1 NOVEMBER Â· 6PM
               </div>
               <h3 className="text-2xl font-display font-black text-amber-400 uppercase">
                 HOUR 48.
@@ -415,11 +415,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* "YOU DON’T HAVE TO SPEAK FRENCH." */}
+      {/* "YOU DONâ€™T HAVE TO SPEAK FRENCH." */}
       <section className="w-full bg-[#03261D] text-white py-20 sm:py-28 border-b border-emerald-900/60">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <h2 className="text-3xl sm:text-5xl font-display font-black tracking-tight uppercase text-white">
-            YOU DON’T HAVE TO SPEAK FRENCH.
+            YOU DONâ€™T HAVE TO SPEAK FRENCH.
           </h2>
           <p className="text-xl sm:text-2xl text-amber-400 font-semibold">
             You just have to show up.
@@ -453,7 +453,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               onClick={() => onNavigate('/register')}
               className="px-8 py-3.5 bg-amber-400 hover:bg-amber-300 text-emerald-950 font-display font-bold text-xs uppercase tracking-wider rounded-md transition-all cursor-pointer"
             >
-              [ REGISTER FREE ]
+              REGISTER FREE
             </button>
           </div>
         </div>
@@ -485,7 +485,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('/register')}
                   className="inline-flex items-center gap-2 text-xs font-bold text-emerald-900 hover:text-amber-600 uppercase tracking-wider transition-colors cursor-pointer"
                 >
-                  <span>[ REGISTER TO ATTEND ]</span>
+                  <span>REGISTER TO ATTEND</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -507,7 +507,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('/share')}
                   className="inline-flex items-center gap-2 text-xs font-bold text-emerald-900 hover:text-amber-600 uppercase tracking-wider transition-colors cursor-pointer"
                 >
-                  <span>[ GET SHARE CARDS & PHRASE ]</span>
+                  <span>GET SHARE CARDS & PHRASE</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -526,7 +526,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('/partner')}
                   className="inline-flex items-center gap-2 text-xs font-bold text-emerald-900 hover:text-amber-600 uppercase tracking-wider transition-colors cursor-pointer"
                 >
-                  <span>[ PARTNER WITH US ]</span>
+                  <span>PARTNER WITH US</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -545,7 +545,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('/press')}
                   className="inline-flex items-center gap-2 text-xs font-bold text-emerald-900 hover:text-amber-600 uppercase tracking-wider transition-colors cursor-pointer"
                 >
-                  <span>[ PRESS & MEDIA ACCREDITATION ]</span>
+                  <span>PRESS & MEDIA ACCREDITATION</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -575,9 +575,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
 
           <div className="pt-4 space-y-2 text-sm sm:text-base font-mono uppercase text-emerald-300 tracking-wider">
-            <p>30 OCTOBER – 1 NOVEMBER 2026</p>
+            <p>30 OCTOBER â€“ 1 NOVEMBER 2026</p>
             <p>LANDMARK, LAGOS</p>
-            <p className="text-amber-400 font-bold">FAVOUR UGEGBE’S 48-HOUR FRENCH LANGUAGE MARATHON</p>
+            <p className="text-amber-400 font-bold">FAVOUR UGEGBEâ€™S 48-HOUR FRENCH LANGUAGE MARATHON</p>
           </div>
 
           <div className="pt-6">
@@ -585,7 +585,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               onClick={() => onNavigate('/register')}
               className="px-10 py-5 bg-amber-400 hover:bg-amber-300 text-emerald-950 font-display font-black text-base uppercase tracking-wider rounded-md shadow-xl transition-all transform hover:scale-105 active:scale-100 cursor-pointer"
             >
-              [ BE THERE ]
+              BE THERE
             </button>
           </div>
         </div>
