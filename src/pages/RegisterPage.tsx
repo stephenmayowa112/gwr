@@ -76,7 +76,13 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
 
     setIsSubmitting(true);
     try {
-      const result = await store.registerAttendee(validation.data, getUtmParams());
+      // Add attendeesCount to the data since we removed it from the form but store still expects it
+      const registrationData = {
+        ...validation.data,
+        attendeesCount: formData.attendeesCount // Always 1
+      };
+      
+      const result = await store.registerAttendee(registrationData, getUtmParams());
       setSuccessResult(result);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (err) {

@@ -63,7 +63,13 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, o
 
     setIsSubmitting(true);
     try {
-      const result = await store.registerAttendee(validation.data);
+      // Add attendeesCount to the data since we removed it from the form but store still expects it
+      const registrationData = {
+        ...validation.data,
+        attendeesCount: formData.attendeesCount // Always 1
+      };
+      
+      const result = await store.registerAttendee(registrationData);
       setSuccessResult(result);
       
       // Store registration data in sessionStorage for ThankYouPage
