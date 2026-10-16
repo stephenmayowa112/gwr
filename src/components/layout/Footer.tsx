@@ -25,10 +25,10 @@ export const Footer: React.FC = () => {
 
         <div className="pt-1">
           <a
-            href="mailto:info@ugegbegwr.com"
+            href="mailto:hello@ugegbegwr.com"
             className="text-sm sm:text-base font-mono text-[#23C48E] hover:text-[#40FFBC] underline transition-colors"
           >
-            info@ugegbegwr.com
+            hello@ugegbegwr.com
           </a>
         </div>
 

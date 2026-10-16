@@ -122,7 +122,7 @@ export async function generateShareCardBlob(options: ShareCardOptions): Promise<
   const bottomY = isStory ? 1720 : 980;
   ctx.fillStyle = '#A7F3D0';
   ctx.font = '500 24px -apple-system, sans-serif';
-  ctx.fillText('Follow the journey: @UGEGBEGWR · info@ugegbegwr.com', width / 2, bottomY);
+  ctx.fillText('Follow the journey: @UGEGBEGWR · hello@ugegbegwr.com', width / 2, bottomY);
   ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
   ctx.font = '400 22px -apple-system, sans-serif';
   ctx.fillText('#UgegbeGWR   #FavourNwobodo   #FrenchLanguageMarathon', width / 2, bottomY + 40);

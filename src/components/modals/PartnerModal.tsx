@@ -48,7 +48,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
       setIsSuccess(true);
     } catch (err) {
       console.error(err);
-      setErrors({ form: 'An error occurred. Please email info@ugegbegwr.com directly.' });
+      setErrors({ form: 'An error occurred. Please email hello@ugegbegwr.com directly.' });
     } finally {
       setIsSubmitting(false);
     }
@@ -71,7 +71,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
               INQUIRY RECEIVED
             </h3>
             <p className="text-xs text-[#D2FCE3]/80 leading-relaxed font-mono">
-              Thank you. Our partnership team will contact you via {formData.email} or you can reach us at info@ugegbegwr.com.
+              Thank you. Our partnership team will contact you via {formData.email} or you can reach us at hello@ugegbegwr.com.
             </p>
             <button
               onClick={onClose}

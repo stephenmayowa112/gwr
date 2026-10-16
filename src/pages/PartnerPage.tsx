@@ -59,7 +59,7 @@ export const PartnerPage: React.FC<PartnerPageProps> = ({ onNavigate }) => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (err) {
       console.error(err);
-      setErrors({ form: 'An unexpected error occurred. Please contact info@ugegbegwr.com directly.' });
+      setErrors({ form: 'An unexpected error occurred. Please contact hello@ugegbegwr.com directly.' });
     } finally {
       setIsSubmitting(false);
     }
@@ -74,7 +74,7 @@ Guinness World Records Attempt — Longest Language Lesson
 PARTNERSHIP OPPORTUNITY OVERVIEW:
 - Objective: 48 hours of continuous French teaching to break the existing 26h record.
 - Audience: 2,500+ on-site attendees, 500,000+ live stream viewers across Nigeria and Francophone West Africa.
-- Contact: info@ugegbegwr.com | @UGEGBEGWR
+- Contact: hello@ugegbegwr.com | @UGEGBEGWR
 - Tiers: Headline Partner, Cultural & Education Partner, Community & Youth Supporter.
 
 For formal decks and customized brand activations, contact partnerships@ugegbegwr.com.`;
@@ -265,7 +265,7 @@ For formal decks and customized brand activations, contact partnerships@ugegbegw
               SUBMIT A PARTNERSHIP INQUIRY
             </h2>
             <p className="text-xs sm:text-sm text-slate-600">
-              Our team reviews inquiries daily and will respond within 24 hours. Emails dispatch to <strong>info@ugegbegwr.com</strong>.
+              Our team reviews inquiries daily and will respond within 24 hours. Emails dispatch to <strong>hello@ugegbegwr.com</strong>.
             </p>
           </div>
 

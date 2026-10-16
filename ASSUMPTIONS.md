@@ -32,7 +32,7 @@
      - "YOU DON’T HAVE TO SPEAK FRENCH."
      - "BE PART OF THE STORY." (ATTEND, SHARE, PARTNER, MEDIA)
      - "ONE LANGUAGE. 48 HOURS. ONE EXTRAORDINARY ATTEMPT."
-     - "STAY CONNECTED" (Footer: @UGEGBEGWR, info@ugegbegwr.com, hashtags, copyright).
+     - "STAY CONNECTED" (Footer: @UGEGBEGWR, hello@ugegbegwr.com, hashtags, copyright).
 
 3. **Event Facts & Timezone**:
    - Location: Landmark, Lagos, Nigeria. Entry is FREE.

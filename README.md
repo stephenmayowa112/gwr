@@ -17,7 +17,7 @@ Official web application and event portal for **Favour Chisimdi Ugegbe's 48-Hour
   - **Sat 31 Oct 2026, ~20:00 WAT:** Hour 26 reached (current record falls).
   - **Sun 1 Nov 2026, 18:00 WAT:** Hour 48 final bell (new world record achieved).
 - **Social Handles:** `@UGEGBEGWR` (Instagram, X, TikTok, YouTube).
-- **Email:** `info@ugegbegwr.com`.
+- **Email:** `hello@ugegbegwr.com`.
 - **Official Hashtags:** `#UgegbeGWR` `#FavourUgegbe` `#FrenchLanguageMarathon`.
 
 ---

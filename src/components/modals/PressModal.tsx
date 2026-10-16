@@ -49,7 +49,7 @@ export const PressModal: React.FC<PressModalProps> = ({ isOpen, onClose }) => {
       setIsSuccess(true);
     } catch (err) {
       console.error(err);
-      setErrors({ form: 'An error occurred. Please email info@ugegbegwr.com directly.' });
+      setErrors({ form: 'An error occurred. Please email hello@ugegbegwr.com directly.' });
     } finally {
       setIsSubmitting(false);
     }

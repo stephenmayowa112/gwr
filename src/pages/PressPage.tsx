@@ -59,7 +59,7 @@ export const PressPage: React.FC<PressPageProps> = ({ onNavigate }) => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (err) {
       console.error(err);
-      setErrors({ form: 'An unexpected error occurred. Please contact info@ugegbegwr.com directly.' });
+      setErrors({ form: 'An unexpected error occurred. Please contact hello@ugegbegwr.com directly.' });
     } finally {
       setIsSubmitting(false);
     }
@@ -80,7 +80,7 @@ EVENT FACTS:
 - Admission: 100% Free Public Admission.
 - Social Handles: @UGEGBEGWR (Instagram, X, TikTok, YouTube).
 - Official Hashtags: #UgegbeGWR #FavourNwobodo #FrenchLanguageMarathon.
-- Press Office Contact: press@ugegbegwr.com | info@ugegbegwr.com.
+- Press Office Contact: press@ugegbegwr.com | hello@ugegbegwr.com.
 
 BOILERPLATE:
 Favour Chisimdi Nwobodo is a Nigerian educator and polyglot dedicated to bridging linguistic and cultural boundaries across Africa. For 48 continuous hours at Landmark Centre, Lagos, Nigeria, she will deliver an extraordinary French masterclass before independent adjudicators, setting a historic new Guinness World Records title and celebrating Nigeria's relationship with its Francophone neighbors.`;
@@ -183,7 +183,7 @@ Favour Chisimdi Nwobodo is a Nigerian educator and polyglot dedicated to bridgin
                   Media Contact
                 </span>
                 <span className="font-mono text-xs text-emerald-800 font-semibold">
-                  info@ugegbegwr.com · @UGEGBEGWR
+                  hello@ugegbegwr.com · @UGEGBEGWR
                 </span>
               </div>
             </div>

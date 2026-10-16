@@ -73,7 +73,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type, onNavigate }) => {
                 5. Contact & Data Rights
               </h2>
               <p>
-                You may request access to, correction, or deletion of your registered attendee details at any time by contacting our data protection officer at <strong>privacy@ugegbegwr.com</strong> or <strong>info@ugegbegwr.com</strong>.
+                You may request access to, correction, or deletion of your registered attendee details at any time by contacting our data protection officer at <strong>privacy@ugegbegwr.com</strong> or <strong>hello@ugegbegwr.com</strong>.
               </p>
             </section>
           </div>

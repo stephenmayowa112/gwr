@@ -63,7 +63,7 @@ export function generateGoogleCalendarUrl(event: CalendarEventPayload): string {
     dates: `${start}/${end}`,
     details: event.description,
     location: event.location,
-    add: 'info@ugegbegwr.com',
+    add: 'hello@ugegbegwr.com',
   });
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }
