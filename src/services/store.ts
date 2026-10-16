@@ -458,9 +458,7 @@ class StoreService {
     return {
       success: true,
       registration: record,
-      message: `Verified! Welcome ${record.fullName} (${record.attendeesCount} ${
-        record.attendeesCount > 1 ? 'attendees' : 'attendee'
-      }). Ticket: ${record.ticketCode}.`,
+      message: `Verified! Welcome ${record.fullName}. Ticket: ${record.ticketCode}.`,
     };
   }
 

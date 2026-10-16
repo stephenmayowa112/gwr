@@ -11,11 +11,11 @@ interface RegisterModalProps {
 }
 
 export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose }) => {
-  const [formData, setFormData] = useState<RegistrationFormData>({
+  const [formData, setFormData] = useState<RegistrationFormData & { attendeesCount: number }>({
     fullName: '',
     email: '',
     phone: '',
-    attendeesCount: 1,
+    attendeesCount: 1, // Always 1 person per registration
     attendanceType: 'in_person',
     hearAbout: '',
     consent: true,
@@ -120,8 +120,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
                   {successResult.registration.email}
                 </span>
                 <span className="text-xs text-[#D2FCE3]/70 font-mono block">
-                  {successResult.registration.attendeesCount}{' '}
-                  {successResult.registration.attendeesCount > 1 ? 'attendees' : 'attendee'} ·{' '}
+                  1 attendee ·{' '}
                   {successResult.registration.attendanceType === 'in_person'
                     ? 'In Person (Landmark)'
                     : 'Online Stream'}
@@ -263,26 +262,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                  <label className="block text-xs font-mono font-semibold uppercase text-[#D2FCE3] mb-1">
-                    Attendees (1-10) *
-                  </label>
-                  <select
-                    value={formData.attendeesCount}
-                    onChange={(e) =>
-                      setFormData({ ...formData, attendeesCount: parseInt(e.target.value, 10) || 1 })
-                    }
-                    className="w-full px-3.5 py-2.5 bg-[#003734]/40 border border-[#23C48E]/30 rounded-lg text-base sm:text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#23C48E]"
-                  >
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
-                      <option key={n} value={n} className="bg-[#001410] text-white">
-                        {n} {n === 1 ? 'Person' : 'People'}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
+              <div>
                 <div>
                   <label className="block text-xs font-mono font-semibold uppercase text-[#D2FCE3] mb-1">
                     Mode *

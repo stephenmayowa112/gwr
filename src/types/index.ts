@@ -9,7 +9,6 @@ export const RegistrationSchema = z.object({
   fullName: z.string().trim().min(2, 'Please enter your full name (minimum 2 characters)'),
   email: z.string().trim().email('Please enter a valid email address'),
   phone: z.string().trim().min(7, 'Please provide a valid phone or WhatsApp number with country code'),
-  attendeesCount: z.coerce.number().int().min(1, 'Minimum 1 attendee').max(10, 'Maximum 10 attendees per registration pass'),
   attendanceType: z.enum(['in_person', 'online'] as const, {
     message: 'Please choose whether attending in person or online'
   }),

@@ -23,11 +23,11 @@ interface RegisterPageProps {
 export const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
   const eventConfig = store.getEventConfig();
 
-  const [formData, setFormData] = useState<RegistrationFormData>({
+  const [formData, setFormData] = useState<RegistrationFormData & { attendeesCount: number }>({
     fullName: '',
     email: '',
     phone: '',
-    attendeesCount: 1,
+    attendeesCount: 1, // Always 1 person per registration
     attendanceType: 'in_person',
     hearAbout: '',
     consent: true,
@@ -184,8 +184,7 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
                       Number of Guests
                     </span>
                     <span className="font-semibold text-slate-900 font-mono">
-                      {registration.attendeesCount}{' '}
-                      {registration.attendeesCount > 1 ? 'People' : 'Person'}
+                      1 Person
                     </span>
                   </div>
                   <div>
@@ -390,31 +389,8 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
               )}
             </div>
 
-            {/* Number of Attendees & Attendance Mode */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="attendeesCount" className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-800 mb-1.5">
-                  Number of Attendees (1 - 10) *
-                </label>
-                <select
-                  id="attendeesCount"
-                  value={formData.attendeesCount}
-                  onChange={(e) =>
-                    setFormData({ ...formData, attendeesCount: parseInt(e.target.value, 10) || 1 })
-                  }
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-800 focus:bg-white transition-all text-sm cursor-pointer"
-                >
-                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-                    <option key={num} value={num}>
-                      {num} {num === 1 ? 'Person' : 'People'}
-                    </option>
-                  ))}
-                </select>
-                {errors.attendeesCount && (
-                  <p className="mt-1 text-xs text-rose-600">{errors.attendeesCount}</p>
-                )}
-              </div>
-
+            {/* Attendance Mode */}
+            <div>
               <div>
                 <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-800 mb-1.5">
                   Attendance Mode *
