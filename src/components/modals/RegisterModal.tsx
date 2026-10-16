@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { X, CheckCircle2, Calendar, MapPin, ExternalLink } from 'lucide-react';
 import { RegistrationSchema, RegistrationFormData, Registration } from '../../types';
 import { store } from '../../services/store';
@@ -102,7 +102,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
                 {successResult.isUpdate ? 'REGISTRATION UPDATED' : 'YOU ARE REGISTERED!'}
               </h3>
               <p className="text-xs text-[#D2FCE3]/80 font-mono">
-                Landmark, Lagos · 30 October – 1 November 2026 · Entry is free
+                Landmark, Lagos Â· 30 October â€“ 1 November 2026 Â· Entry is free
               </p>
             </div>
 
@@ -120,7 +120,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
                   {successResult.registration.email}
                 </span>
                 <span className="text-xs text-[#D2FCE3]/70 font-mono block">
-                  1 attendee ·{' '}
+                  1 attendee Â·{' '}
                   {successResult.registration.attendanceType === 'in_person'
                     ? 'In Person (Landmark)'
                     : 'Online Stream'}
@@ -187,13 +187,13 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
 
             <div className="space-y-1 text-center sm:text-left">
               <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-[#23C48E] font-bold block">
-                LANDMARK CENTRE, LAGOS, NIGERIA · 100% FREE PASS
+                LANDMARK CENTRE, LAGOS, NIGERIA Â· 100% FREE PASS
               </span>
               <h3 className="text-xl sm:text-2xl font-display font-black text-white uppercase tracking-tight">
-                FAVOUR CHISIMDI NWOBODO’S 48-HOUR MARATHON
+                WATCH UGEGBE TAKE ON A 48-HOUR FRENCH LESSON
               </h3>
               <p className="text-xs text-[#D2FCE3]/80 font-normal">
-                You don’t have to speak French. Just show up and make history.
+                You don't have to speak French. Just show up and make history.
               </p>
             </div>
 
