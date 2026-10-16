@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CheckCircle2, Calendar, Download, ExternalLink, ArrowRight, Mail, Share2 } from 'lucide-react';
+import { CheckCircle2, Calendar, Download, ExternalLink, ArrowRight, Share2 } from 'lucide-react';
 import { OFFICIAL_MILESTONES, downloadIcsFile, generateGoogleCalendarUrl } from '../services/calendar';
 import type { Registration } from '../types';
 
@@ -56,8 +56,8 @@ export const ThankYouPage: React.FC<ThankYouPageProps> = ({ onNavigate }) => {
         {registration && (
           <div className="bg-white border-2 border-emerald-900/20 rounded-2xl p-6 sm:p-8 space-y-4 shadow-sm">
             <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-emerald-800 font-bold">
-              <Mail className="w-4 h-4" />
-              <span>CONFIRMATION SENT</span>
+              <CheckCircle2 className="w-4 h-4" />
+              <span>REGISTRATION CONFIRMED</span>
             </div>
             
             <div className="space-y-3">
@@ -66,14 +66,10 @@ export const ThankYouPage: React.FC<ThankYouPageProps> = ({ onNavigate }) => {
                 <p className="text-xl font-display font-bold text-slate-900">{registration.fullName}</p>
               </div>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-slate-100">
+              <div className="pt-2 border-t border-slate-100">
                 <div>
                   <p className="text-sm text-slate-600">Email</p>
                   <p className="text-sm font-mono text-slate-900">{registration.email}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-slate-600">Ticket Code</p>
-                  <p className="text-sm font-mono font-bold text-emerald-900">{registration.ticketCode}</p>
                 </div>
               </div>
 
@@ -87,8 +83,7 @@ export const ThankYouPage: React.FC<ThankYouPageProps> = ({ onNavigate }) => {
 
             <div className="pt-4 border-t border-slate-100">
               <p className="text-xs text-slate-600 leading-relaxed">
-                A confirmation email with your ticket details has been sent to <strong>{registration.email}</strong>. 
-                Check your spam folder if you don't see it within a few minutes.
+                Your registration has been confirmed! We look forward to seeing you at the event.
               </p>
             </div>
           </div>
@@ -161,8 +156,8 @@ export const ThankYouPage: React.FC<ThankYouPageProps> = ({ onNavigate }) => {
                 1
               </div>
               <div>
-                <p className="font-semibold text-slate-900">Check Your Email</p>
-                <p className="text-sm text-slate-600">Your confirmation email includes your ticket code and event details.</p>
+                <p className="font-semibold text-slate-900">Save Your Spot</p>
+                <p className="text-sm text-slate-600">Your registration is confirmed. Entry is completely free.</p>
               </div>
             </div>
 
@@ -182,7 +177,7 @@ export const ThankYouPage: React.FC<ThankYouPageProps> = ({ onNavigate }) => {
               </div>
               <div>
                 <p className="font-semibold text-slate-900">Show Up & Make History</p>
-                <p className="text-sm text-slate-600">Bring your ticket code (we'll send reminders). Entry is 100% free.</p>
+                <p className="text-sm text-slate-600">Just show up at the venue. Entry is 100% free - no tickets needed!</p>
               </div>
             </div>
           </div>
