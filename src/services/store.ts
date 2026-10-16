@@ -31,6 +31,7 @@ import {
   OperationType,
   subscribeToAuth,
 } from './firebase';
+import { sendToGoogleSheets } from './googleSheets';
 
 const STORAGE_KEYS = {
   REGISTRATIONS: 'ugegbe_registrations_v1',
@@ -400,6 +401,11 @@ class StoreService {
     } catch (err) {
       handleFirestoreError(err, OperationType.CREATE, `registrations/${newRecord.id}`);
     }
+
+    // Send to Google Sheets (non-blocking, won't fail registration if it errors)
+    sendToGoogleSheets(newRecord).catch((err) => {
+      console.warn('Google Sheets export failed (non-critical):', err);
+    });
 
     return { registration: newRecord, isUpdate: false, waitlisted: isWaitlisted };
   }
