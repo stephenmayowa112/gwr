@@ -8,9 +8,10 @@ import { UgegbeBrandLogo } from '../common/UgegbeBrandLogo';
 interface RegisterModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onSuccess?: () => void;
 }
 
-export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose }) => {
+export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, onSuccess }) => {
   const [formData, setFormData] = useState<RegistrationFormData & { attendeesCount: number }>({
     fullName: '',
     email: '',
@@ -64,6 +65,16 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
     try {
       const result = await store.registerAttendee(validation.data);
       setSuccessResult(result);
+      
+      // Store registration data in sessionStorage for ThankYouPage
+      sessionStorage.setItem('ugegbe_registration_success', JSON.stringify(result.registration));
+      
+      // Call onSuccess callback after a brief delay to show success state
+      if (onSuccess) {
+        setTimeout(() => {
+          onSuccess();
+        }, 2000);
+      }
     } catch (err) {
       console.error(err);
       setErrors({ form: 'An unexpected error occurred. Please try again.' });
