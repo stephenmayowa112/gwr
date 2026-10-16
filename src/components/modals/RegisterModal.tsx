@@ -66,12 +66,15 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, o
       // Add attendeesCount to the data since we removed it from the form but store still expects it
       const registrationData = {
         ...validation.data,
-        attendeesCount: formData.attendeesCount // Always 1
+        attendeesCount: 1 // Always 1 person per registration
       };
       
-      console.log('Submitting registration data:', registrationData); // Debug log
+      console.log('Submitting registration data:', registrationData);
+      console.log('Registration data keys:', Object.keys(registrationData));
+      console.log('Registration data values:', Object.values(registrationData));
       
       const result = await store.registerAttendee(registrationData);
+      console.log('Registration successful:', result);
       setSuccessResult(result);
       
       // Store registration data in sessionStorage for ThankYouPage
@@ -84,8 +87,11 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, o
         }, 2000);
       }
     } catch (err) {
-      console.error('Registration error:', err); // Enhanced error logging
-      setErrors({ form: 'An unexpected error occurred. Please try again.' });
+      console.error('Registration error:', err);
+      console.error('Error type:', typeof err);
+      console.error('Error message:', err instanceof Error ? err.message : String(err));
+      console.error('Error stack:', err instanceof Error ? err.stack : 'No stack trace');
+      setErrors({ form: `An unexpected error occurred: ${err instanceof Error ? err.message : String(err)}` });
     } finally {
       setIsSubmitting(false);
     }

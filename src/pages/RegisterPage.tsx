@@ -79,15 +79,23 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
       // Add attendeesCount to the data since we removed it from the form but store still expects it
       const registrationData = {
         ...validation.data,
-        attendeesCount: formData.attendeesCount // Always 1
+        attendeesCount: 1 // Always 1 person per registration
       };
       
+      console.log('Submitting registration data:', registrationData);
+      console.log('Registration data keys:', Object.keys(registrationData));
+      console.log('Registration data values:', Object.values(registrationData));
+      
       const result = await store.registerAttendee(registrationData, getUtmParams());
+      console.log('Registration successful:', result);
       setSuccessResult(result);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (err) {
-      console.error(err);
-      setErrors({ form: 'An unexpected error occurred. Please try again.' });
+      console.error('Registration error:', err);
+      console.error('Error type:', typeof err);
+      console.error('Error message:', err instanceof Error ? err.message : String(err));
+      console.error('Error stack:', err instanceof Error ? err.stack : 'No stack trace');
+      setErrors({ form: `An unexpected error occurred: ${err instanceof Error ? err.message : String(err)}` });
     } finally {
       setIsSubmitting(false);
     }
