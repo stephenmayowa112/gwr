@@ -69,6 +69,8 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, o
         attendeesCount: formData.attendeesCount // Always 1
       };
       
+      console.log('Submitting registration data:', registrationData); // Debug log
+      
       const result = await store.registerAttendee(registrationData);
       setSuccessResult(result);
       
@@ -82,7 +84,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, o
         }, 2000);
       }
     } catch (err) {
-      console.error(err);
+      console.error('Registration error:', err); // Enhanced error logging
       setErrors({ form: 'An unexpected error occurred. Please try again.' });
     } finally {
       setIsSubmitting(false);
