@@ -338,7 +338,7 @@ export const SharePage: React.FC<SharePageProps> = ({ onNavigate }) => {
                 </div>
               </div>
               <p className="text-slate-700">
-                “Just registered my free pass for the Landmark session on Saturday evening when the 26h record drops! Bring your notebooks Lagos! #FrenchLanguageMarathon”
+                “Just registered my free pass for the Lagos session on Saturday evening when the 26h record drops! Bring your notebooks Lagos! #FrenchLanguageMarathon”
               </p>
             </div>
 

@@ -27,8 +27,8 @@ export const VisitFaqPage: React.FC<VisitFaqPageProps> = ({ onNavigate }) => {
     setOpenFaqId(openFaqId === id ? null : id);
   };
 
-  const landmarkMapUrl =
-    'https://www.google.com/maps/search/?api=1&query=Landmark+Centre+Victoria+Island+Lagos+Nigeria';
+  const venueMapUrl =
+    'https://www.google.com/maps/search/?api=1&query=Lagos+Nigeria';
 
   return (
     <div className="w-full bg-[#FAF8F5] py-12 sm:py-20">
@@ -63,7 +63,7 @@ export const VisitFaqPage: React.FC<VisitFaqPageProps> = ({ onNavigate }) => {
             </div>
 
             <a
-              href={landmarkMapUrl}
+              href={venueMapUrl}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 bg-emerald-900 hover:bg-emerald-800 text-white font-mono text-xs uppercase tracking-wider font-semibold rounded-lg transition-colors cursor-pointer"
