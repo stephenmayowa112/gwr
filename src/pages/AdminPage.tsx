@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import {
   Lock,
   LogOut,
@@ -427,7 +427,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
 
               <div className="p-5 bg-white border border-slate-200 rounded-xl shadow-xs">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 block">
-                  In-Person (Landmark)
+                  In-Person (Lagos)
                 </span>
                 <span className="text-3xl font-display font-black text-emerald-900 font-mono">
                   {inPersonCount}
@@ -451,7 +451,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
 
               <div className="p-5 bg-white border border-slate-200 rounded-xl shadow-xs">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 block">
-                  Checked In (Landmark)
+                  Checked In
                 </span>
                 <span className="text-3xl font-display font-black text-amber-600 font-mono">
                   {checkedInCount}
@@ -559,7 +559,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                                   : 'bg-slate-100 text-slate-600 border border-slate-200'
                               }`}
                             >
-                              {r.attendanceType === 'in_person' ? 'Landmark' : 'Online'}
+                              {r.attendanceType === 'in_person' ? 'Lagos' : 'Online'}
                             </span>
                           </td>
                           <td className="py-3.5 px-4 text-xs">
@@ -1149,7 +1149,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                 </span>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between font-mono">
-                    <span>In-Person at Landmark</span>
+                    <span>In-Person in Lagos</span>
                     <span className="font-bold">{inPersonCount} ({totalRegistrations > 0 ? ((inPersonCount / totalRegistrations) * 100).toFixed(0) : 0}%)</span>
                   </div>
                   <div className="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
@@ -1205,7 +1205,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                     {inPersonCount} / {eventConfig.venueCapacity}
                   </div>
                   <p className="text-xs text-slate-500 leading-relaxed">
-                    Auditorium capacity at Landmark Centre, Victoria Island. Waitlist triggers automatically if capacity threshold is exceeded.
+                    Auditorium capacity at the venue, Victoria Island. Waitlist triggers automatically if capacity threshold is exceeded.
                   </p>
                 </div>
               </div>

@@ -1,4 +1,4 @@
-# ASSUMPTIONS.md
+﻿# ASSUMPTIONS.md
 
 ## Project: Favour Ugegbe's 48-Hour French Language Marathon
 ### Guinness World Records Attempt — Longest Language Lesson
@@ -35,6 +35,6 @@
      - "STAY CONNECTED" (Footer: @UGEGBEGWR, hello@ugegbegwr.com, hashtags, copyright).
 
 3. **Event Facts & Timezone**:
-   - Location: Landmark, Lagos, Nigeria. Entry is FREE.
+   - Location: Lagos, Nigeria, Nigeria. Entry is FREE.
    - Timezone: `Africa/Lagos` (WAT, UTC+1).
    - Target start: Friday, 30 October 2026 at 18:00 WAT prompt.

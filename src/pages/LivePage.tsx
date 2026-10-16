@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import {
   Play,
   Radio,
@@ -193,8 +193,8 @@ export const LivePage: React.FC<LivePageProps> = ({ onNavigate }) => {
                 aspectRatio="4:3"
               />
               <EditorialPlaceholder
-                label="The Final Bell at Landmark Lagos"
-                subtext="TODO: Victory celebration at Landmark auditorium with students and witnesses"
+                label="The Final Bell at Lagos"
+                subtext="TODO: Victory celebration in Lagos auditorium with students and witnesses"
                 aspectRatio="4:3"
               />
             </div>
@@ -237,7 +237,7 @@ export const LivePage: React.FC<LivePageProps> = ({ onNavigate }) => {
               THE MARATHON CLOCK STARTS FRIDAY 30 OCT
             </h1>
             <p className="text-base text-slate-700 leading-relaxed font-normal">
-              Continuous live stream coverage from Landmark Lagos will broadcast globally right here throughout all 48 hours.
+              Continuous live stream coverage from Lagos will broadcast globally right here throughout all 48 hours.
             </p>
           </div>
 
@@ -253,7 +253,7 @@ export const LivePage: React.FC<LivePageProps> = ({ onNavigate }) => {
                 Friday 30 October 2026 at 18:00 WAT Prompt
               </p>
               <div className="flex justify-center gap-4 text-xs font-mono text-amber-400">
-                <span>Landmark Centre, Victoria Island, Lagos</span>
+                <span>the venue, Victoria Island, Lagos</span>
                 <span>·</span>
                 <span>Entry is Free</span>
               </div>
@@ -266,7 +266,7 @@ export const LivePage: React.FC<LivePageProps> = ({ onNavigate }) => {
               BROADCAST STAGE PREPARATION
             </h2>
             <EditorialPlaceholder
-              label="Landmark Lagos Auditorium & Broadcast Control"
+              label="Lagos Auditorium & Broadcast Control"
               subtext="TODO: Live stage cameras, continuous GWR timecode monitors, and lectern setup preview"
               aspectRatio="16:9"
             />
@@ -337,7 +337,7 @@ export const LivePage: React.FC<LivePageProps> = ({ onNavigate }) => {
                 LIVE NOW
               </span>
               <span className="text-xs font-mono uppercase tracking-widest text-emerald-300">
-                LANDMARK LAGOS · CONTINUOUS BROADCAST
+                Lagos · CONTINUOUS BROADCAST
               </span>
             </div>
 
@@ -433,7 +433,7 @@ export const LivePage: React.FC<LivePageProps> = ({ onNavigate }) => {
                     Direct Broadcast Stream Connecting...
                   </span>
                   <span className="text-xs text-slate-400 font-mono">
-                    Official video feed from Landmark Centre Victoria Island
+                    Official video feed from the venue Victoria Island
                   </span>
                 </div>
               )}
@@ -445,7 +445,7 @@ export const LivePage: React.FC<LivePageProps> = ({ onNavigate }) => {
                   Favour Chisimdi Nwobodo's 48-Hour French Language Marathon
                 </h3>
                 <p className="text-xs text-slate-500 font-mono">
-                  Official Guinness World Records Attempt · Landmark, Lagos, Nigeria
+                  Official Guinness World Records Attempt · Lagos, Nigeria
                 </p>
               </div>
 

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { ShieldCheck, Video, Clock, FileText, Users, AlertTriangle } from 'lucide-react';
 import { EditorialPlaceholder } from '../components/common/EditorialPlaceholder';
 
@@ -58,7 +58,7 @@ export const VerificationPage: React.FC<VerificationPageProps> = ({ onNavigate }
             HOW THE RECORD IS VERIFIED
           </h1>
           <p className="text-base sm:text-xl text-slate-700 leading-relaxed font-normal">
-            Setting a Guinness World Record requires uncompromising scientific rigor, strict chain-of-custody evidence, and independent oversight at Landmark Lagos.
+            Setting a Guinness World Record requires uncompromising scientific rigor, strict chain-of-custody evidence, and independent oversight at Lagos.
           </p>
         </div>
 
@@ -138,7 +138,7 @@ export const VerificationPage: React.FC<VerificationPageProps> = ({ onNavigate }
             VERIFICATION BOOTH & TIMEKEEPING DESK
           </h2>
           <EditorialPlaceholder
-            label="Landmark Lagos Official GWR Adjudication Desk"
+            label="Lagos Official GWR Adjudication Desk"
             subtext="TODO: Independent witness station, digital dual precision timers, and live logbook station diagram"
             aspectRatio="16:9"
           />

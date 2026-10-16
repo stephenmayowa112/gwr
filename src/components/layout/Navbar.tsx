@@ -116,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRegister, onScrollTo }) =>
                 REGISTER TO ATTEND — FREE
               </button>
               <p className="text-[11px] text-center font-mono text-[#D2FCE3]/70">
-                Landmark, Lagos · 30 Oct – 1 Nov 2026
+                Lagos, Nigeria · 30 Oct – 1 Nov 2026
               </p>
             </div>
           </div>

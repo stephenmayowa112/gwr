@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   MapPin,
   Car,
@@ -36,13 +36,13 @@ export const VisitFaqPage: React.FC<VisitFaqPageProps> = ({ onNavigate }) => {
         {/* Header */}
         <div className="space-y-4">
           <div className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-semibold">
-            VENUE GUIDE & VISITOR ESSENTIALS · LANDMARK LAGOS
+            VISITOR ESSENTIALS · LAGOS, NIGERIA
           </div>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-black text-emerald-950 uppercase tracking-tight">
             VISIT & FREQUENTLY ASKED QUESTIONS
           </h1>
           <p className="text-base sm:text-xl text-slate-700 leading-relaxed font-normal">
-            Everything you need to know about joining the 48-hour French Language Marathon in person at Landmark Centre, Victoria Island, Lagos.
+            Everything you need to know about joining the 48-hour French Language Marathon in person at Lagos, Nigeria.
           </p>
         </div>
 
@@ -55,7 +55,7 @@ export const VisitFaqPage: React.FC<VisitFaqPageProps> = ({ onNavigate }) => {
                 <span>OFFICIAL MARATHON VENUE</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-display font-black text-emerald-950 uppercase tracking-tight mt-1">
-                LANDMARK CENTRE, LAGOS
+                the venue, LAGOS
               </h2>
               <p className="text-sm text-slate-600 font-mono mt-0.5">
                 Plot 2 & 3, Water Corporation Drive, Victoria Island, Lagos, Nigeria
@@ -80,7 +80,7 @@ export const VisitFaqPage: React.FC<VisitFaqPageProps> = ({ onNavigate }) => {
                 Transport & Parking
               </span>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Dedicated secured on-site parking available inside Landmark compound. Rideshare (Uber, Bolt, inDrive) pickup and drop-off bays are located directly in front of the main foyer.
+                Dedicated secured on-site parking available inside the venue. Rideshare (Uber, Bolt, inDrive) pickup and drop-off bays are located directly in front of the main foyer.
               </p>
             </div>
 
@@ -210,7 +210,7 @@ export const VisitFaqPage: React.FC<VisitFaqPageProps> = ({ onNavigate }) => {
         {/* Final CTA */}
         <div className="p-8 bg-[#022C22] text-white rounded-2xl text-center space-y-4">
           <h3 className="text-2xl font-display font-black uppercase tracking-tight">
-            READY TO JOIN US AT LANDMARK?
+            READY TO JOIN US in Lagos?
           </h3>
           <p className="text-xs sm:text-sm text-emerald-200 font-mono">
             Get your instant free attendee ticket pass now.

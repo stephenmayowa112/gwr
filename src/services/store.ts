@@ -1,4 +1,4 @@
-import {
+﻿import {
   collection,
   doc,
   getDocs,
@@ -98,9 +98,9 @@ const SAMPLE_REGISTRATIONS: Registration[] = [
 const INITIAL_UPDATES: LiveUpdate[] = [
   {
     id: 'upd_1',
-    title: 'The Send-Off is Underway at Landmark Lagos!',
+    title: 'The Send-Off is Underway at Lagos!',
     message:
-      'The hall is electric. Poets, French educators, and supporters from across Nigeria and West Africa have packed Landmark. Favour is speaking to the crowd before her final medical checks.',
+      'The hall is electric. Poets, French educators, and supporters from across Nigeria and West Africa have packed the venue. Favour is speaking to the crowd before her final medical checks.',
     milestoneHour: 0,
     isPinned: true,
     createdAt: new Date(Date.now() - 3600000).toISOString(),

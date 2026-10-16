@@ -102,7 +102,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
                 {successResult.isUpdate ? 'REGISTRATION UPDATED' : 'YOU ARE REGISTERED!'}
               </h3>
               <p className="text-xs text-[#D2FCE3]/80 font-mono">
-                Landmark, Lagos Â· 30 October â€“ 1 November 2026 Â· Entry is free
+                Lagos, Nigeria Â· 30 October â€“ 1 November 2026 Â· Entry is free
               </p>
             </div>
 
@@ -122,7 +122,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
                 <span className="text-xs text-[#D2FCE3]/70 font-mono block">
                   1 attendee Â·{' '}
                   {successResult.registration.attendanceType === 'in_person'
-                    ? 'In Person (Landmark)'
+                    ? 'In Person (Lagos)'
                     : 'Online Stream'}
                 </span>
               </div>
@@ -130,7 +130,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
               <div className="pt-3 border-t border-[#23C48E]/20">
                 <p className="text-xs text-[#D2FCE3]/80 leading-relaxed">
                   A confirmation email has been sent to {successResult.registration.email}. 
-                  Entry is 100% free. See you at Landmark Centre, Lagos!
+                  Entry is 100% free. See you in Lagos!
                 </p>
               </div>
             </div>
@@ -187,7 +187,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose })
 
             <div className="space-y-1 text-center sm:text-left">
               <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-[#23C48E] font-bold block">
-                LANDMARK CENTRE, LAGOS, NIGERIA Â· 100% FREE PASS
+                LAGOS, NIGERIA Â· 100% FREE PASS
               </span>
               <h3 className="text-xl sm:text-2xl font-display font-black text-white uppercase tracking-tight">
                 WATCH UGEGBE TAKE ON A 48-HOUR FRENCH LESSON

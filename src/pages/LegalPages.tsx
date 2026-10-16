@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { ShieldCheck, Lock, FileText, ArrowRight } from 'lucide-react';
 
 interface LegalPageProps {
@@ -32,7 +32,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type, onNavigate }) => {
                 1. Data Controller & Scope
               </h2>
               <p>
-                This Privacy Policy explains how the organizers of <strong>Favour Chisimdi Nwobodo's 48-Hour French Language Marathon</strong> (“we”, “us”, or “our”) collect, process, and safeguard personal data collected via this website and at the event venue (Landmark Centre, Lagos). We comply with the Nigeria Data Protection Act (NDPA) and the Nigeria Data Protection Regulation (NDPR).
+                This Privacy Policy explains how the organizers of <strong>Favour Chisimdi Nwobodo's 48-Hour French Language Marathon</strong> (“we”, “us”, or “our”) collect, process, and safeguard personal data collected via this website and at the event venue (Lagos, Nigeria). We comply with the Nigeria Data Protection Act (NDPA) and the Nigeria Data Protection Regulation (NDPR).
               </p>
             </section>
 
@@ -45,7 +45,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type, onNavigate }) => {
                 <li>Full Name</li>
                 <li>Email address (for ticket delivery and event schedule dispatches)</li>
                 <li>Phone and WhatsApp number (for crowd management alerts and verification)</li>
-                <li>Attendance preferences (in-person at Landmark or virtual live stream)</li>
+                <li>Attendance preferences (in-person in Lagos or virtual live stream)</li>
                 <li>Media outlet details (for press accreditation applications)</li>
               </ul>
             </section>
@@ -55,7 +55,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type, onNavigate }) => {
                 3. Purpose of Processing & Security
               </h2>
               <p>
-                Your personal data is used solely to generate your QR attendee pass, maintain auditorium fire-safety capacity at Landmark Lagos, verify Guinness World Records witness records, and notify you of critical marathon milestones. We do not sell or rent personal information to third-party commercial brokers.
+                Your personal data is used solely to generate your QR attendee pass, maintain auditorium fire-safety capacity at Lagos, verify Guinness World Records witness records, and notify you of critical marathon milestones. We do not sell or rent personal information to third-party commercial brokers.
               </p>
             </section>
 
@@ -64,7 +64,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type, onNavigate }) => {
                 4. Photography, Video & Broadcast Notice
               </h2>
               <p>
-                The 48-Hour French Language Marathon is an accredited Guinness World Records attempt recorded by continuous multi-angle cameras and broadcast globally. By entering the event hall at Landmark Centre, attendees acknowledge that their image and likeness may appear in documentary feeds, official GWR evidence portfolios, and news media broadcasts.
+                The 48-Hour French Language Marathon is an accredited Guinness World Records attempt recorded by continuous multi-angle cameras and broadcast globally. By entering the event hall at the venue, attendees acknowledge that their image and likeness may appear in documentary feeds, official GWR evidence portfolios, and news media broadcasts.
               </p>
             </section>
 
@@ -84,7 +84,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type, onNavigate }) => {
                 1. Free Admission & Ticketing
               </h2>
               <p>
-                Admission to Favour Chisimdi Nwobodo's 48-Hour French Language Marathon at Landmark Lagos is 100% free of charge. Your digital pass guarantees entry subject to auditorium safe capacity limits established by Landmark Centre safety authorities.
+                Admission to Favour Chisimdi Nwobodo's 48-Hour French Language Marathon at Lagos is 100% free of charge. Your digital pass guarantees entry subject to auditorium safe capacity limits established by the venue safety authorities.
               </p>
             </section>
 

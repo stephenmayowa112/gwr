@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   CheckCircle2,
   Calendar,
@@ -91,8 +91,8 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
     window.print();
   };
 
-  const landmarkMapUrl =
-    'https://www.google.com/maps/search/?api=1&query=Landmark+Centre+Victoria+Island+Lagos+Nigeria';
+  const venueMapUrl =
+    'https://www.google.com/maps/search/?api=1&query=Lagos+Centre+Victoria+Island+Lagos+Nigeria';
 
   // SUCCESS SCREEN WITH QR TICKET
   if (successResult) {
@@ -115,9 +115,9 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
             </h1>
             <p className="text-base text-slate-700 max-w-md mx-auto leading-relaxed">
               {waitlisted
-                ? 'Due to unprecedented demand at Landmark, your pass is queued on our priority list. We will notify you immediately as seating capacity opens.'
+                ? 'Due to unprecedented demand in Lagos, your pass is queued on our priority list. We will notify you immediately as seating capacity opens.'
                 : isUpdate
-                ? `We have updated your registration details under ${registration.email}. Present this updated pass at Landmark.`
+                ? `We have updated your registration details under ${registration.email}. Present this updated pass in Lagos.`
                 : `A confirmation receipt with your QR ticket, event reminders, and directions has been recorded for ${registration.email}.`}
             </p>
           </div>
@@ -193,7 +193,7 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
                     </span>
                     <span className="font-semibold text-emerald-800 uppercase text-xs font-mono">
                       {registration.attendanceType === 'in_person'
-                        ? 'In Person (Landmark)'
+                        ? 'In Person (Lagos)'
                         : 'Online Stream'}
                     </span>
                   </div>
@@ -204,7 +204,7 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
                     Venue Location
                   </span>
                   <span className="font-medium text-slate-900 block">
-                    Landmark Centre, Victoria Island, Lagos
+                    the venue, Victoria Island, Lagos
                   </span>
                 </div>
 
@@ -222,7 +222,7 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
             {/* Microcopy Instructions */}
             <div className="bg-slate-50 rounded-lg p-3.5 text-xs text-slate-600 leading-relaxed border border-slate-200">
               <p>
-                <strong>Check-in instructions:</strong> Present this screen or a printed copy upon arrival at Landmark Centre. Entry is continuous across the 48 hours. Drop in for 10 minutes or stay for 10 hours.
+                <strong>Check-in instructions:</strong> Present this screen or a printed copy upon arrival at the venue. Entry is continuous across the 48 hours. Drop in for 10 minutes or stay for 10 hours.
               </p>
             </div>
 
@@ -247,7 +247,7 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
               </a>
 
               <a
-                href={landmarkMapUrl}
+                href={venueMapUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-4 py-3 bg-white border border-slate-300 hover:border-slate-400 text-slate-800 font-mono text-xs uppercase tracking-wider font-semibold rounded-lg transition-colors cursor-pointer"
@@ -286,7 +286,7 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
         {/* Header */}
         <div className="space-y-4 mb-10">
           <div className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-semibold">
-            FREE ADMISSION · LANDMARK LAGOS & LIVE STREAM
+            FREE ADMISSION · Lagos & LIVE STREAM
           </div>
           <h1 className="text-3xl sm:text-5xl font-display font-black text-emerald-950 uppercase tracking-tight">
             REGISTER TO ATTEND

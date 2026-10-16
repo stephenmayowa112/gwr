@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   Volume2,
   Download,
@@ -39,7 +39,7 @@ export const SharePage: React.FC<SharePageProps> = ({ onNavigate }) => {
     }
   };
 
-  const shareText = `Join me in supporting Nigerian polyglot Favour Chisimdi Nwobodo as she attempts the Guinness World Record for the longest language lesson (48-hour French marathon)! 30 Oct – 1 Nov 2026 at Landmark Centre, Lagos, Nigeria. Entry is FREE: https://ugegbegwr.com`;
+  const shareText = `Join me in supporting Nigerian polyglot Favour Chisimdi Nwobodo as she attempts the Guinness World Record for the longest language lesson (48-hour French marathon)! 30 Oct – 1 Nov 2026 at Lagos, Nigeria, Nigeria. Entry is FREE: https://ugegbegwr.com`;
 
   const handleCopyText = (text: string, type: string) => {
     navigator.clipboard.writeText(text);
@@ -71,7 +71,7 @@ export const SharePage: React.FC<SharePageProps> = ({ onNavigate }) => {
 
   const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`;
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-    `Witness history! Nigerian polyglot Favour Chisimdi Nwobodo goes for 48 hours of continuous French teaching in a @GuinnessWorldRecord attempt at Landmark Centre, Lagos, Nigeria.`
+    `Witness history! Nigerian polyglot Favour Chisimdi Nwobodo goes for 48 hours of continuous French teaching in a @GuinnessWorldRecord attempt at Lagos, Nigeria, Nigeria.`
   )}&hashtags=UgegbeGWR,FavourNwobodo,FrenchLanguageMarathon&url=${encodeURIComponent('https://ugegbegwr.com')}`;
 
   return (
@@ -178,7 +178,7 @@ export const SharePage: React.FC<SharePageProps> = ({ onNavigate }) => {
                   </div>
                 </div>
                 <div className="text-[10px] font-mono text-center text-emerald-300 border-t border-emerald-800/80 pt-2">
-                  30 OCT – 1 NOV 2026 · LANDMARK LAGOS · FREE ENTRY
+                  30 OCT – 1 NOV 2026 · Lagos · FREE ENTRY
                 </div>
               </div>
 
@@ -216,7 +216,7 @@ export const SharePage: React.FC<SharePageProps> = ({ onNavigate }) => {
                   </div>
                 </div>
                 <div className="text-[9px] font-mono text-center text-emerald-300 border-t border-emerald-800/80 pt-1.5">
-                  30 OCT – 1 NOV 2026 · LANDMARK LAGOS
+                  30 OCT – 1 NOV 2026 · Lagos
                 </div>
               </div>
 

@@ -1,6 +1,6 @@
-# Favour Ugegbe's 48-Hour French Language Marathon
+﻿# Favour Ugegbe's 48-Hour French Language Marathon
 
-Official web application and event portal for **Favour Chisimdi Ugegbe's 48-Hour French Language Marathon** — an accredited Guinness World Records™ attempt for the longest language lesson, hosted at **Landmark Centre, Victoria Island, Lagos, Nigeria** (30 October – 1 November 2026).
+Official web application and event portal for **Favour Chisimdi Ugegbe's 48-Hour French Language Marathon** — an accredited Guinness World Records™ attempt for the longest language lesson, hosted at **Lagos, Nigeria** (30 October – 1 November 2026).
 
 ---
 
@@ -9,7 +9,7 @@ Official web application and event portal for **Favour Chisimdi Ugegbe's 48-Hour
 - **Challenger:** Favour Chisimdi Ugegbe (Nigerian polyglot speaking 11 languages: 9 foreign, 2 Nigerian).
 - **Target Record:** 48 Hours of continuous French teaching (Guinness World Records).
 - **Current Standing Record:** 26 Hours.
-- **Venue:** Landmark Centre, Plot 2 & 3 Water Corporation Drive, Victoria Island, Lagos, Nigeria.
+- **Venue:** the venue, Plot 2 & 3 Water Corporation Drive, Victoria Island, Lagos, Nigeria.
 - **Admission:** 100% Free Public Admission.
 - **Timezone:** `Africa/Lagos` (WAT, UTC+1).
   - **Fri 30 Oct 2026, 10:00–15:00 WAT:** The Send-Off (music, comedy, spoken word, French).
@@ -33,7 +33,7 @@ Official web application and event portal for **Favour Chisimdi Ugegbe's 48-Hour
    - **Post-Event State:** Automatic switch to results and verification gallery.
 5. **About Favour (`/favour`):** Biography, 11 languages breakdown (9 foreign, 2 Nigerian), quotes, and photo slots.
 6. **Verification (`/verification`):** Guinness World Records rules (timekeepers, independent witnesses, continuous recording, logbooks, and 5-min/hour accumulated rest breaks).
-7. **Visit & FAQ (`/visit`):** Landmark Lagos venue directions, map links, transport/parking, accessibility, visitor policies (children & cameras welcome), and accordion FAQ with FAQPage structured data.
+7. **Visit & FAQ (`/visit`):** Lagos venue directions, map links, transport/parking, accessibility, visitor policies (children & cameras welcome), and accordion FAQ with FAQPage structured data.
 8. **Share (`/share`):** Daily French phrase with Web Speech audio pronunciation, high-resolution canvas social share cards (1080x1080 square and 1080x1920 story format), and one-click WhatsApp/X sharing.
 9. **Partner (`/partner`):** Why partner, audience projections, three sponsorship tiers, downloadable brief, and partner inquiry form.
 10. **Press & Media (`/press`):** Boilerplate, fact sheet, downloadable media kit, and press accreditation application.

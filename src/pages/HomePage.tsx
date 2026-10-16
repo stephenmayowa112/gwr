@@ -52,7 +52,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-5 h-5 text-amber-400 shrink-0" />
-              <span className="font-semibold text-white tracking-wide">LANDMARK, LAGOS</span>
+              <span className="font-semibold text-white tracking-wide">LAGOS, NIGERIA</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="inline-block px-2.5 py-0.5 rounded text-xs font-mono font-bold tracking-wider bg-amber-400 text-emerald-950 uppercase">
@@ -330,7 +330,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="space-y-3">
             <span className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-semibold">
-              OFFICIAL TIMELINE Â· LANDMARK LAGOS (WAT, UTC+1)
+              OFFICIAL TIMELINE Â· Lagos (WAT, UTC+1)
             </span>
             <h2 className="text-3xl sm:text-5xl font-display font-black tracking-tight uppercase text-emerald-950">
               THREE DAYS. ONE CITY. A LOT OF FRENCH.
@@ -576,7 +576,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
           <div className="pt-4 space-y-2 text-sm sm:text-base font-mono uppercase text-emerald-300 tracking-wider">
             <p>30 OCTOBER â€“ 1 NOVEMBER 2026</p>
-            <p>LANDMARK, LAGOS</p>
+            <p>LAGOS, NIGERIA</p>
             <p className="text-amber-400 font-bold">FAVOUR UGEGBEâ€™S 48-HOUR FRENCH LANGUAGE MARATHON</p>
           </div>
 

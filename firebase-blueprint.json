@@ -30,7 +30,7 @@
         },
         "attendanceType": {
           "type": "string",
-          "description": "In-person at Landmark Centre or online stream",
+          "description": "In-person in Lagos or online stream",
           "enum": ["in_person", "online"]
         },
         "hearAbout": {
@@ -58,7 +58,7 @@
         },
         "checkedInAt": {
           "type": "string",
-          "description": "Timestamp when attendee scanned in at Landmark Centre",
+          "description": "Timestamp when attendee scanned in at the venue",
           "maxLength": 50
         },
         "utmSource": {

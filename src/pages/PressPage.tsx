@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   FileText,
   Download,
@@ -75,7 +75,7 @@ EVENT FACTS:
 - Attempt: Longest language lesson (continuous French instruction).
 - Target: 48 Hours.
 - Current Official Guinness Record: 26 Hours.
-- Venue: Landmark Centre, Victoria Island, Lagos, Nigeria.
+- Venue: the venue, Victoria Island, Lagos, Nigeria.
 - Dates: Friday, 30 October 2026, 18:00 WAT through Sunday, 1 November 2026, 18:00 WAT.
 - Admission: 100% Free Public Admission.
 - Social Handles: @UGEGBEGWR (Instagram, X, TikTok, YouTube).
@@ -83,7 +83,7 @@ EVENT FACTS:
 - Press Office Contact: press@ugegbegwr.com | hello@ugegbegwr.com.
 
 BOILERPLATE:
-Favour Chisimdi Nwobodo is a Nigerian educator and polyglot dedicated to bridging linguistic and cultural boundaries across Africa. For 48 continuous hours at Landmark Centre, Lagos, Nigeria, she will deliver an extraordinary French masterclass before independent adjudicators, setting a historic new Guinness World Records title and celebrating Nigeria's relationship with its Francophone neighbors.`;
+Favour Chisimdi Nwobodo is a Nigerian educator and polyglot dedicated to bridging linguistic and cultural boundaries across Africa. For 48 continuous hours at Lagos, Nigeria, Nigeria, she will deliver an extraordinary French masterclass before independent adjudicators, setting a historic new Guinness World Records title and celebrating Nigeria's relationship with its Francophone neighbors.`;
 
     const blob = new Blob([kitText], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
@@ -175,7 +175,7 @@ Favour Chisimdi Nwobodo is a Nigerian educator and polyglot dedicated to bridgin
                   Venue & Admission
                 </span>
                 <span className="font-semibold text-slate-700">
-                  Landmark Centre, Victoria Island, Lagos, Nigeria. Entry is 100% Free.
+                  the venue, Victoria Island, Lagos, Nigeria. Entry is 100% Free.
                 </span>
               </div>
               <div>
@@ -221,7 +221,7 @@ Favour Chisimdi Nwobodo is a Nigerian educator and polyglot dedicated to bridgin
                 Accreditation Request Received
               </h3>
               <p className="text-sm text-slate-700 max-w-md mx-auto leading-relaxed">
-                Thank you, {formData.name}. Our press desk has logged your application for {formData.outlet} and will email confirmation along with press badge collection instructions at Landmark.
+                Thank you, {formData.name}. Our press desk has logged your application for {formData.outlet} and will email confirmation along with press badge collection instructions in Lagos.
               </p>
               <button
                 onClick={() => setIsSuccess(false)}

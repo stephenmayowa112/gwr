@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Prisma database seed script for Favour Ugegbe's 48-Hour French Marathon
  */
 
@@ -6,7 +6,7 @@ export const INITIAL_FAQS = [
   {
     category: "Venue & Access",
     question: "Where is the event taking place?",
-    answer: "Landmark Centre, Plot 2 & 3, Water Corporation Drive, Victoria Island, Lagos, Nigeria. The venue is fully air-conditioned, secured, and equipped with ample parking and accessibility ramps.",
+    answer: "Lagos, Nigeria. The venue is fully air-conditioned, secured, and equipped with ample parking and accessibility ramps.",
     order: 1
   },
   {

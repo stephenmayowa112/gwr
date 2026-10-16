@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Globe, BookOpen, Award, ArrowRight, ExternalLink } from 'lucide-react';
 import { EditorialPlaceholder } from '../components/common/EditorialPlaceholder';
 
@@ -188,7 +188,7 @@ export const AboutFavourPage: React.FC<AboutFavourPageProps> = ({ onNavigate }) 
               onClick={() => onNavigate('/register')}
               className="px-8 py-3.5 bg-amber-400 hover:bg-amber-300 text-emerald-950 font-display font-bold text-xs uppercase tracking-wider rounded-md transition-all cursor-pointer"
             >
-              Register to Support Favour at Landmark
+              Register to Support Favour in Lagos
             </button>
           </div>
         </div>

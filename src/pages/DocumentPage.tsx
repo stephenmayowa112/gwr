@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { TimezoneCountdown } from '../components/common/TimezoneCountdown';
 import { UgegbeBrandLogo } from '../components/common/UgegbeBrandLogo';
 import {
@@ -38,14 +38,14 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
 
   const handleCopyShare = () => {
     navigator.clipboard.writeText(
-      'Join me in supporting Nigerian polyglot Favour Chisimdi Ugegbe for the 48-Hour French Language Marathon at Landmark, Lagos! Entry is FREE. #UgegbeGWR #FavourUgegbe #FrenchLanguageMarathon https://ugegbegwr.com'
+      'Join me in supporting Nigerian polyglot Favour Chisimdi Ugegbe for the 48-Hour French Language Marathon at Lagos, Nigeria! Entry is FREE. #UgegbeGWR #FavourUgegbe #FrenchLanguageMarathon https://ugegbegwr.com'
     );
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
 
   const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(
-    'Join me in supporting Nigerian polyglot Favour Chisimdi Ugegbe for the 48-Hour French Language Marathon at Landmark, Lagos! Entry is FREE. #UgegbeGWR #FavourUgegbe https://ugegbegwr.com'
+    'Join me in supporting Nigerian polyglot Favour Chisimdi Ugegbe for the 48-Hour French Language Marathon at Lagos, Nigeria! Entry is FREE. #UgegbeGWR #FavourUgegbe https://ugegbegwr.com'
   )}`;
 
   return (
@@ -90,7 +90,7 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
 
           {/* Subheading with glow animation */}
           <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-mono tracking-wider uppercase text-[#23C48E] font-bold drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-1100 px-4">
-            LANDMARK, LAGOS · FREE ENTRY
+            Lagos, Nigeria · FREE ENTRY
           </p>
 
           {/* CTA Buttons with animation */}
@@ -173,7 +173,7 @@ GET FREE PASS
                 Entry for all
               </div>
               <div className="text-xs sm:text-sm md:text-base text-[#D2FCE3]/70 font-light">
-                Landmark, Lagos
+                Lagos, Nigeria
               </div>
             </div>
           </div>
@@ -602,7 +602,7 @@ GET FREE PASS
           {/* Info Line */}
           <div className="pt-6 space-y-3 font-mono uppercase text-sm sm:text-base md:text-lg text-[#D2FCE3]/90 tracking-wider">
             <p className="font-bold text-white text-lg sm:text-xl">30 OCTOBER – 1 NOVEMBER 2026</p>
-            <p className="font-bold text-white text-lg sm:text-xl">LANDMARK, LAGOS</p>
+            <p className="font-bold text-white text-lg sm:text-xl">Lagos, Nigeria</p>
           </div>
 
           {/* Big CTA Button */}

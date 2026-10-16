@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Calendar, Clock, MapPin, Download, ExternalLink, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { OFFICIAL_MILESTONES, downloadIcsFile, generateGoogleCalendarUrl } from '../services/calendar';
 
@@ -70,7 +70,7 @@ export const SchedulePage: React.FC<SchedulePageProps> = ({ onNavigate }) => {
             THREE DAYS. ONE CITY. A LOT OF FRENCH.
           </h1>
           <p className="text-base sm:text-xl text-slate-700 leading-relaxed font-normal">
-            For 48 consecutive hours, Landmark Lagos will host an uninterrupted masterclass in French language, literature, culture, and communication.
+            For 48 consecutive hours, Lagos will host an uninterrupted masterclass in French language, literature, culture, and communication.
           </p>
         </div>
 

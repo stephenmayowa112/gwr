@@ -1,4 +1,4 @@
-# Security Specification: Ugegbe 48-Hour Marathon Backend
+﻿# Security Specification: Ugegbe 48-Hour Marathon Backend
 
 ## 1. Data Invariants
 
@@ -22,7 +22,7 @@
 
 1. **Payload 1 (Shadow Field in Registration)**: An attacker injects `vipPass: true` or `role: 'admin'` into `registrations`.
    - *Expected Result*: PERMISSION_DENIED (Strict key validation rejects non-whitelisted keys).
-2. **Payload 2 (Pre-Checked-In Ticket)**: An attacker sets `checkedIn: true` during registration creation to bypass the Landmark Centre gate scanner.
+2. **Payload 2 (Pre-Checked-In Ticket)**: An attacker sets `checkedIn: true` during registration creation to bypass the venue gate scanner.
    - *Expected Result*: PERMISSION_DENIED (`checkedIn` must be `false` on creation).
 3. **Payload 3 (Oversized Payload / Denial of Wallet)**: An attacker submits a `fullName` or `notes` containing a 2MB string.
    - *Expected Result*: PERMISSION_DENIED (Enforced `.size() <= maxLength` bounds on all strings).

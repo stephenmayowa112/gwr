@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { X, CheckCircle2 } from 'lucide-react';
 import { PartnerInquirySchema, PartnerInquiryFormData } from '../../types';
 import { store } from '../../services/store';
@@ -98,7 +98,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
                 PARTNER WITH US
               </h3>
               <p className="text-xs text-[#D2FCE3]/80 leading-relaxed">
-                Associate your brand with Favour Chisimdi Nwobodo's historic Guinness World Records attempt at Landmark Centre, Lagos, Nigeria.
+                Associate your brand with Favour Chisimdi Nwobodo's historic Guinness World Records attempt at Lagos, Nigeria, Nigeria.
               </p>
             </div>
 

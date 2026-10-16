@@ -1,4 +1,4 @@
-# TESTING.md — Quality Assurance Checklist
+﻿# TESTING.md — Quality Assurance Checklist
 
 This checklist verifies the core operational workflows for **Favour Ugegbe's 48-Hour French Language Marathon**.
 
@@ -14,7 +14,7 @@ This checklist verifies the core operational workflows for **Favour Ugegbe's 48-
 - [ ] **Calendar & Directions:**
   - Click `Add to Calendar (.ics)`; verify valid RFC-5545 `.ics` file downloads.
   - Click `Google Calendar`; verify correctly pre-populated event details in UTC+1.
-  - Click `Map`; verify Google Maps opens Landmark Centre, Victoria Island, Lagos.
+  - Click `Map`; verify Google Maps opens Lagos.
 - [ ] **Duplicate Prevention:** Re-submit registration using the same email (`test@ugegbegwr.com`) with updated headcount; verify record is updated rather than creating a duplicate entry.
 - [ ] **Waitlist State:** In `/admin`, toggle `Waitlist Active`; submit in-person registration and verify waitlist notification banner.
 

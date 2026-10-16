@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { X, CheckCircle2 } from 'lucide-react';
 import { PressRequestSchema, PressRequestFormData } from '../../types';
 import { store } from '../../services/store';
@@ -99,7 +99,7 @@ export const PressModal: React.FC<PressModalProps> = ({ isOpen, onClose }) => {
                 PRESS ACCREDITATION
               </h3>
               <p className="text-xs text-[#D2FCE3]/80 leading-relaxed">
-                Apply for press credentials to cover Favour Chisimdi Nwobodo’s 48-Hour French Language Marathon at Landmark Centre, Lagos, Nigeria.
+                Apply for press credentials to cover Favour Chisimdi Nwobodo’s 48-Hour French Language Marathon at Lagos, Nigeria, Nigeria.
               </p>
             </div>
 
