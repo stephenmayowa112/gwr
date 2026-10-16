@@ -107,7 +107,7 @@ GET FREE PASS
               }}
               className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-transparent hover:bg-[#003734] border-2 border-[#23C48E] text-[#D2FCE3] font-display font-black text-sm sm:text-base tracking-wider uppercase rounded-lg sm:rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2"
             >
-              <span>[ LEARN MORE ]</span>
+              <span> LEARN MORE </span>
               <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5" />
             </button>
           </div>
@@ -261,7 +261,7 @@ GET FREE PASS
                 onClick={onOpenRegister}
                 className="px-8 sm:px-10 py-3 sm:py-4 bg-[#23C48E] hover:bg-[#40FFBC] text-[#001410] font-display font-black text-xs sm:text-sm uppercase tracking-wider rounded-lg shadow-lg transition-all cursor-pointer"
               >
-                [ REGISTER TO ATTEND ]
+                 REGISTER TO ATTEND 
               </button>
             </div>
           </div>
