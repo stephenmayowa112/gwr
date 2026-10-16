@@ -20,6 +20,11 @@ export const RegistrationSchema = z.object({
 
 export type RegistrationFormData = z.infer<typeof RegistrationSchema>;
 
+// Extended registration data that includes attendeesCount for the store
+export interface RegistrationFormDataWithCount extends RegistrationFormData {
+  attendeesCount: number;
+}
+
 export interface Registration {
   id: string;
   fullName: string;

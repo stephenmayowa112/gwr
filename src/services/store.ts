@@ -328,7 +328,7 @@ class StoreService {
   }
 
   async registerAttendee(
-    data: RegistrationFormData,
+    data: RegistrationFormData & { attendeesCount: number },
     utmParams?: { utmSource?: string; utmMedium?: string; utmCampaign?: string }
   ): Promise<{ registration: Registration; isUpdate: boolean; waitlisted: boolean }> {
     const list = await this.getRegistrations();
