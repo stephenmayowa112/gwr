@@ -124,8 +124,8 @@ service cloud.firestore {
     match /registrations/{registrationId} {
       allow get: if isValidId(registrationId);
       allow list: if isAdmin();
-      allow create: if isValidId(registrationId) &&
-        isValidRegistration(incoming()) &&
+      // Allow anyone to create a registration (public event registration)
+      allow create: if isValidRegistration(incoming()) &&
         incoming().checkedIn == false;
       allow update: if isValidId(registrationId) &&
         isValidRegistration(incoming()) &&
