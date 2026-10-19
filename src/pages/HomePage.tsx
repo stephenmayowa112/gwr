@@ -298,6 +298,30 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <p>
                   Now, she is taking that passion out of the classroom and putting it on a global stage.
                 </p>
+                
+                {/* Ugegbe's Introduction Video */}
+                <div className="mt-8 pt-8 border-t border-emerald-700/40">
+                  <div className="mb-4">
+                    <span className="inline-block px-3 py-1.5 bg-amber-400/20 border border-amber-400/40 text-amber-400 font-mono text-xs uppercase tracking-wider rounded-md font-semibold">
+                      ▶ Hear from Ugegbe herself
+                    </span>
+                  </div>
+                  <div className="relative w-full rounded-xl overflow-hidden shadow-2xl border-2 border-emerald-700/60 bg-black">
+                    <div className="relative" style={{ paddingTop: '56.25%' /* 16:9 aspect ratio */ }}>
+                      <iframe
+                        src="https://player.cloudinary.com/embed/?cloud_name=dkkyvnhhg&public_id=ugebe_t6xpsq&fluid=true&controls=true&colors[base]=%2323C48E&colors[accent]=%23F59E0B"
+                        allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                        allowFullScreen
+                        className="absolute top-0 left-0 w-full h-full"
+                        title="Favour Ugegbe introduces the 48-Hour French Marathon"
+                      />
+                    </div>
+                  </div>
+                  <p className="text-sm text-emerald-200/70 mt-3 italic text-center">
+                    Watch Favour introduce herself and share what this marathon means to her
+                  </p>
+                </div>
+              </div>
                 <p className="pt-2 font-medium text-white">
                   Her challenge is simple to understand.
                 </p>

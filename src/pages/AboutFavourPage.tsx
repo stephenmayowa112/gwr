@@ -136,7 +136,29 @@ export const AboutFavourPage: React.FC<AboutFavourPageProps> = ({ onNavigate }) 
           </div>
         </div>
 
-        {/* Video Slots / Gallery Placeholders */}
+        {/* Video Section - Ugegbe's Introduction */}
+        <div className="space-y-6">
+          <h2 className="text-2xl font-display font-black text-emerald-950 uppercase tracking-tight">
+            MEET UGEGBE: IN HER OWN WORDS
+          </h2>
+          
+          <div className="relative w-full rounded-xl overflow-hidden shadow-2xl border-2 border-emerald-800/40 bg-black">
+            <div className="relative" style={{ paddingTop: '56.25%' /* 16:9 aspect ratio */ }}>
+              <iframe
+                src="https://player.cloudinary.com/embed/?cloud_name=dkkyvnhhg&public_id=ugebe_t6xpsq&fluid=true&controls=true&colors[base]=%2323C48E&colors[accent]=%23F59E0B"
+                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                allowFullScreen
+                className="absolute top-0 left-0 w-full h-full"
+                title="Favour Ugegbe introduces herself and the 48-Hour French Marathon"
+              />
+            </div>
+          </div>
+          <p className="text-sm text-slate-600 italic text-center leading-relaxed">
+            Watch Favour introduce herself, share her story, and explain what the 48-Hour French Language Marathon means to her and to Nigeria.
+          </p>
+        </div>
+
+        {/* Additional Media Placeholders */}
         <div className="space-y-6">
           <h2 className="text-2xl font-display font-black text-emerald-950 uppercase tracking-tight">
             MEDIA & INTERVIEWS
