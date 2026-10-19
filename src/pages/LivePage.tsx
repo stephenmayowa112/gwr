@@ -250,7 +250,7 @@ export const LivePage: React.FC<LivePageProps> = ({ onNavigate }) => {
 
             <div className="mt-8 pt-6 border-t border-emerald-800/80 text-center space-y-2">
               <p className="text-xs font-mono uppercase tracking-widest text-emerald-300">
-                Friday 30 October 2026 at 18:00 WAT Prompt
+                Thursday 13 November 2026 at 18:00 WAT Prompt
               </p>
               <div className="flex justify-center gap-4 text-xs font-mono text-amber-400">
                 <span>the venue, Victoria Island, Lagos</span>

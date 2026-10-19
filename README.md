@@ -1,6 +1,6 @@
 ﻿# Favour Ugegbe's 48-Hour French Language Marathon
 
-Official web application and event portal for **Favour Chisimdi Ugegbe's 48-Hour French Language Marathon** — an accredited Guinness World Records™ attempt for the longest language lesson, hosted at **Lagos, Nigeria** (30 October – 1 November 2026).
+Official web application and event portal for **Favour Chisimdi Ugegbe's 48-Hour French Language Marathon** — an accredited Guinness World Records™ attempt for the longest language lesson, hosted at **Lagos, Nigeria** (13 November – 15 November 2026).
 
 ---
 
@@ -12,10 +12,10 @@ Official web application and event portal for **Favour Chisimdi Ugegbe's 48-Hour
 - **Venue:** the venue, Plot 2 & 3 Water Corporation Drive, Victoria Island, Lagos, Nigeria.
 - **Admission:** 100% Free Public Admission.
 - **Timezone:** `Africa/Lagos` (WAT, UTC+1).
-  - **Fri 30 Oct 2026, 10:00–15:00 WAT:** The Send-Off (music, comedy, spoken word, French).
-  - **Fri 30 Oct 2026, 18:00 WAT:** The Clock Starts (official commencement).
-  - **Sat 31 Oct 2026, ~20:00 WAT:** Hour 26 reached (current record falls).
-  - **Sun 1 Nov 2026, 18:00 WAT:** Hour 48 final bell (new world record achieved).
+  - **Thu 13 Nov 2026, 10:00–15:00 WAT:** The Send-Off (music, comedy, spoken word, French).
+  - **Thu 13 Nov 2026, 18:00 WAT:** The Clock Starts (official commencement).
+  - **Fri 14 Nov 2026, ~20:00 WAT:** Hour 26 reached (current record falls).
+  - **Sat 15 Nov 2026, 18:00 WAT:** Hour 48 final bell (new world record achieved).
 - **Social Handles:** `@UGEGBEGWR` (Instagram, X, TikTok, YouTube).
 - **Email:** `hello@ugegbegwr.com`.
 - **Official Hashtags:** `#UgegbeGWR` `#FavourUgegbe` `#FrenchLanguageMarathon`.

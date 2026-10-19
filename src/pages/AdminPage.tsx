@@ -768,7 +768,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                     className="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm font-mono"
                   />
                   <p className="text-[11px] text-slate-400 font-mono mt-1">
-                    Default: 2026-10-30T18:00:00+01:00 (Africa/Lagos WAT)
+                    Default: 2026-11-13T18:00:00+01:00 (Africa/Lagos WAT)
                   </p>
                 </div>
 

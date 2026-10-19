@@ -47,7 +47,7 @@ export const INITIAL_PHRASES = [
     english: "Together, we are writing history.",
     phonetic: "ahn-SAHM-bluh, noo z-ay-kree-VOHN lees-TWAHR",
     context: "The official spirit and motto of the 48-hour marathon.",
-    dateStr: "2026-10-30"
+    dateStr: "2026-11-13"
   },
   {
     french: "La langue est un pont, pas une barrière.",
@@ -61,14 +61,14 @@ export const INITIAL_PHRASES = [
     english: "Courage begins with a first word.",
     phonetic: "luh koo-RAHZH koh-MAHNS pahr uhn pruh-mee-AY MOH",
     context: "Inspiring every young Nigerian to embrace multilingualism.",
-    dateStr: "2026-11-01"
+    dateStr: "2026-11-15"
   }
 ];
 
 export const INITIAL_CONFIG = {
   id: "singleton",
   status: "UPCOMING",
-  officialStartTime: "2026-10-30T18:00:00+01:00",
+  officialStartTime: "2026-11-13T18:00:00+01:00",
   youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   hourOverride: null,
   venueCapacity: 2500,

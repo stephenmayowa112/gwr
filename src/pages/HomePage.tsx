@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { ArrowRight, Calendar, MapPin, CheckCircle, ShieldCheck, Sparkles, ExternalLink } from 'lucide-react';
 import { TimezoneCountdown } from '../components/common/TimezoneCountdown';
 import { EditorialPlaceholder } from '../components/common/EditorialPlaceholder';
@@ -48,7 +48,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           <div className="mt-8 pt-6 border-t border-emerald-800/80 flex flex-wrap items-center gap-y-3 gap-x-8 text-sm sm:text-base font-medium text-emerald-200">
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5 text-amber-400 shrink-0" />
-              <span className="font-semibold text-white tracking-wide">30 OCTOBER â€“ 1 NOVEMBER 2026</span>
+              <span className="font-semibold text-white tracking-wide">13 NOVEMBER – 15 NOVEMBER 2026</span>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-5 h-5 text-amber-400 shrink-0" />
@@ -79,7 +79,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
           {/* Live Countdown Component synced to Africa/Lagos (WAT, UTC+1) */}
           <div id="countdown-block" className="mt-14 pt-8 border-t border-emerald-900/80">
-            <TimezoneCountdown targetDateIso="2026-10-30T18:00:00+01:00" />
+            <TimezoneCountdown targetDateIso="2026-11-13T18:00:00+01:00" />
           </div>
         </div>
       </section>
@@ -161,7 +161,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             SO WE ARE MAKING HISTORY IN FRENCH.
           </h2>
           <p className="text-lg sm:text-2xl text-emerald-100 font-light leading-relaxed">
-            From 30 October to 1 November 2026, Lagos will become the stage for an extraordinary 48-hour French Language Marathon.
+            From 13 November to 15 November 2026, Lagos will become the stage for an extraordinary 48-hour French Language Marathon.
           </p>
           <div className="space-y-2 text-xl sm:text-2xl font-display font-bold text-amber-400">
             <p>One woman.</p>
@@ -364,7 +364,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             {/* 1. Friday 30 Oct, 10am - 3pm */}
             <div className="p-6 sm:p-8 bg-white border border-slate-200 rounded-xl space-y-3">
               <div className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-semibold">
-                FRIDAY Â· 30 OCTOBER Â· 10AM â€“ 3PM
+                THURSDAY · 13 NOVEMBER · 10AM â€“ 3PM
               </div>
               <h3 className="text-2xl font-display font-black text-slate-900 uppercase">
                 THE SEND-OFF
@@ -380,7 +380,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             {/* 2. Friday 30 Oct, 6pm */}
             <div className="p-6 sm:p-8 bg-white border-2 border-emerald-800/40 rounded-xl space-y-3 shadow-xs">
               <div className="text-xs font-mono uppercase tracking-widest text-emerald-800 font-semibold">
-                FRIDAY Â· 30 OCTOBER Â· 6PM
+                THURSDAY · 13 NOVEMBER · 6PM
               </div>
               <h3 className="text-2xl font-display font-black text-emerald-950 uppercase">
                 THE CLOCK STARTS.
@@ -409,7 +409,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             {/* 4. Sunday 1 Nov, 6pm */}
             <div className="p-6 sm:p-8 bg-emerald-950 text-white border border-amber-500/40 rounded-xl space-y-3 shadow-md">
               <div className="text-xs font-mono uppercase tracking-widest text-amber-400 font-semibold">
-                SUNDAY Â· 1 NOVEMBER Â· 6PM
+                SATURDAY · 15 NOVEMBER · 6PM
               </div>
               <h3 className="text-2xl font-display font-black text-amber-400 uppercase">
                 HOUR 48.
@@ -598,7 +598,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
 
           <div className="pt-4 space-y-2 text-sm sm:text-base font-mono uppercase text-emerald-300 tracking-wider">
-            <p>30 OCTOBER â€“ 1 NOVEMBER 2026</p>
+            <p>13 NOVEMBER – 15 NOVEMBER 2026</p>
             <p>LAGOS, NIGERIA</p>
             <p className="text-amber-400 font-bold">FAVOUR UGEGBEâ€™S 48-HOUR FRENCH LANGUAGE MARATHON</p>
           </div>

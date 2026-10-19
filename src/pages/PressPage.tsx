@@ -76,7 +76,7 @@ EVENT FACTS:
 - Target: 48 Hours.
 - Current Official Guinness Record: 26 Hours.
 - Venue: the venue, Victoria Island, Lagos, Nigeria.
-- Dates: Friday, 30 October 2026, 18:00 WAT through Sunday, 1 November 2026, 18:00 WAT.
+- Dates: Thursday, 13 November 2026, 18:00 WAT through Saturday, 15 November 2026, 18:00 WAT.
 - Admission: 100% Free Public Admission.
 - Social Handles: @UGEGBEGWR (Instagram, X, TikTok, YouTube).
 - Official Hashtags: #UgegbeGWR #FavourNwobodo #FrenchLanguageMarathon.
@@ -167,7 +167,7 @@ Favour Chisimdi Nwobodo is a Nigerian educator and polyglot dedicated to bridgin
                   Dates & Timezone
                 </span>
                 <span className="font-bold text-slate-900">
-                  30 Oct – 1 Nov 2026 (Africa/Lagos, WAT, UTC+1)
+                  13 Nov – 15 Nov 2026 (Africa/Lagos, WAT, UTC+1)
                 </span>
               </div>
               <div>
@@ -196,7 +196,7 @@ Favour Chisimdi Nwobodo is a Nigerian educator and polyglot dedicated to bridgin
             OFFICIAL BOILERPLATE
           </span>
           <p className="text-sm sm:text-base text-slate-700 leading-relaxed italic">
-            “For 48 hours, Favour Chisimdi Nwobodo will teach, speak, engage and keep going, turning a French lesson into a live celebration of language, culture, endurance and possibility. From 30 October to 1 November 2026, Lagos, Nigeria will become the stage for an extraordinary 48-hour French Language Marathon — an audacious attempt to set a new Guinness World Records title. Not in Paris. In Nigeria.”
+            “For 48 hours, Favour Chisimdi Nwobodo will teach, speak, engage and keep going, turning a French lesson into a live celebration of language, culture, endurance and possibility. From 13 November to 15 November 2026, Lagos, Nigeria will become the stage for an extraordinary 48-hour French Language Marathon — an audacious attempt to set a new Guinness World Records title. Not in Paris. In Nigeria.”
           </p>
         </div>
 

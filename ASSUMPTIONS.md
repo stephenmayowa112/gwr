@@ -37,4 +37,4 @@
 3. **Event Facts & Timezone**:
    - Location: Lagos, Nigeria, Nigeria. Entry is FREE.
    - Timezone: `Africa/Lagos` (WAT, UTC+1).
-   - Target start: Friday, 30 October 2026 at 18:00 WAT prompt.
+   - Target start: Thursday, 13 November 2026 at 18:00 WAT prompt.

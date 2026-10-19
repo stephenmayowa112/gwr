@@ -127,7 +127,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, o
                 {successResult.isUpdate ? 'REGISTRATION UPDATED' : 'YOU ARE REGISTERED!'}
               </h3>
               <p className="text-xs text-[#D2FCE3]/80 font-mono">
-                Lagos, Nigeria Â· 30 October â€“ 1 November 2026 Â· Entry is free
+                Lagos, Nigeria Â· 13 November – 15 November 2026 Â· Entry is free
               </p>
             </div>
 

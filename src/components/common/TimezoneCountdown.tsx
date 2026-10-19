@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 interface TimezoneCountdownProps {
-  targetDateIso?: string; // default: 2026-10-30T18:00:00+01:00
+  targetDateIso?: string; // default: 2026-11-13T18:00:00+01:00
   title?: string;
   variant?: 'hero' | 'compact' | 'live' | 'prominent';
 }
@@ -16,7 +16,7 @@ interface TimeRemaining {
 }
 
 export const TimezoneCountdown: React.FC<TimezoneCountdownProps> = ({
-  targetDateIso = '2026-10-30T18:00:00+01:00',
+  targetDateIso = '2026-11-13T18:00:00+01:00',
   title = 'TIME UNTIL OFFICIAL START (LAGOS WAT)',
   variant = 'hero',
 }) => {

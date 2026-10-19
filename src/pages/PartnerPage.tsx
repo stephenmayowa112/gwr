@@ -69,7 +69,7 @@ export const PartnerPage: React.FC<PartnerPageProps> = ({ onNavigate }) => {
     // Generate a simple PDF / text brief summary download
     const deckContent = `FAVOUR UGEGBE'S 48-HOUR FRENCH LANGUAGE MARATHON
 Guinness World Records Attempt — Longest Language Lesson
-30 October – 1 November 2026 | Lagos, Nigeria, Nigeria
+13 November – 15 November 2026 | Lagos, Nigeria, Nigeria
 
 PARTNERSHIP OPPORTUNITY OVERVIEW:
 - Objective: 48 hours of continuous French teaching to break the existing 26h record.

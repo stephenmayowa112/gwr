@@ -96,7 +96,7 @@ export const ThankYouPage: React.FC<ThankYouPageProps> = ({ onNavigate }) => {
           </h2>
           <div className="space-y-2 text-emerald-100">
             <p className="text-lg font-semibold">48-Hour French Language Marathon</p>
-            <p className="text-sm">30 October – 1 November 2026</p>
+            <p className="text-sm">13 November – 15 November 2026</p>
             <p className="text-sm">Lagos, Nigeria · 100% Free Entry</p>
           </div>
 

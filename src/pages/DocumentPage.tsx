@@ -74,7 +74,7 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
           {/* MASSIVE COUNTDOWN - FIRST AND BIGGEST */}
           <div className="max-w-6xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-1000">
             <TimezoneCountdown
-              targetDateIso="2026-10-30T18:00:00+01:00"
+              targetDateIso="2026-11-13T18:00:00+01:00"
               variant="prominent"
             />
           </div>
@@ -601,7 +601,7 @@ GET FREE PASS
 
           {/* Info Line */}
           <div className="pt-6 space-y-3 font-mono uppercase text-sm sm:text-base md:text-lg text-[#D2FCE3]/90 tracking-wider">
-            <p className="font-bold text-white text-lg sm:text-xl">30 OCTOBER – 1 NOVEMBER 2026</p>
+            <p className="font-bold text-white text-lg sm:text-xl">13 NOVEMBER – 15 NOVEMBER 2026</p>
             <p className="font-bold text-white text-lg sm:text-xl">Lagos, Nigeria</p>
           </div>
 

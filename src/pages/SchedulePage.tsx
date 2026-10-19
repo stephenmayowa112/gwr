@@ -11,7 +11,7 @@ export const SchedulePage: React.FC<SchedulePageProps> = ({ onNavigate }) => {
     {
       key: 'sendOff',
       milestone: OFFICIAL_MILESTONES.sendOff,
-      day: 'FRIDAY · 30 OCTOBER 2026',
+      day: 'THURSDAY · 13 NOVEMBER 2026',
       time: '10:00 AM – 3:00 PM WAT',
       title: 'THE SEND-OFF',
       subhead: 'Music. Comedy. Spoken word. French. Lagos energy.',
@@ -23,7 +23,7 @@ export const SchedulePage: React.FC<SchedulePageProps> = ({ onNavigate }) => {
     {
       key: 'clockStarts',
       milestone: OFFICIAL_MILESTONES.clockStarts,
-      day: 'FRIDAY · 30 OCTOBER 2026',
+      day: 'THURSDAY · 13 NOVEMBER 2026',
       time: '6:00 PM WAT (PROMPT)',
       title: 'THE CLOCK STARTS.',
       subhead: 'The 48-hour challenge officially begins.',
@@ -35,7 +35,7 @@ export const SchedulePage: React.FC<SchedulePageProps> = ({ onNavigate }) => {
     {
       key: 'hour26',
       milestone: OFFICIAL_MILESTONES.hour26,
-      day: 'SATURDAY · 31 OCTOBER 2026',
+      day: 'FRIDAY · 14 NOVEMBER 2026',
       time: 'AROUND 8:00 PM WAT',
       title: 'HOUR 26.',
       subhead: 'The current record is reached. And if Favour is still going, the record falls.',
@@ -47,7 +47,7 @@ export const SchedulePage: React.FC<SchedulePageProps> = ({ onNavigate }) => {
     {
       key: 'hour48',
       milestone: OFFICIAL_MILESTONES.hour48,
-      day: 'SUNDAY · 1 NOVEMBER 2026',
+      day: 'SATURDAY · 15 NOVEMBER 2026',
       time: '6:00 PM WAT',
       title: 'HOUR 48.',
       subhead: 'The final bell. The end of the marathon.',

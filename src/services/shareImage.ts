@@ -112,7 +112,7 @@ export async function generateShareCardBlob(options: ShareCardOptions): Promise<
   const footerY = isStory ? 1400 : 800;
   ctx.fillStyle = '#FFFFFF';
   ctx.font = '700 36px -apple-system, sans-serif';
-  ctx.fillText('30 OCTOBER – 1 NOVEMBER 2026', width / 2, footerY);
+  ctx.fillText('13 NOVEMBER – 15 NOVEMBER 2026', width / 2, footerY);
 
   ctx.fillStyle = '#F59E0B';
   ctx.font = '600 30px -apple-system, sans-serif';

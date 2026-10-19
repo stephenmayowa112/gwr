@@ -57,7 +57,7 @@ const SAMPLE_REGISTRATIONS: Registration[] = [
     ticketCode: '',
     qrCodeDataUrl: '',
     checkedIn: true,
-    checkedInAt: '2026-10-30T10:15:00+01:00',
+    checkedInAt: '2026-11-13T10:15:00+01:00',
     utmSource: 'instagram',
     createdAt: '2026-09-12T14:22:00Z',
     updatedAt: '2026-09-12T14:22:00Z',
@@ -133,7 +133,7 @@ class StoreService {
     this.inMemoryConfig = this.getItem<EventConfig>(STORAGE_KEYS.CONFIG, {
       ...INITIAL_CONFIG,
       status: 'upcoming' as const,
-      officialStartTime: '2026-10-30T18:00:00+01:00',
+      officialStartTime: '2026-11-13T18:00:00+01:00',
     });
     this.inMemoryUpdates = this.getItem<LiveUpdate[]>(STORAGE_KEYS.UPDATES, INITIAL_UPDATES);
     this.inMemoryPartners = this.getItem<PartnerInquiry[]>(STORAGE_KEYS.PARTNERS, []);
@@ -683,7 +683,7 @@ class StoreService {
         english: 'Together, we are writing history.',
         phonetic: 'ahn-SAHM-bluh, noo z-ay-kree-VOHN lees-TWAHR',
         context: 'Official motto for the 48-Hour French Marathon.',
-        dateStr: '2026-10-30',
+        dateStr: '2026-11-13',
         createdAt: new Date().toISOString(),
       }
     );

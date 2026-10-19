@@ -148,7 +148,7 @@ export interface FaqItem {
 export interface EventConfig {
   id: string;
   status: EventStatus;
-  officialStartTime: string; // ISO String (2026-10-30T18:00:00+01:00)
+  officialStartTime: string; // ISO String (2026-11-13T18:00:00+01:00)
   youtubeUrl: string;
   hourOverride: number | null;
   venueCapacity: number;

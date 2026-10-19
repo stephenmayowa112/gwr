@@ -33,7 +33,7 @@ This checklist verifies the core operational workflows for **Favour Ugegbe's 48-
 
 ### 3. Countdown Timezone Correctness (Africa/Lagos WAT UTC+1)
 - [ ] **Timezone Invariance:** Test countdown on devices set to different local timezones (e.g., US EST, GMT/UTC, Tokyo JST).
-  - Verify countdown calculates target `2026-10-30T18:00:00+01:00` against UTC epoch time, producing identical days/hours/minutes/seconds regardless of client device timezone.
+  - Verify countdown calculates target `2026-11-13T18:00:00+01:00` against UTC epoch time, producing identical days/hours/minutes/seconds regardless of client device timezone.
 - [ ] **Tabular Numerals:** Verify timer digits use `font-mono tabular-nums` to prevent horizontal jitter as seconds tick.
 
 ---
