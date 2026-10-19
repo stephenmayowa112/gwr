@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { ArrowRight, Calendar, MapPin, CheckCircle, ShieldCheck, Sparkles, ExternalLink } from 'lucide-react';
 import { TimezoneCountdown } from '../components/common/TimezoneCountdown';
 import { EditorialPlaceholder } from '../components/common/EditorialPlaceholder';
@@ -321,7 +321,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                     Watch Favour introduce herself and share what this marathon means to her
                   </p>
                 </div>
-              </div>
                 <p className="pt-2 font-medium text-white">
                   Her challenge is simple to understand.
                 </p>
