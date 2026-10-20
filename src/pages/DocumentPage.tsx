@@ -251,8 +251,37 @@ GET FREE PASS
             </div>
           </div>
 
+          {/* Video Section - Hear from Ugegbe herself */}
+          <div className="max-w-4xl mx-auto pt-4 sm:pt-6">
+            <div className="space-y-4 sm:space-y-6">
+              {/* Video Badge */}
+              <div className="text-center">
+                <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-[#FF6B1A]/20 border border-[#FF6B1A]/40 text-[#FF6B1A] font-mono text-xs uppercase tracking-wider rounded-md font-semibold">
+                  ▶ Hear from Ugegbe herself
+                </span>
+              </div>
+              
+              {/* Video Player */}
+              <div className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border-2 border-[#23C48E]/60 bg-black">
+                <div className="relative" style={{ paddingTop: '56.25%' /* 16:9 aspect ratio */ }}>
+                  <iframe
+                    src="https://player.cloudinary.com/embed/?cloud_name=dkkyvnhhg&public_id=ugebe_t6xpsq&fluid=true&controls=true&showLogo=false&colors[base]=%2323C48E&colors[accent]=%23F59E0B"
+                    allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                    className="absolute top-0 left-0 w-full h-full"
+                    title="Favour Ugegbe introduces the 48-Hour French Marathon"
+                  />
+                </div>
+              </div>
+              
+              <p className="text-xs sm:text-sm text-[#D2FCE3]/70 italic text-center">
+                Watch Favour introduce herself and share what this marathon means to her
+              </p>
+            </div>
+          </div>
+
           {/* Bio Card */}
-          <div className="max-w-3xl mx-auto pt-2 sm:pt-4">
+          <div className="max-w-3xl mx-auto pt-6 sm:pt-8">
             <div className="p-6 sm:p-8 md:p-10 bg-[#003734]/50 border border-[#23C48E]/30 rounded-xl sm:rounded-2xl text-center space-y-4 sm:space-y-6 backdrop-blur-sm">
               <p className="text-base sm:text-lg md:text-2xl text-[#D2FCE3] font-light leading-relaxed">
                 A Nigerian polyglot who speaks 11 languages, Favour is bringing French — and history — to Lagos.
@@ -303,7 +332,7 @@ GET FREE PASS
               <div className="space-y-2 sm:space-y-3">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
                   <span className="text-[10px] sm:text-[11px] font-mono uppercase font-bold text-[#23C48E] tracking-wider">
-                    FRI 30 OCT · 10AM
+                    THU 13 NOV · 10AM
                   </span>
                   <span className="text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded bg-[#23C48E]/10 text-[#23C48E] border border-[#23C48E]/25">
                     WAT
@@ -335,7 +364,7 @@ GET FREE PASS
               <div className="space-y-2 sm:space-y-3">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
                   <span className="text-[10px] sm:text-[11px] font-mono uppercase font-bold text-[#23C48E] tracking-wider">
-                    FRI 30 OCT · 6PM
+                    THU 13 NOV · 6PM
                   </span>
                   <span className="text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded bg-[#23C48E] text-[#001410] font-black">
                     START
@@ -367,7 +396,7 @@ GET FREE PASS
               <div className="space-y-3">
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-[11px] font-mono uppercase font-bold text-[#FF6B1A] tracking-wider">
-                    SAT 31 OCT · ~8PM
+                    FRI 14 NOV · ~8PM
                   </span>
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#FF6B1A]/20 text-[#FF6B1A] border border-[#FF6B1A]/40 font-bold">
                     RECORD REACHED
@@ -399,7 +428,7 @@ GET FREE PASS
               <div className="space-y-3">
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-[11px] font-mono uppercase font-bold text-[#23C48E] tracking-wider">
-                    SUN 1 NOV · 6PM
+                    SAT 15 NOV · 6PM
                   </span>
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#23C48E] text-[#001410] font-black">
                     FINAL BELL
