@@ -246,10 +246,12 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, o
                 </label>
                 <input
                   type="text"
+                  name="fullName"
                   required
                   placeholder="Your full name"
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                  autoComplete="name"
                   className="w-full px-3.5 py-2.5 bg-[#003734]/40 border border-[#23C48E]/30 rounded-lg text-base sm:text-sm text-white placeholder:text-[#D2FCE3]/40 focus:outline-none focus:ring-2 focus:ring-[#23C48E]"
                 />
                 {errors.fullName && <p className="text-xs text-rose-400 mt-1">{errors.fullName}</p>}
@@ -262,10 +264,12 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, o
                   </label>
                   <input
                     type="email"
+                    name="email"
                     required
                     placeholder="name@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    autoComplete="email"
                     className="w-full px-3.5 py-2.5 bg-[#003734]/40 border border-[#23C48E]/30 rounded-lg text-base sm:text-sm text-white placeholder:text-[#D2FCE3]/40 focus:outline-none focus:ring-2 focus:ring-[#23C48E]"
                   />
                   {errors.email && <p className="text-xs text-rose-400 mt-1">{errors.email}</p>}
@@ -277,10 +281,12 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, o
                   </label>
                   <input
                     type="tel"
+                    name="phone"
                     required
                     placeholder="+234..."
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    autoComplete="tel"
                     className="w-full px-3.5 py-2.5 bg-[#003734]/40 border border-[#23C48E]/30 rounded-lg text-base sm:text-sm text-white placeholder:text-[#D2FCE3]/40 focus:outline-none focus:ring-2 focus:ring-[#23C48E]"
                   />
                   {errors.phone && <p className="text-xs text-rose-400 mt-1">{errors.phone}</p>}

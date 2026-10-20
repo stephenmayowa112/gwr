@@ -351,10 +351,12 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
               <input
                 id="fullName"
                 type="text"
+                name="fullName"
                 required
                 placeholder="e.g. Chisimdi Nwosu"
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                autoComplete="name"
                 className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-800 focus:bg-white transition-all text-sm"
               />
               {errors.fullName && (
@@ -370,10 +372,12 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
               <input
                 id="email"
                 type="email"
+                name="email"
                 required
                 placeholder="name@example.com"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                autoComplete="email"
                 className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-800 focus:bg-white transition-all text-sm"
               />
               <p className="mt-1 text-[11px] text-slate-500">
@@ -392,10 +396,12 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
               <input
                 id="phone"
                 type="tel"
+                name="phone"
                 required
                 placeholder="+234 800 000 0000"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                autoComplete="tel"
                 className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-800 focus:bg-white transition-all text-sm"
               />
               {errors.phone && (
