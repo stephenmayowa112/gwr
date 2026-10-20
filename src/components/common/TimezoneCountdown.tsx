@@ -109,7 +109,7 @@ export const TimezoneCountdown: React.FC<TimezoneCountdownProps> = ({
           <div className="flex items-center gap-2 text-xs sm:text-sm font-mono">
             <span className="text-[#D2FCE3]/60 uppercase tracking-wide">STARTS:</span>
             <span className="text-[#23C48E] font-bold tracking-wide uppercase">
-              FRI 30 OCT 2026 · 6:00 PM (WAT)
+              THU 13 NOV 2026 · 6:00 PM (WAT)
             </span>
           </div>
         </div>
