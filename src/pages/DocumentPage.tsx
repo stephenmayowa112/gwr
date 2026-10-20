@@ -60,6 +60,7 @@ export const DocumentPage: React.FC<DocumentPageProps> = ({
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
+            loading="eager"
             src="/IMG_6521.JPG.webp" 
             alt="Event Background" 
             className="w-full h-full object-cover"
@@ -121,6 +122,7 @@ GET FREE PASS
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
+            loading="lazy"
             src="/IMG_3314.JPG.webp" 
             alt="Background" 
             className="w-full h-full object-cover opacity-30"
@@ -197,6 +199,7 @@ GET FREE PASS
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
+            loading="lazy"
             src="/IMG_3319.webp" 
             alt="Background" 
             className="w-full h-full object-cover opacity-30"
@@ -220,6 +223,7 @@ GET FREE PASS
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
             <div className="relative overflow-hidden rounded-xl sm:rounded-2xl border-2 border-[#23C48E]/40 group aspect-square sm:aspect-auto">
               <img
+                loading="lazy"
                 src="/IMG_3314.JPG.webp"
                 alt="Favour Ugegbe"
                 className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
@@ -228,6 +232,7 @@ GET FREE PASS
 
             <div className="relative overflow-hidden rounded-xl sm:rounded-2xl border-2 border-[#23C48E]/40 group aspect-square sm:aspect-auto">
               <img
+                loading="lazy"
                 src="/IMG_3319.webp"
                 alt="Favour Ugegbe"
                 className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
@@ -236,6 +241,7 @@ GET FREE PASS
 
             <div className="relative overflow-hidden rounded-xl sm:rounded-2xl border-2 border-[#23C48E]/40 group aspect-square sm:aspect-auto">
               <img
+                loading="lazy"
                 src="/IMG_6517.webp"
                 alt="Favour Ugegbe"
                 className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
@@ -244,6 +250,7 @@ GET FREE PASS
 
             <div className="relative overflow-hidden rounded-xl sm:rounded-2xl border-2 border-[#23C48E]/40 group aspect-square sm:aspect-auto">
               <img
+                loading="lazy"
                 src="/IMG_6521.JPG.webp"
                 alt="Favour Ugegbe"
                 className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
@@ -307,6 +314,7 @@ GET FREE PASS
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
+            loading="lazy"
             src="/IMG_6517.webp" 
             alt="Background" 
             className="w-full h-full object-cover opacity-30"
@@ -468,6 +476,7 @@ GET FREE PASS
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
+            loading="lazy"
             src="/IMG_6521.JPG.webp" 
             alt="Background" 
             className="w-full h-full object-cover opacity-25"

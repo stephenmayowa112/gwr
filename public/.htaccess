@@ -1,0 +1,82 @@
+# Apache .htaccess for ugegbegwr.com
+# SEO and Performance Optimizations
+
+# Enable Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml
+</IfModule>
+
+# Browser Caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Images
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  
+  # Fonts
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  
+  # CSS and JavaScript
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  
+  # HTML (no cache for dynamic content)
+  ExpiresByType text/html "access plus 0 seconds"
+  
+  # Favicon
+  ExpiresByType image/x-icon "access plus 1 year"
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+  # Prevent clickjacking
+  Header always set X-Frame-Options "DENY"
+  
+  # Prevent MIME sniffing
+  Header always set X-Content-Type-Options "nosniff"
+  
+  # Enable XSS protection
+  Header always set X-XSS-Protection "1; mode=block"
+  
+  # Referrer Policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  
+  # Permissions Policy
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# Redirect non-www to www (or vice versa)
+# Uncomment based on your preference
+
+# Redirect www to non-www
+# RewriteEngine On
+# RewriteCond %{HTTP_HOST} ^www\.ugegbegwr\.com [NC]
+# RewriteRule ^(.*)$ https://ugegbegwr.com/$1 [L,R=301]
+
+# Redirect non-www to www
+# RewriteEngine On
+# RewriteCond %{HTTP_HOST} ^ugegbegwr\.com [NC]
+# RewriteRule ^(.*)$ https://www.ugegbegwr.com/$1 [L,R=301]
+
+# Force HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Custom Error Pages
+ErrorDocument 404 /index.html
+ErrorDocument 500 /index.html
+
+# Remove trailing slashes (optional, for cleaner URLs)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [R=301,L]
