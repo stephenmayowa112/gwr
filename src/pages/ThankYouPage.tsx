@@ -92,13 +92,59 @@ export const ThankYouPage: React.FC<ThankYouPageProps> = ({ onNavigate }) => {
         {/* Event Details */}
         <div className="bg-emerald-950 text-white rounded-2xl p-6 sm:p-8 space-y-4">
           <h2 className="text-xl sm:text-2xl font-display font-black uppercase tracking-tight">
-            MARK YOUR CALENDAR
+            {registration?.attendanceType === 'online' ? 'HOW TO WATCH ONLINE' : 'MARK YOUR CALENDAR'}
           </h2>
-          <div className="space-y-2 text-emerald-100">
-            <p className="text-lg font-semibold">48-Hour French Language Marathon</p>
-            <p className="text-sm">13 November – 15 November 2026</p>
-            <p className="text-sm">Lagos, Nigeria · 100% Free Entry</p>
-          </div>
+          
+          {registration?.attendanceType === 'online' ? (
+            // Online Attendee Message
+            <div className="space-y-4">
+              <p className="text-lg text-emerald-100 leading-relaxed">
+                Hi <span className="font-bold text-amber-400">{registration.fullName.split(' ')[0]}</span>,
+              </p>
+              
+              <p className="text-base text-emerald-100 leading-relaxed">
+                You're registered to join UGEGBE online. It's free to watch.
+              </p>
+              
+              <p className="text-base text-emerald-100 leading-relaxed">
+                From <span className="font-semibold text-white">13 November to 15 November 2026</span>, follow Favour Chisimdi Nwobodo's 48-hour French lesson and Guinness World Records title attempt.
+              </p>
+              
+              <p className="text-base text-emerald-100 leading-relaxed">
+                The lesson begins at <span className="font-bold text-amber-400">6:00 p.m. WAT on Thursday, 13 November 2026</span>. You can watch on YouTube, and we'll email you a direct viewing link and a reminder before it starts.
+              </p>
+              
+              <div className="pt-4 border-t border-emerald-800">
+                <p className="text-sm text-emerald-200 mb-3">
+                  For UGEGBE's channels and the latest event information:
+                </p>
+                <a
+                  href="https://linktr.ee/ugegbegwr"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 font-semibold text-sm transition-colors"
+                >
+                  <span>https://linktr.ee/ugegbegwr</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+              
+              <p className="text-base text-emerald-100 leading-relaxed pt-4">
+                You don't need to know French to join in. We look forward to seeing you online!
+              </p>
+              
+              <p className="text-sm text-emerald-200 font-semibold pt-2">
+                The UGEGBE Team
+              </p>
+            </div>
+          ) : (
+            // In-Person Attendee Message
+            <div className="space-y-2 text-emerald-100">
+              <p className="text-lg font-semibold">48-Hour French Language Marathon</p>
+              <p className="text-sm">13 November – 15 November 2026</p>
+              <p className="text-sm">Lagos, Nigeria · 100% Free Entry</p>
+            </div>
+          )}
 
           <div className="pt-4 flex flex-wrap gap-3">
             <button
