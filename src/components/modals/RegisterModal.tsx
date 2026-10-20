@@ -212,7 +212,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, o
 
             <div className="space-y-1 text-center sm:text-left">
               <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-[#23C48E] font-bold block">
-                LAGOS, NIGERIA Â· 100% FREE PASS
+                13-15 NOVEMBER 2026 · LAGOS, NIGERIA · 100% FREE
               </span>
               <h3 className="text-xl sm:text-2xl font-display font-black text-white uppercase tracking-tight">
                 WATCH UGEGBE TAKE ON A 48-HOUR FRENCH LESSON

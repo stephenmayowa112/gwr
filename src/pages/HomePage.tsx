@@ -28,9 +28,21 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Eyebrow badge / Kicker */}
           <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-amber-400 uppercase mb-6">
-            <span>GUINNESS WORLD RECORDSâ„¢ ATTEMPT</span>
-            <span aria-hidden="true">Â·</span>
+            <span>GUINNESS WORLD RECORDS™ ATTEMPT</span>
+            <span aria-hidden="true">·</span>
             <span>LONGEST LANGUAGE LESSON</span>
+          </div>
+          
+          {/* Prominent Date Badge */}
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-amber-400/10 border-2 border-amber-400 rounded-xl mb-6">
+            <Calendar className="w-6 h-6 text-amber-400" />
+            <div className="text-left">
+              <div className="text-xs font-mono text-amber-400/80 uppercase tracking-wider">Event Dates</div>
+              <div className="text-lg sm:text-xl font-display font-black text-amber-400 tracking-tight">
+                NOVEMBER 13-15, 2026
+              </div>
+              <div className="text-xs text-emerald-200">Thursday 6PM - Saturday 6PM WAT</div>
+            </div>
           </div>
 
           {/* Main Display Headline (exact verbatim from copy) */}
