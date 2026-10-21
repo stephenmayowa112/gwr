@@ -14,18 +14,25 @@ export default defineConfig(() => {
     build: {
       // Enable gzip compression
       minify: 'esbuild',
-      // Split chunks for better caching
+      // Split chunks for better caching using function syntax
       rollupOptions: {
         output: {
-          manualChunks: {
-            'react-vendor': ['react', 'react-dom'],
-            'firebase-vendor': ['firebase/app', 'firebase/firestore', 'firebase/auth'],
-            'ui-vendor': ['lucide-react'],
+          manualChunks(id) {
+            // React and React DOM in one chunk
+            if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+              return 'react-vendor';
+            }
+            // Firebase in one chunk
+            if (id.includes('node_modules/firebase') || id.includes('@firebase')) {
+              return 'firebase-vendor';
+            }
+            // Lucide icons in one chunk
+            if (id.includes('node_modules/lucide-react')) {
+              return 'ui-vendor';
+            }
           },
         },
       },
-      // Enable source maps for production debugging (optional, remove if not needed)
-      sourcemap: false,
       // Optimize chunk size
       chunkSizeWarningLimit: 1000,
       // Enable CSS code splitting
